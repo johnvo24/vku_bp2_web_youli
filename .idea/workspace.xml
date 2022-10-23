@@ -5,18 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client/view/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/view/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/view/src/reportWebVitals.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,24 +38,28 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2EOfAtfZiA32BSugMAFGqlS59S7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Program Files/nodejs/node.exe",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,7 +69,9 @@
       <option name="presentableId" value="Default" />
       <updated>1662471413265</updated>
       <workItem from="1662471417638" duration="612000" />
-      <workItem from="1662475363455" duration="1630000" />
+      <workItem from="1662475363455" duration="2479000" />
+      <workItem from="1662516276263" duration="2489000" />
+      <workItem from="1666535702892" duration="388000" />
     </task>
     <servers />
   </component>
