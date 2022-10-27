@@ -1,0 +1,27 @@
+:root {
+    --themeColor: rgb(255, 255, 255);
+    --textColor: rgb(0, 0, 0);
+    --fontSizeText: 14px;
+
+    --boxShadow: 0 0 9px -4px black;
+    --boxShadow1: 0 0 7px -3px black;
+    --boxShadow2: 0 0 9px -3px black;
+    --boxShadow3: 0 0 5px 0px black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: var(--fontSizeText);
+}
+
+#root {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--textColor);
+    
+}

@@ -1,0 +1,8 @@
+.sideList {
+    width: fit-content;
+    height: fit-content;
+    padding: 10px 10px 0px 10px;
+    border: solid 1px rgb(230, 230, 230);
+    border-radius: 10px;
+    box-shadow: var(--boxShadow1) inset;
+}
