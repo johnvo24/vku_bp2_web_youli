@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/view/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/project_decription/.$quan_ly_ca_nhan_model.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/.$quan_ly_ca_nhan_model.drawio.bkp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/project_decription/.$quan_ly_ca_nhan_model.drawio.dtmp" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/.$quan_ly_ca_nhan_model.drawio.dtmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/public/project_decription/quan_ly_ca_nhan_model.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/quan_ly_ca_nhan_model.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="088d4f50-542e-4350-8aa4-9e4105487e2d" />
+        <option name="url" value="https://github.com/hqvjet/Youli.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -57,9 +57,16 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="O:\Project\Youli\documents\draw.io" />
+      <recent name="O:\Project\Youli\documents" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,7 +78,8 @@
       <workItem from="1662471417638" duration="612000" />
       <workItem from="1662475363455" duration="2479000" />
       <workItem from="1662516276263" duration="2489000" />
-      <workItem from="1666535702892" duration="388000" />
+      <workItem from="1666535702892" duration="1009000" />
+      <workItem from="1666872483628" duration="3018000" />
     </task>
     <servers />
   </component>
