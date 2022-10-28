@@ -7,9 +7,7 @@
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/NavigationBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/NavigationBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/actor.drawio" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/.$quan_ly_ca_nhan_model.drawio.dtmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/actor.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/actor.drawio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -81,7 +79,8 @@
       <workItem from="1662516276263" duration="2489000" />
       <workItem from="1666535702892" duration="1009000" />
       <workItem from="1666872483628" duration="4359000" />
-      <workItem from="1666927432569" duration="1015000" />
+      <workItem from="1666927432569" duration="1016000" />
+      <workItem from="1666929013473" duration="477000" />
     </task>
     <servers />
   </component>

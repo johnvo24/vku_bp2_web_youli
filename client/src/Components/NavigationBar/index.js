@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import {useEffect, useLayoutEffect, useState} from 'react';
+import {useLayoutEffect, useState} from 'react';
 import styles from './NavigationBar.module.css'
 import { navList } from '../../Constants/GlobalVariables';
 
