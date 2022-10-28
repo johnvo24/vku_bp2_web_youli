@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useLayoutEffect, useState } from 'react';
+import {useEffect, useLayoutEffect, useState} from 'react';
 import styles from './NavigationBar.module.css'
 import { navList } from '../../Constants/GlobalVariables';
 
@@ -14,7 +14,6 @@ function NavigationBar() {
         }
         handleClick(obj.index)
     }, [])
-
 
     const handleClick = (index) => {
         const delta = 2 - index
