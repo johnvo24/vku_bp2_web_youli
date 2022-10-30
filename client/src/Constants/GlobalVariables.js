@@ -1,4 +1,6 @@
 import { getCurrentDevice } from "../Middlewares/Middlewares";
+import {useState} from "react";
+import * as IMAGE from "./IMAGE";
 
 export const currentDevice = {
     name: getCurrentDevice()
