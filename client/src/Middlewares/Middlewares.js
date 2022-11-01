@@ -1,4 +1,3 @@
-
 export function getCurrentDevice() {
     const ua = navigator.userAgent;
     if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
@@ -8,4 +7,4 @@ export function getCurrentDevice() {
         return "mobile";
     }
     return "desktop";
-};
+}

@@ -9,3 +9,7 @@ export async function getWalletData(id) {
         resetTime: '30'
     }
 }
+
+export async function updateTimeToServer(time) {
+    //api
+}

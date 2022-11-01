@@ -7,9 +7,11 @@
 
 .container {
     margin: 0 auto;
-    width: 90%;
+    width: 1000px;
     height: 100%;
     border: 1px solid black;
+    display: flex;
+    flex-direction: row;
 }
 
 .title {
@@ -21,4 +23,33 @@
 .wallet {
     padding: 20px;
     font-size: 4em;
+    margin-top: -20px;
+}
+
+.leftSide {
+    width: 300px;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rightSide {
+    width: calc(100% - 300px);
+    height: 100%;
+    background-color: transparent;
+    border-style: none none none solid;
+    border-color: red;
+}
+
+.walletContainer, .costContainer, .resetContainer  {
+    text-align: center;
+}
+
+.circle {
+    width: 100%;
+    height: 100%;
+    background-color: lawngreen;
+    border-radius: 100%;
 }

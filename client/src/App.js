@@ -5,19 +5,29 @@ import RoutersNav from './Routes/RoutersNav';
 import {listOfNavBar} from './Constants/GlobalVariables';
 import {useState} from "react";
 import * as IMAGE from "./Constants/IMAGE";
-
-let data = [listOfNavBar]
+import Authentication from "./Pages/Authentication";
+let lang = 1;
+let data = [listOfNavBar, lang]
 export const MyUserContext = createContext(undefined)
 
 function App() {
 
 
     return (
-        <MyUserContext.Provider value={data}>
-            <Layout>
-                <RoutersNav/>
-            </Layout>
-        </MyUserContext.Provider>
+        <>
+            {
+                localStorage.getItem('YouliUser') === null ?
+                    <Authentication/> :
+                    (
+                        <MyUserContext.Provider value={data}>
+                            <Layout>
+                                <RoutersNav/>
+                            </Layout>
+                        </MyUserContext.Provider>
+                    )
+            }
+        </>
+
     );
 }
 

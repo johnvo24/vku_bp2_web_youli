@@ -3,10 +3,11 @@ import Header from "../Components/Header";
 import NavigationBar from "../Components/NavigationBar";
 
 function Layout({children}) {
+
     return (
         <>
             <Header />
-            <NavigationBar />
+            <NavigationBar/>
             <div className="Main_main">
                 {children}
             </div>
