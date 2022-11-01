@@ -1,6 +1,6 @@
 .main {
     width: 100%;
-    height: 100vh;
+    height: 500px;
     /*background-color: red;*/
     margin: 0;
 }
@@ -26,6 +26,10 @@
     margin-top: -20px;
 }
 
+.wallet::after {
+    content: '$';
+}
+
 .leftSide {
     width: 300px;
     height: 100%;
@@ -41,15 +45,75 @@
     background-color: transparent;
     border-style: none none none solid;
     border-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.walletContainer, .costContainer, .resetContainer  {
+.walletContainer, .costContainer, .resetContainer {
     text-align: center;
 }
 
 .circle {
-    width: 100%;
+    width: 50%;
     height: 100%;
-    background-color: lawngreen;
     border-radius: 100%;
+    margin: 0 auto;
+}
+
+.circleBar {
+    overflow: hidden;
+    width: 450px;
+    height: 450px;
+    background-color: transparent;
+    position: relative;
+    border: 1px solid black;
+    border-radius: 100%;
+}
+
+.yourWallet, .statistic, .reset, .addItem, .dot {
+    position: absolute;
+}
+
+
+.yourWallet {
+    transform: translate(195px, 70px);
+
+}
+
+.statistic {
+    transform: translate(320px, 195px);
+}
+
+.reset {
+    transform: translate(195px, 330px);
+}
+
+.addItem {
+    transform: translate(40px, 195px);
+}
+
+.dot {
+    border: 0 none black;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: black;
+    transform: translate(225px, 225px);
+}
+
+.lineUp {
+    position: absolute;
+    transform: rotate(-45deg) translate(-160px, 165px);
+    width: 450px;
+    height: 2px;
+    background-color: black;
+}
+
+.lineDown {
+    position: absolute;
+    transform: rotate(45deg) translate(160px, 157px);
+    width: 450px;
+    height: 2px;
+    background-color: black;
 }
