@@ -1,26 +1,23 @@
-import styles from "./BudgetPage.module.css"
 import {useEffect, useState} from "react";
+
+//components
+import styles from "./BudgetPage.module.css"
 import {getWalletData, updateTimeToServer} from "../../api/BudgetPageAPI";
-import {useClock} from "../../hooks";
 import * as CONTENT from "../../Constants/languages/Expenditure";
 import {useContext} from "react";
 import {MyUserContext} from "../../App";
 import '../../Components/GlobalStyle'
-import Container from "../../Components/Container";
+import Wallet from "../../Components/BudgetComponents/Wallet";
 
 function BudgetPage(props) {
     const [wallet, setWallet] = useState({})
-    const [time] = useClock(Number(sessionStorage.getItem('z')))
     const data = useContext(MyUserContext)
     const [mainTheme, setMainTheme] = useState(true)
     const [walletTheme, setWalletTheme] = useState(false)
     const [statisticTheme, setStatisticTheme] = useState(false)
     const [addItemTheme, setAddItemTheme] = useState(false)
     const [resetTheme, setResetTheme] = useState(false)
-    const [isEdit, setEdit] = useState({
-        balance: false,
-        income: false
-    })
+
 
     useEffect(() => {
         async function fetch() {
@@ -40,12 +37,6 @@ function BudgetPage(props) {
 
         fetch().then()
     }, [])
-
-    const updateTime = async () => {
-        await updateTimeToServer(time)
-    }
-
-    window.addEventListener('pagehide', updateTime)
 
     return (
         <div className={styles.main}>
@@ -91,55 +82,9 @@ function BudgetPage(props) {
                     )}
 
                     {walletTheme && (
-                        <>
-                            <div className={styles.walletTheme}>
-                                <Container customStyles={{
-                                    border: '1px solid red',
-                                    display: 'flex',
-                                    flexDirection: 'column'
-                                }}>
-                                    <div className={styles.balance}>
-                                        <label className={styles.walletTitle}
-                                               htmlFor='balance'>{CONTENT.balance[data[1]]}</label>
-                                        {isEdit.balance ?
-                                            (
-                                                <>
-                                                    <input type='text' id='balance' className={styles.walletEditor}
-                                                           defaultValue={wallet.yourWallet}/>
-                                                </>
-                                            ) :
-                                            (
-                                                <>
-                                                    <label
-                                                        className={styles.walletTitle}>{`${wallet.yourWallet}$`}</label>
-                                                </>
-                                            )}
-                                    </div>
-                                    <div className={styles.income}>
-                                        <label className={styles.walletTitle}>{CONTENT.income[data[1]]}</label>
-                                        {isEdit.income ?
-                                            (
-                                                <>
-                                                    <input type='text' id='income' className={styles.walletEditor}
-                                                           defaultValue={wallet.income}/>
-                                                </>
-                                            ) :
-                                            (
-                                                <>
-                                                    <label className={styles.walletTitle}>{`${wallet.income}$`}</label>
-                                                </>
-                                            )}
-                                    </div>
-                                    <div className={styles.bank}>
-                                        <h1 className={styles.walletTitle}>{CONTENT.bank[data[1]]}</h1>
-                                    </div>
-                                </Container>
-                            </div>
-                        </>
+                        <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
                     )}
                 </div>
-
-
             </div>
         </div>
     )

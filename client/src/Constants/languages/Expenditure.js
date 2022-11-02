@@ -1,7 +1,7 @@
 // 0: en, 1: vi
 export const yourWallet = [
     'Your Wallet:',
-    'Ví Của Bạn'
+    'Ví Của Bạn:'
 ]
 
 export const totalCost = [
@@ -28,7 +28,6 @@ export const bank = [
     'Connect To Your Bank Account',
     'Kết Nối Với Tài Khoản Ngân Hàng Của Bạn'
 ]
-
 
 
 

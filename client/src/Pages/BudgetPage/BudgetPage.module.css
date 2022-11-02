@@ -124,15 +124,3 @@
     height: 2px;
     background-color: black;
 }
-
-.walletTheme {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.walletTitle {
-    font-size: 2em;
-}
