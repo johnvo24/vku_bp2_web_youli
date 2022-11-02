@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/GlobalStyle/GlobalStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/GlobalStyle/GlobalStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/.$system_database.drawio.dtmp" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/.$system_database.drawio.dtmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/draw.io/.$system_database.drawio.dtmp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/documents/draw.io/system_database.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/system_database.drawio" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +90,8 @@
       <workItem from="1667278460234" duration="6639000" />
       <workItem from="1667286451602" duration="1600000" />
       <workItem from="1667303544119" duration="7756000" />
+      <workItem from="1667311375951" duration="81000" />
+      <workItem from="1667359645007" duration="4205000" />
     </task>
     <servers />
   </component>

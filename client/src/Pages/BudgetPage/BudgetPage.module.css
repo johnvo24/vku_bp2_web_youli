@@ -73,12 +73,12 @@
 
 .yourWallet, .statistic, .reset, .addItem, .dot {
     position: absolute;
+    transition: font-size 500ms, margin-top 500ms, margin-left 500ms;
 }
 
 
 .yourWallet {
     transform: translate(195px, 70px);
-
 }
 
 .statistic {
@@ -91,6 +91,13 @@
 
 .addItem {
     transform: translate(40px, 195px);
+}
+
+.addItem:hover, .reset:hover, .statistic:hover, .yourWallet:hover {
+    cursor: pointer;
+    font-size: 2em;
+    margin-top: -30px;
+    margin-left: -25px;
 }
 
 .dot {
@@ -116,4 +123,16 @@
     width: 450px;
     height: 2px;
     background-color: black;
+}
+
+.walletTheme {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.walletTitle {
+    font-size: 2em;
 }

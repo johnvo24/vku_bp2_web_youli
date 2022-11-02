@@ -7,7 +7,9 @@ export async function getWalletData(id) {
         EID: '1',
         yourWallet: '100',
         totalCost: '20',
-        status: '0'
+        status: '0',
+        income: '5000',
+        PIN: '247801'
     }
 }
 

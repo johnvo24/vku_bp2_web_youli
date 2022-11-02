@@ -14,6 +14,21 @@ export const status = [
     'Trạng Thái:'
 ]
 
+export const balance = [
+    'Balance:',
+    'Số Dư:'
+]
+
+export const income = [
+    'Income:',
+    'Tiền Lương:'
+]
+
+export const bank = [
+    'Connect To Your Bank Account',
+    'Kết Nối Với Tài Khoản Ngân Hàng Của Bạn'
+]
+
 
 
 
