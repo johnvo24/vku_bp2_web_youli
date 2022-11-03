@@ -8,6 +8,9 @@ import {useContext} from "react";
 import {MyUserContext} from "../../App";
 import '../../Components/GlobalStyle'
 import Wallet from "../../Components/BudgetComponents/Wallet";
+import AddItem from "../../Components/BudgetComponents/AddItem";
+import Statistic from "../../Components/BudgetComponents/Statistic";
+import Reset from "../../Components/BudgetComponents/Reset";
 
 function BudgetPage(props) {
     const [wallet, setWallet] = useState({})
@@ -67,13 +70,19 @@ function BudgetPage(props) {
                                 }}>
                                     <i className="fa-solid fa-wallet" style={{fontSize: '4.5em'}}></i>
                                 </div>
-                                <div className={styles.statistic}>
+                                <div className={styles.statistic} onClick={() => {
+                                    setStatisticTheme(true)
+                                    setMainTheme(false)
+                                }}>
                                     <i className="fa-solid fa-chart-pie" style={{fontSize: '4.5em'}}></i>
                                 </div>
-                                <div className={styles.addItem}>
+                                <div className={styles.addItem} onClick={() => {
+                                    setAddItemTheme(true)
+                                    setMainTheme(false)
+                                }}>
                                     <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
                                 </div>
-                                <div className={styles.reset}>
+                                <div className={styles.reset} onClick={() => setResetTheme(true)}>
                                     <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
                                 </div>
                                 <div className={styles.dot}/>
@@ -83,6 +92,15 @@ function BudgetPage(props) {
 
                     {walletTheme && (
                         <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
+                    )}
+                    {addItemTheme && (
+                        <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme}/>
+                    )}
+                    {statisticTheme && (
+                        <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
+                    )}
+                    {resetTheme && (
+                        <Reset resetTheme={setResetTheme}/>
                     )}
                 </div>
             </div>

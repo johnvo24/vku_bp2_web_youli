@@ -7,3 +7,8 @@ export const save = [
     'Save',
     'Lưu'
 ]
+
+export const reset = [
+    'Reset',
+    'Làm Lại'
+]
