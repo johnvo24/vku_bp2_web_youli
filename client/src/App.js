@@ -11,12 +11,12 @@ let data = [listOfNavBar, lang]
 export const MyUserContext = createContext(undefined)
 
 function App() {
-
+    localStorage.setItem("YoleUser", {})
 
     return (
         <>
             {
-                localStorage.getItem('YouliUser') === null ?
+                localStorage.getItem('YoleUser') === null ?
                     <Authentication/> :
                     (
                         <MyUserContext.Provider value={data}>
