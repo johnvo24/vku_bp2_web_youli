@@ -27,7 +27,7 @@ function NotePage() {
             {/* {console.log(currentDevice)} */}
             <SideBar list={data[0].note}/>
             <MainContainer />
-            <SideList />
+            {/* <SideList /> */}
         </div>
     )
 }

@@ -1,11 +1,10 @@
 .notePage {
     width: 80%;
-    border: solid 1px rgb(230, 230, 230);
     border-radius: 8px;
-    box-shadow: var(--boxShadow1);
     margin-left: auto;
     margin-right: auto;
-    padding: 5px;
+    padding: 10px;
     height: 100%;
+    background-color: var(--themeColor);
     display: flex;
 }

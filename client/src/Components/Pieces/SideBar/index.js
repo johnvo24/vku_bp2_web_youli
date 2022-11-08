@@ -19,7 +19,7 @@ function SideBar({list}) {
                         to={`/note/${item.alt}`}
                         // onClick={() => console.log("click")}
                     >
-                        <li>
+                        <li className={item.alt}>
                             <i className={item.icon}></i>
                             {checker && (<span>{ item.name }</span>)}
                         </li>

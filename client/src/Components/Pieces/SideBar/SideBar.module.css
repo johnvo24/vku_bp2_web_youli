@@ -2,9 +2,11 @@
     width: fit-content;
     height: fit-content;
     padding: 10px 10px 0px 10px;
-    border: solid 1px rgb(230, 230, 230);
+    background-color: white;
     border-radius: 10px;
-    box-shadow: var(--boxShadow1) inset;
+    border: solid 1px rgb(172, 172, 172);
+    box-shadow: var(--boxShadow) inset;
+    margin-right: 5px;
 }
 
 .sideBar ul {
@@ -48,4 +50,8 @@
     box-shadow: var(--boxShadow) inset;
     font-weight: 500;
     text-align: center;
+}
+
+.new > i{
+    background-color: #14A44D;
 }

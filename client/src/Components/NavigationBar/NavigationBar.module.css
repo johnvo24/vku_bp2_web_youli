@@ -1,6 +1,6 @@
 .nav {
     width: 100%;
-    height: 48px;
+    height: 50px;
     margin: 2px 0 5px 0;
 }
 
@@ -13,8 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 0px 6px 0px rgb(200, 200, 200);
-    border-bottom: solid 1px rgb(200, 200, 200);
+    background-color: var(--themeNavBarColor);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
@@ -26,17 +25,18 @@
     line-height: 30px;
     text-transform: uppercase;
     font-weight: 500;
-    box-shadow: var(--boxShadow2);
 }
 
 .nav ul a li {
     width: 100%;
     height: 100%;
     text-align: center;
+    color: black;
 }
 
 .nav ul .sidePage {
-
+    background-color: #45e300;
+    border-bottom: solid 2px #277d02;
 }
 
 .nav ul .currentPage {
@@ -44,8 +44,24 @@
     width: 240px;
     border-radius: 18px;
     line-height: 36px;
+    font-weight: 700;
+    background-color: #e6db11;
+    border-bottom: solid 3px #8b8506;
 }
 .nav ul .currentPage > li {
     font-size: 18px;
+}
+.nav ul .currentPage:hover {
+    background-color: #bfb609;
+}
+.nav ul .sidePage:hover {
+    background-color: #39b703;
+}
+.nav ul a:hover > li {
+    color: white;
+    text-shadow: 0 0 1px black;
+}
+.nav ul a:active {
+    border: none;
 }
 
