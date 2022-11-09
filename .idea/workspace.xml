@@ -6,12 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/CopyRight.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/Signin.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/Signup.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Routes/RoutersNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes/RoutersNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/Use Case.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/Use Case.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/config/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/config/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/Cart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/Shop.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +71,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="O:\Project\Youli\client\src\api" />
       <recent name="O:\Project\Youli\documents\draw.io" />
       <recent name="O:\Project\Youli\documents" />
     </key>
@@ -100,7 +105,7 @@
       <workItem from="1667959758473" duration="2413000" />
       <workItem from="1667974331019" duration="2007000" />
       <workItem from="1667979158520" duration="628000" />
-      <workItem from="1667999040033" duration="2158000" />
+      <workItem from="1667999040033" duration="12315000" />
     </task>
     <servers />
   </component>

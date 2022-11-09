@@ -9,7 +9,8 @@ import BudgetPage from "../Pages/BudgetPage";
 import NoPage from "../Pages/NoPage";
 import {useState} from "react";
 import * as IMAGE from "../Constants/IMAGE";
-import SignIn from "../Components/Authorization/Signin";
+import SignIn from "../Components/Authorization/SignIn";
+import SignUp from "../Components/Authorization/SignUp";
 
 function RoutersNav() {
 
@@ -33,7 +34,8 @@ function RoutersNav() {
             <Route path="/home" element={<HomePage/>}></Route>
             <Route path="/goal" element={<GoalPage/>}></Route>
             <Route path="/budget" element={<BudgetPage user={user}/>}></Route>
-            <Route path='/sign-in' element={<SignIn/>} />
+            <Route path='/sign-in' element={<SignIn/>}></Route>
+            <Route path='/sign-up' element={<SignUp/>}></Route>
             <Route path="/*" element={<NoPage/>}></Route>
         </Routes>
     )
