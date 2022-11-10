@@ -1,12 +1,11 @@
 .sideBar {
     width: fit-content;
     height: fit-content;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 5px 0px 5px;
     background-color: white;
-    border-radius: 10px;
-    border: solid 1px rgb(172, 172, 172);
-    box-shadow: var(--boxShadow) inset;
-    margin-right: 5px;
+    border-radius: 5px;
+    border: solid 1px var(--themeBorderColor);
+    margin-right: 2px;
 }
 
 .sideBar ul {
@@ -26,6 +25,12 @@
     width: 100%;
     height: 100%;
     align-items: center;
+}
+.sideBar ul a:hover li i {
+    transform: scale(1.07);
+}
+.sideBar ul a:active li i {
+    transform: scale(1);
 }
 
 .sideBar ul a li i {
@@ -50,8 +55,4 @@
     box-shadow: var(--boxShadow) inset;
     font-weight: 500;
     text-align: center;
-}
-
-.new > i{
-    background-color: #14A44D;
 }

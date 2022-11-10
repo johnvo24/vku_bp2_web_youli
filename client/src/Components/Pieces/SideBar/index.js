@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SideBar.module.css'
+import './SideBar.css';
 
 function SideBar({list}) {
     const [checker, setChecker] = useState(true)
@@ -26,7 +27,7 @@ function SideBar({list}) {
                     </Link>
                 ))}
                 <a href="null" onClick={handleHideName}>
-                    <li>
+                    <li className='btn_toggle'>
                         <i className="fa-sharp fa-solid fa-eye-slash"></i>
                         {checker && (<span>Ẩn chữ</span>)}
                     </li>

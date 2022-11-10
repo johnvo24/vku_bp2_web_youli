@@ -9,7 +9,7 @@ export const currentDevice = {
 export const navList = [
     {
         name: "Ghi chú",
-        alt: "note",
+        alt: "note"
     },
     {
         name: "Lịch Trình",
