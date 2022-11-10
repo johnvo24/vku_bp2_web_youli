@@ -4,7 +4,7 @@
   "description": "The website that can handle all of everything about your spending, your work, your task or even your team !!",
   "main": "index.js",
   "scripts": {
-    "server": "cd server & node server.js",
+    "server": "cd server & nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -20,10 +20,16 @@
   },
   "homepage": "https://github.com/hqvjet/Youli#readme",
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.13",
+    "@mui/styled-engine-sc": "^5.10.6",
     "axios": "^0.27.2",
     "concurrently": "^7.5.0",
     "express": "^4.18.2",
     "mysql": "^2.18.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "styled-components": "^5.3.6"
   }
 }

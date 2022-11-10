@@ -1,0 +1,8 @@
+.snackBar {
+    width: auto;
+    min-width: 200px;
+    height: auto;
+    min-height: 75px;
+    position: fixed;
+    right: 0;
+}

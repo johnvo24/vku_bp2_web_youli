@@ -1,13 +1,9 @@
-const shopRouter = require('./Shop')
-const cartRouter = require("./Cart");
 const PORT = 4000
+const auth = require('./Authorization')
 
 function routes(app) {
 
-    app.use('/shop', shopRouter)
-    app.use('/view-cart', cartRouter)
-    app.use('/authorization', )
-
+    app.use('/api/authorization', auth)
     app.listen(PORT)
 }
 
