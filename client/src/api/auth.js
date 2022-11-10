@@ -7,7 +7,5 @@ export async function PostDataForSignin(data) {
 }
 
 export async function PostDataForSignUp(data) {
-
     return (await AUTH.post('signup', data)).data.user
-
 }

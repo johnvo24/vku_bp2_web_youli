@@ -11,6 +11,7 @@ import Wallet from "../../Components/BudgetComponents/Wallet";
 import AddItem from "../../Components/BudgetComponents/AddItem";
 import Statistic from "../../Components/BudgetComponents/Statistic";
 import Reset from "../../Components/BudgetComponents/Reset";
+import axios from "axios";
 
 function BudgetPage(props) {
     const [wallet, setWallet] = useState({})

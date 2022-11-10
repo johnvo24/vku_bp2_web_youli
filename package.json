@@ -4,7 +4,7 @@
   "description": "The website that can handle all of everything about your spending, your work, your task or even your team !!",
   "main": "index.js",
   "scripts": {
-    "server": "cd server & node server.js",
+    "server": "cd server & nodemon server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
