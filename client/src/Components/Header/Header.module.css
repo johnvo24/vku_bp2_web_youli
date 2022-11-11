@@ -5,8 +5,9 @@
     padding: 0 10px;
     width: 100%;
     height: 50px;
-    background-color: var(--themeNavBarColor);
+    background-color: var(--themeColor);
     color: var(--textColor);
+    border-bottom: solid 1px var(--themeBorderColor);
     box-shadow: var(--boxShadow1);
 }
 

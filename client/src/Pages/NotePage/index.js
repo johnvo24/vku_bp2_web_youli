@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { MyUserContext } from "../../App";
 import MainContainer from "../../Components/Pieces/MainContainer";
 import SideList from "../../Components/Pieces/SideList";
+import NoteBoxList from "../../Components/NoteComponents/NoteBoxList";
 
 const noteList = [
     {
@@ -26,7 +27,9 @@ function NotePage() {
         >
             {/* {console.log(currentDevice)} */}
             <SideBar list={data[0].note}/>
-            <MainContainer />
+            <MainContainer>
+                <NoteBoxList></NoteBoxList>
+            </MainContainer>
             {/* <SideList /> */}
         </div>
     )

@@ -13,55 +13,69 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--themeNavBarColor);
+    background-color: var(--themeColor);
+    border: solid 1px var(--themeBorderColor);
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
 
 .nav ul a {
     height: 30px;
-    width: 170px;
-    border-radius: 15px;
+    width: 160px;
+    border-radius: 10px;
     line-height: 30px;
     text-transform: uppercase;
-    font-weight: 500;
+    border: solid 1px rgb(123, 123, 123);
 }
 
 .nav ul a li {
     width: 100%;
     height: 100%;
     text-align: center;
-    color: black;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0 0 3px black inset;
+    font-size: 13px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 0 2px black;
 }
 
 .nav ul .sidePage {
-    background-color: #45e300;
-    border-bottom: solid 2px #277d02;
+    background-color: #22e000;
 }
 
 .nav ul .currentPage {
     height: 36px;
     width: 240px;
-    border-radius: 18px;
+    border-radius: 10px;
     line-height: 36px;
-    font-weight: 700;
-    background-color: #e6db11;
-    border-bottom: solid 3px #8b8506;
+    background-color: #eaac00;
 }
 .nav ul .currentPage > li {
-    font-size: 18px;
+    font-size: 17px;
 }
-.nav ul .currentPage:hover {
-    background-color: #bfb609;
+.nav ul a:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 30px;
 }
-.nav ul .sidePage:hover {
-    background-color: #39b703;
+.nav ul a:last-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 30px;
 }
-.nav ul a:hover > li {
-    color: white;
-    text-shadow: 0 0 1px black;
+.nav ul a:first-child > li {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 30px;
 }
-.nav ul a:active {
-    border: none;
+.nav ul a:last-child > li {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 30px;
 }
 
+.nav ul a:hover {
+    box-shadow: 0 0 6px white;
+}
+.nav ul a:active {
+    box-shadow: 0 0 6px white;
+    transform: scale(1.01);
+}

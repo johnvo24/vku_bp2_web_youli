@@ -1,7 +1,8 @@
 :root {
-    --themeColor: rgb(30, 30, 30);
-    --themeNavBarColor: rgb(30, 30, 30);
-    --themeBackgroundColor: #f4f4f4;
+    --themeColor: rgb(55, 55, 55);
+    --themeBorderColor: rgb(172, 172, 172);
+    --themeNavBarButton: #00ff66;
+    --themeBackgroundColor: #ffffff;
     --textColor: rgb(0, 0, 0);
     --fontSizeText: 14px;
 
