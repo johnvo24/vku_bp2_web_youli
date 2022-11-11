@@ -9,7 +9,7 @@ async function checkExist(value) {
 }
 
 async function getUser(req, res) {
-    if(req.body.username.trim() === '' || req.body.userpassword.trim() === '') {
+    if(req.body.username.trim() === '' ) {//|| req.body.userpassword.trim() === '') {
         res.status(409)
         res.send('Empty input is not allowed')
     }
@@ -20,6 +20,7 @@ async function getUser(req, res) {
     }
 
     const data = await checkExist(req.body.username)
+    console.log(data)
     if(data.length === 0) {
         res.status(409)
         res.send('Can not found Username that you inputted')

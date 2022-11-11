@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/.$system_database.drawio.bkp" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/.$system_database.drawio.bkp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/system_database.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/system_database.drawio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/Authorization.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/Authorization.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/authController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +98,7 @@
       <workItem from="1667979158520" duration="628000" />
       <workItem from="1667999040033" duration="12315000" />
       <workItem from="1668083051191" duration="1159000" />
-      <workItem from="1668090063609" duration="8740000" />
+      <workItem from="1668090063609" duration="9615000" />
     </task>
     <servers />
   </component>
