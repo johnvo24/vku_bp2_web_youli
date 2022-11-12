@@ -4,6 +4,12 @@ import styles from './SnackBar.module.css'
 
 export default function SnackBar(props) {
 
+    if(props.duration !== null) {
+         setTimeout(() => {
+            props.setOpen(false)
+        }, props.duration)
+    }
+
     return (
         <>
             {props.open && (
