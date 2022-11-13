@@ -1,12 +1,14 @@
-const PORT = 4000
-const auth = require('./Authorization')
-const wallet = require('./Wallet')
+const auth = require('./Authorization');
+const noteBoxRouter = require('./noteBoxRouter');
+const wallet = require('./Wallet');
+const PORT = 4000;
 
 function routes(app) {
 
-    app.use('/api/authorization', auth)
-    app.use('/api/wallet/:id', wallet)
-    app.listen(PORT)
+    app.use('/api/authorization', auth);
+    app.use('/api/notebox', noteBoxRouter);
+    app.use('/api/wallet/:id', wallet);
+    app.listen(PORT);
 }
 
-module.exports = routes
+module.exports = routes;
