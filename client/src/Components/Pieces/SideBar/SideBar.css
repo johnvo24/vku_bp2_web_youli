@@ -1,3 +1,8 @@
+.view > i{
+    background-color: #d400ff;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
 .new > i{
     background-color: #00ff66;
     color: white;
@@ -20,6 +25,11 @@
 }
 .btn_toggle > i {
     background-color: #9FA6B2;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+.view > span{
+    background-color: #d400ff;
     color: white;
     text-shadow: 0 0 3px black;
 }
