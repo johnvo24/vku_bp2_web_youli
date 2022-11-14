@@ -4,8 +4,7 @@ const noteBoxController = () => {
     const noteBoxController = {};
 
     noteBoxController.index = async (req, res) => {
-        user_id = 1;
-        res.send(await NoteBox().getNoteBox(user_id));
+        res.send(await NoteBox().getNoteBox(req.params.user_id));
     }
     noteBoxController.create = (req, res) => {
         return false;

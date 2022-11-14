@@ -1,11 +1,14 @@
 .sideBar {
+    position: absolute;
+    left: 12px;
+    top: 12px;
     width: fit-content;
     height: fit-content;
-    padding: 10px 5px 0px 5px;
+    padding: 8px 5px 0px 5px;
     background-color: white;
     border-radius: 5px;
-    border: solid 1px var(--themeBorderColor);
-    margin-right: 2px;
+    border: solid 1px var(--themeBorderColorChild);
+    box-shadow: var(--boxShadow1);
 }
 
 .sideBar ul {
@@ -16,8 +19,7 @@
 .sideBar ul a {
     display: block;
     width: 100%;
-    height: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .sideBar ul a li {
@@ -35,11 +37,11 @@
 
 .sideBar ul a li i {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     text-align: center;
-    line-height: 30px;
-    font-size: 16px;
+    line-height: 26px;
+    font-size: 14px;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: var(--boxShadow) inset;
@@ -49,8 +51,9 @@
     margin-left: 7px;
     padding: 0px 10px;
     flex: 1;
-    height: 30px;
-    line-height: 30px;
+    height: 26px;
+    font-size: var(--fontSizeTextMini);
+    line-height: 26px;
     border-radius: 8px;
     box-shadow: var(--boxShadow) inset;
     font-weight: 500;

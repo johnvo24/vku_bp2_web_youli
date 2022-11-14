@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 08, 2022 lúc 07:13 PM
+-- Thời gian đã tạo: Th10 14, 2022 lúc 05:34 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -78,6 +78,7 @@ CREATE TABLE `goal` (
   `goal_deathline` timestamp NOT NULL DEFAULT current_timestamp(),
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `priority` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -95,8 +96,17 @@ CREATE TABLE `note` (
   `note_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `note_link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `note_deathline` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `priority` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `note`
+--
+
+INSERT INTO `note` (`note_id`, `note_box_id`, `note_title`, `note_img`, `note_description`, `note_link`, `note_deathline`, `status`, `priority`) VALUES
+(1, 1, 'Mua kem', '', '', '', '2022-11-12 04:34:41', 0, 1),
+(6, 1, 'Mua sách', '', '', '', '2022-11-12 04:48:30', 0, 2);
 
 -- --------------------------------------------------------
 
@@ -111,8 +121,18 @@ CREATE TABLE `note_box` (
   `note_box_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` tinyint(1) NOT NULL DEFAULT 0,
   `priority` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `note_box`
+--
+
+INSERT INTO `note_box` (`note_box_id`, `user_id`, `note_box_title`, `note_box_description`, `created_at`, `updated_at`, `status`, `priority`) VALUES
+(1, 1, 'Hoc tap', NULL, '2022-11-12 04:32:14', '2022-11-12 04:32:14', 0, 1),
+(3, 1, 'Mua sắm', 'Mua nhiều tí ba!', '2022-11-13 09:59:02', '2022-11-13 09:59:02', 0, 2),
+(4, 1, 'Du lịch', 'Đi xa luôn!', '2022-11-13 09:59:28', '2022-11-13 09:59:28', 0, 3);
 
 -- --------------------------------------------------------
 
@@ -151,6 +171,13 @@ CREATE TABLE `user` (
   `language` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `user`
+--
+
+INSERT INTO `user` (`user_id`, `username`, `userpassword`, `display_name`, `user_avatar`, `user_email`, `user_phone`, `user_biography`, `created_at`, `language`) VALUES
+(1, 'account1', '123456', 'Account 1', NULL, 'account1@gmail.com', NULL, NULL, '2022-11-12 04:30:45', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -173,9 +200,9 @@ CREATE TABLE `wallet` (
 --
 ALTER TABLE `bills`
   ADD PRIMARY KEY (`bill_id`),
-  ADD UNIQUE KEY `wallet_id` (`wallet_id`),
-  ADD UNIQUE KEY `c_category_id` (`c_category_id`),
-  ADD UNIQUE KEY `category_id` (`category_id`);
+  ADD KEY `wallet_id_2` (`wallet_id`),
+  ADD KEY `c_category_id_2` (`c_category_id`),
+  ADD KEY `category_id_2` (`category_id`);
 
 --
 -- Chỉ mục cho bảng `categories`
@@ -188,53 +215,51 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `custom_categories`
   ADD PRIMARY KEY (`category_id`),
-  ADD UNIQUE KEY `fk_user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `goal`
 --
 ALTER TABLE `goal`
   ADD PRIMARY KEY (`goal_id`),
-  ADD UNIQUE KEY `fk_user_id` (`user_id`),
-  ADD UNIQUE KEY `priority` (`priority`);
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `note`
 --
 ALTER TABLE `note`
   ADD PRIMARY KEY (`note_id`),
-  ADD UNIQUE KEY `priority` (`priority`),
-  ADD UNIQUE KEY `note_box_id_2` (`note_box_id`),
-  ADD KEY `note_box_id` (`note_box_id`);
+  ADD KEY `note_box_id_4` (`note_box_id`);
 
 --
 -- Chỉ mục cho bảng `note_box`
 --
 ALTER TABLE `note_box`
   ADD PRIMARY KEY (`note_box_id`),
-  ADD UNIQUE KEY `user_id_2` (`user_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id_3` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `step`
 --
 ALTER TABLE `step`
   ADD PRIMARY KEY (`step_id`),
-  ADD UNIQUE KEY `step_id` (`step_id`,`step_title`),
-  ADD UNIQUE KEY `goal_id` (`goal_id`);
+  ADD KEY `goal_id_2` (`goal_id`);
 
 --
 -- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `user_email` (`user_email`),
+  ADD UNIQUE KEY `user_phone` (`user_phone`);
 
 --
 -- Chỉ mục cho bảng `wallet`
 --
 ALTER TABLE `wallet`
   ADD PRIMARY KEY (`wallet_id`),
-  ADD UNIQUE KEY `user_id` (`user_id`);
+  ADD KEY `user_id_2` (`user_id`);
 
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
@@ -268,13 +293,13 @@ ALTER TABLE `goal`
 -- AUTO_INCREMENT cho bảng `note`
 --
 ALTER TABLE `note`
-  MODIFY `note_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `note_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `note_box`
 --
 ALTER TABLE `note_box`
-  MODIFY `note_box_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `note_box_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `step`
@@ -286,7 +311,7 @@ ALTER TABLE `step`
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `wallet`

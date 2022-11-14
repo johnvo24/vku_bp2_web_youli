@@ -1,34 +1,47 @@
 import styles from "./NotePage.module.css"
 import SideBar from "../../Components/Pieces/SideBar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MyUserContext } from "../../App";
 import MainContainer from "../../Components/Pieces/MainContainer";
-import SideList from "../../Components/Pieces/SideList";
-import NoteBoxList from "../../Components/NoteComponents/NoteBoxList";
+import noteBoxAPI from "../../api/noteBoxAPI";
+import NoteContainer from "../../Components/NoteComponents/NoteContainer";
 
-const noteList = [
-    {
-        id: "00001",
-        priority: 1,
-        title: "Đi chợ",
-        list: [
-            "",
-        ]
-    }
-]
+let noteBoxListInit = [];
+noteBoxAPI().getView()
+    .then((res) => {
+        noteBoxListInit = res.data;
+    }).catch((err) => { console.log(err) });
+
 
 function NotePage() {
+    const data = useContext(MyUserContext);
+    const [noteBoxList, setNodeBoxList] = useState(noteBoxListInit)
 
-    const data = useContext(MyUserContext)
+    const handleClickSideBar = (event, action) => {
+        event.preventDefault();
+        switch (action) {
+            case "view":
+                noteBoxAPI().getView()
+                    .then((res) => {
+                        setNodeBoxList(res.data);
+                    }).catch((err) => { console.log(err) })
+                break;
+
+            default:
+                break;
+        }
+    }
 
     return (
         <div
             className={styles.notePage}
         >
-            {/* {console.log(currentDevice)} */}
-            <SideBar list={data[0].note}/>
+            <SideBar
+                list={data[0].note}
+                handleClickSideBar={handleClickSideBar}
+            />
             <MainContainer>
-                <NoteBoxList></NoteBoxList>
+                <NoteContainer noteBoxList={noteBoxList} />
             </MainContainer>
             {/* <SideList /> */}
         </div>

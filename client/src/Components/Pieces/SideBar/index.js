@@ -2,29 +2,13 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './SideBar.module.css'
 import './SideBar.css';
-import axios from 'axios';
 
-function SideBar({ list }) {
-    const [checker, setChecker] = useState(true)
+function SideBar({ list, handleClickSideBar }) {
+    const [checker, setChecker] = useState(false)
 
     const handleHideName = (e) => {
         e.preventDefault()
         setChecker((prev) => prev = !prev)
-    }
-
-    const handleClick = (e, alt) => {
-        e.preventDefault();
-        switch (alt) {
-            case "view":
-                axios.get('/api/notebox/create')
-                    .then((res) => {
-                        console.log(res)
-                    })
-                break;
-
-            default:
-                break;
-        }
     }
 
     return (
@@ -34,7 +18,7 @@ function SideBar({ list }) {
                     <Link
                         key={index}
                         to={`/note/${item.alt}`}
-                        onClick={(e) => handleClick(e, item.alt)}
+                        onClick={(e) => handleClickSideBar(e, item.alt)}
                     >
                         <li className={item.alt}>
                             <i className={item.icon}></i>
