@@ -1,11 +1,11 @@
+const NoteModel = require("../model/Note");
 
 
 const noteController = () => {
     const noteController = {};
 
     noteController.index = async (req, res) => {
-        console.log(req.params);
-        res.send(await NoteBox().getNoteBox(req.params.user_id));
+        res.send(await NoteModel().getNode(req.params.note_box_id));
     }
     noteController.create = (req, res) => {
         return false;

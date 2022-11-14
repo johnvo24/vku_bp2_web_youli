@@ -31,9 +31,13 @@
 }
 
 .g_body {
+    position: relative;
     flex: 1;
 }
 .g_description {
+    position: absolute;
+    width: 100%;
+    top: 0;
     padding: 5px 10px;
     color: rgb(30, 30, 30);
     font-size: var(--fontSizeTextMini);
@@ -53,4 +57,16 @@
 }
 .g_createdAt, .g_updatedAt{
     font-size: var(--fontSizeMini);
+}
+
+.g_item {
+    padding: 10px;
+    margin: 3px;
+    box-shadow:  0 0 2px rgb(66, 66, 66);
+    border-radius: 2px;
+    color: rgb(50, 50, 50);
+    font-weight: 500;
+}
+.g_item:nth-child(odd) {
+    background-color: rgb(224, 224, 224);
 }

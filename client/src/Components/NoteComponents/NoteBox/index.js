@@ -1,7 +1,19 @@
+import { useEffect, useState } from 'react';
+import noteAPI from '../../../api/noteAPI';
 import { timeConverter } from '../../../Middlewares/Middlewares';
+import Note from '../Note';
 import styles from './NoteBox.module.css';
 
 function NoteBox({ noteBoxData }) {
+    const [noteList, setNoteList] = useState([]);
+
+    useEffect(() => {
+        noteAPI().getNote(noteBoxData.note_box_id)
+            .then((res) => {
+                setNoteList(res.data)
+            }).catch((err) => console.log(err))
+    }, [noteBoxData.note_box_id]);
+
     const handleClickTitle = () => {
         const e = document.getElementById(`note_box_${noteBoxData.note_box_id}`)
             .children[1].children[0].style;
@@ -22,6 +34,14 @@ function NoteBox({ noteBoxData }) {
             <div className="g_body">
                 <div className="g_description" style={{display: "none"}}>
                     {noteBoxData.note_box_description || "Không có mô tả nào cả!"}
+                </div>
+                <div className={styles.NoteList}>
+                    {noteList.map((note) => (
+                        <Note
+                            key={note.note_id}
+                            noteData={note}
+                        />
+                    ))}
                 </div>
             </div>
             <div className="g_footer">

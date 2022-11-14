@@ -1,8 +1,7 @@
-const { response } = require('express');
 const db = require('../config/db');
 
 const NoteBoxModel = () => {
-    const noteBoxModel = [];
+    const noteBoxModel = {};
 
     noteBoxModel.getNoteBox = async (user_id) => {
         let noteBoxList = [];
@@ -17,7 +16,7 @@ const NoteBoxModel = () => {
                 }
             )
         })
-        .then((response) => noteBoxList = response)
+        .then((result) => noteBoxList = result)
         .catch((err) => console.log(err));
         return noteBoxList;
     }

@@ -6,3 +6,6 @@ export const AUTH = axios.create({
 export const NOTEBOX = axios.create({
     baseURL: '/api/notebox'
 })
+export const NOTE = axios.create({
+    baseURL: '/api/note'
+})
