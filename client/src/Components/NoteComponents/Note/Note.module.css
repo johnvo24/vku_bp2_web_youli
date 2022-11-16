@@ -1,6 +1,70 @@
 .note {
 }
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
 
-.noteTitle {
+.noteTitle i, .noteTitle span {
+    margin-right: 10px;
     font-size: var(--fontSizeTextMini);
+    cursor: pointer;
+}
+.noteTitle span {
+    font-weight: bolder;
+}
+.header i:hover {
+    cursor: pointer;
+    transform: scale(1.2) rotateZ(10deg);
+    transition: 150ms;
+}
+.header i:active {
+    transform: scale(0.9);
+}
+
+.body {
+    width: 100%;
+    display: none
+}
+.detail {
+    width: 100%;
+}
+.detail > div {
+    margin-top: 5px;
+    border-top: solid 1px rgb(60, 60, 60);
+}
+.img {
+    width: 100%;
+}
+.img img {
+    display: block;
+    padding: 10px;
+    max-width: 100%;
+    max-height: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.description span {
+    display: block;
+    font-size: var(--fontSizeTextMini);
+}
+.description span:nth-child(1) {
+    padding: 10px 0;
+    font-weight: bolder;
+}
+.description span:nth-child(2) {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: dashed 1px rgb(170, 170, 170);
+}
+
+.time {
+    display:  block;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    margin-right: -3px;
+    font-size: var(--fontSizeMini);
+    text-align: end;
 }

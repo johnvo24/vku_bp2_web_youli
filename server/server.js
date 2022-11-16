@@ -1,4 +1,5 @@
 const express = require('express')
+const NoteBoxModel = require('./model/NoteBox')
 const routes = require('./routes')
 const app = express()
 

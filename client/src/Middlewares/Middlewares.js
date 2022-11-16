@@ -9,6 +9,10 @@ export function getCurrentDevice() {
     return "desktop";
 }
 
+export function getCurrentUser(key) {
+    return JSON.parse(localStorage.getItem(key));
+}
+
 export function timeConverter(time, string) {
     let t = new Date(time);
     let stringconerted = "";

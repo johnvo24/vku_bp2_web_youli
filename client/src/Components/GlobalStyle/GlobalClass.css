@@ -33,6 +33,10 @@
 .g_body {
     position: relative;
     flex: 1;
+    overflow: scroll;
+}
+.g_body::-webkit-scrollbar {
+    display: none;
 }
 .g_description {
     position: absolute;
@@ -41,7 +45,8 @@
     padding: 5px 10px;
     color: rgb(30, 30, 30);
     font-size: var(--fontSizeTextMini);
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(202, 202, 202);
+    box-shadow: 0 0 1px rgb(68, 68, 68);
 }
 
 .g_footer {
@@ -68,5 +73,54 @@
     font-weight: 500;
 }
 .g_item:nth-child(odd) {
-    background-color: rgb(224, 224, 224);
+    background-color: rgb(225, 225, 225);
+}
+.g_padding {
+    padding: 10px;
+}
+
+.g_priority_1 {
+    color:  #ae00ff;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+.g_priority_1 + span {
+    color: #ae00ff;
+}
+.g_priority_2, .g_priority_0 {
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+.g_priority_3 {
+    color: rgb(100, 100, 100);
+    text-shadow: 0 0 3px white ;
+}
+.g_priority_3 + span {
+    color: rgba(120, 120, 120);
+    text-shadow: none;
+    text-decoration: line-through;
+}
+
+.g_boxpriority_1 {
+    color:  #ffee00;
+}
+.g_boxpriority_1 + span {
+    color: #ffee00;
+}
+.g_boxpriority_2, .g_priority_0 {
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+.g_boxpriority_3 {
+    color: rgb(100, 100, 100);
+    text-shadow: 0 0 3px white ;
+}
+.g_boxpriority_3 + span {
+    color: rgba(120, 120, 120);
+    text-shadow: none;
+    text-decoration: line-through;
+}
+
+
+.g_success {
+    color:  #ffbf00;
 }

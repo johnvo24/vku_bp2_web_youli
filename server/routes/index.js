@@ -1,6 +1,6 @@
 const auth = require('./Authorization');
 const noteBoxRouter = require('./noteBoxRouter');
-const noteRouter = require('./NoteRouter');
+const noteRouter = require('./noteRouter');
 const wallet = require('./Wallet');
 const PORT = 4000;
 
