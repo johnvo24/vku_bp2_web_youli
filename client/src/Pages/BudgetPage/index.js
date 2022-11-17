@@ -33,7 +33,7 @@ function BudgetPage() {
     }, [])
 
     useEffect(() => {
-        if(wallet.length !== 0) {
+        if (wallet.length !== 0) {
 
             setLoading(true)
             if (wallet.budget === 0)
@@ -50,9 +50,10 @@ function BudgetPage() {
     return (
         <div className={styles.main}>
             <div className={styles.container}>
-                <div className={styles.leftSide}>
-                    {loading && (
-                        <>
+                {loading && (
+                    <>
+
+                        <div className={styles.leftSide}>
                             <div className={styles.walletContainer}>
                                 <h1 className={styles.title}>{CONTENT.yourWallet[data[1]]}</h1>
                                 <h1 className={styles.wallet}>{wallet.budget}</h1>
@@ -65,54 +66,54 @@ function BudgetPage() {
                                 <h1 className={styles.title}>{CONTENT.status[data[1]]}</h1>
                                 <div className={styles.circle} style={{backgroundColor: statusColor}}/>
                             </div>
-                        </>
-                    )}
-                </div>
-                <div className={styles.rightSide}>
-                    {mainTheme && (
-                        <>
-                            <div className={styles.circleBar}>
-                                <div className={styles.lineUp}/>
-                                <div className={styles.lineDown}/>
-                                <div className={styles.yourWallet} onClick={() => {
-                                    setWalletTheme(true)
-                                    setMainTheme(false)
-                                }}>
-                                    <i className="fa-solid fa-wallet" style={{fontSize: '4.5em'}}></i>
-                                </div>
-                                <div className={styles.statistic} onClick={() => {
-                                    setStatisticTheme(true)
-                                    setMainTheme(false)
-                                }}>
-                                    <i className="fa-solid fa-chart-pie" style={{fontSize: '4.5em'}}></i>
-                                </div>
-                                <div className={styles.addItem} onClick={() => {
-                                    setAddItemTheme(true)
-                                    setMainTheme(false)
-                                }}>
-                                    <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
-                                </div>
-                                <div className={styles.reset} onClick={() => setResetTheme(true)}>
-                                    <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
-                                </div>
-                                <div className={styles.dot}/>
-                            </div>
-                        </>
-                    )}
+                        </div>
+                        <div className={styles.rightSide}>
+                            {mainTheme && (
+                                <>
+                                    <div className={styles.circleBar}>
+                                        <div className={styles.lineUp}/>
+                                        <div className={styles.lineDown}/>
+                                        <div className={styles.yourWallet} onClick={() => {
+                                            setWalletTheme(true)
+                                            setMainTheme(false)
+                                        }}>
+                                            <i className="fa-solid fa-wallet" style={{fontSize: '4.5em'}}></i>
+                                        </div>
+                                        <div className={styles.statistic} onClick={() => {
+                                            setStatisticTheme(true)
+                                            setMainTheme(false)
+                                        }}>
+                                            <i className="fa-solid fa-chart-pie" style={{fontSize: '4.5em'}}></i>
+                                        </div>
+                                        <div className={styles.addItem} onClick={() => {
+                                            setAddItemTheme(true)
+                                            setMainTheme(false)
+                                        }}>
+                                            <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
+                                        </div>
+                                        <div className={styles.reset} onClick={() => setResetTheme(true)}>
+                                            <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
+                                        </div>
+                                        <div className={styles.dot}/>
+                                    </div>
+                                </>
+                            )}
 
-                    {walletTheme && (
-                        <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
-                    )}
-                    {addItemTheme && (
-                        <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme}/>
-                    )}
-                    {statisticTheme && (
-                        <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
-                    )}
-                    {resetTheme && (
-                        <Reset resetTheme={setResetTheme}/>
-                    )}
-                </div>
+                            {walletTheme && (
+                                <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
+                            )}
+                            {addItemTheme && (
+                                <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme}/>
+                            )}
+                            {statisticTheme && (
+                                <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
+                            )}
+                            {resetTheme && (
+                                <Reset resetTheme={setResetTheme}/>
+                            )}
+                        </div>
+                    </>
+                )}
             </div>
         </div>
     )

@@ -3,6 +3,6 @@ const walletRouter = express.Router()
 const controller = require('../controllers/walletController')
 
 walletRouter.post('/inf', controller.getInf)
-// walletRouter.post('/')
+walletRouter.post('/update', controller.updateBudget)
 
 module.exports = walletRouter
