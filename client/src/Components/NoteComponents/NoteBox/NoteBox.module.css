@@ -1,0 +1,13 @@
+.noteBox {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-width: 350px;
+    height: 300px;
+    margin: 5px;
+    margin-bottom: 20px;
+    border: solid 1px var(--themeBorderColorChild);
+    border-radius: 5px;
+    box-shadow: var(--boxShadow1);
+}

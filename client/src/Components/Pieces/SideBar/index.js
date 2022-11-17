@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './SideBar.module.css'
 import './SideBar.css';
 
-function SideBar({list}) {
-    const [checker, setChecker] = useState(true)
+function SideBar({ list, handleClickSideBar }) {
+    const [checker, setChecker] = useState(false)
 
     const handleHideName = (e) => {
         e.preventDefault()
@@ -18,11 +18,11 @@ function SideBar({list}) {
                     <Link
                         key={index}
                         to={`/note/${item.alt}`}
-                        // onClick={() => console.log("click")}
+                        onClick={(e) => handleClickSideBar(e, item.alt)}
                     >
                         <li className={item.alt}>
                             <i className={item.icon}></i>
-                            {checker && (<span>{ item.name }</span>)}
+                            {checker && (<span>{item.name}</span>)}
                         </li>
                     </Link>
                 ))}

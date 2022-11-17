@@ -1,13 +1,18 @@
 :root {
     --themeColor: rgb(55, 55, 55);
     --themeBorderColor: rgb(172, 172, 172);
+    --themeBorderColorChild: rgb(200, 200, 200);
     --themeNavBarButton: #00ff66;
-    --themeBackgroundColor: #ffffff;
+    --themeBackgroundColor: #bababa;
     --textColor: rgb(0, 0, 0);
+
     --fontSizeText: 14px;
+    --fontSizeTextMini: 12px;    
+    --fontSizeMini: 10px;
 
     
     --boxShadow: 0 0 9px -3px rgb(0, 0, 0);
+    --boxShadow1: 0 0 6px -3px rgb(0, 0, 0);
 }
 
 * {
@@ -20,6 +25,7 @@
 body {
     background-color: var(--themeBackgroundColor);
 }
+
 
 #root {
     width: 100%;

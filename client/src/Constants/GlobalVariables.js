@@ -31,6 +31,7 @@ export const navList = [
 
 export const listOfNavBar = {
     note: [
+        {name: "Xem tất cả", alt: "view", icon: "fa-solid fa-clipboard"},
         {name: "Tạo mới", alt: "new", icon: "fa-solid fa-file-circle-plus"},
         {name: "Chỉnh sửa", alt: "edit", icon: "fa-sharp fa-solid fa-pen-to-square"},
         {name: "Lưu lại", alt: "save", icon: "fa-solid fa-floppy-disk"},
