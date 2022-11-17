@@ -16,7 +16,7 @@ const noteBoxController = () => {
         return false;
     }
     noteBoxController.update = (req, res) => {
-        return false;
+        NoteBox().updateNoteBox(req.body);
     }
     noteBoxController.delete = (req, res) => {
         return false;

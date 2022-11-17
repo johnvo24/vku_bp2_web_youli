@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 14, 2022 lúc 05:34 AM
+-- Thời gian đã tạo: Th10 17, 2022 lúc 12:43 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -95,18 +95,24 @@ CREATE TABLE `note` (
   `note_img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `note_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `note_link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `note_deathline` timestamp NOT NULL DEFAULT current_timestamp(),
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` tinyint(1) NOT NULL DEFAULT 0,
-  `priority` bigint(20) NOT NULL
+  `priority` tinyint(1) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `note`
 --
 
-INSERT INTO `note` (`note_id`, `note_box_id`, `note_title`, `note_img`, `note_description`, `note_link`, `note_deathline`, `status`, `priority`) VALUES
-(1, 1, 'Mua kem', '', '', '', '2022-11-12 04:34:41', 0, 1),
-(6, 1, 'Mua sách', '', '', '', '2022-11-12 04:48:30', 0, 2);
+INSERT INTO `note` (`note_id`, `note_box_id`, `note_title`, `note_img`, `note_description`, `note_link`, `created_at`, `status`, `priority`) VALUES
+(1, 1, 'Mua kem', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png', 'Mua kem vua an vua hoc', '', '2022-11-12 04:34:41', 0, 1),
+(6, 1, 'Mua sách', 'https://i.pinimg.com/736x/79/3c/8a/793c8a6bcf07457129706f57062ab456.jpg', '', '', '2022-11-12 04:48:30', 0, 2),
+(7, 3, 'Mua áo ấm', '', 'Chiếc áo màu đỏ + cam + vàng', '', '2022-11-14 17:35:08', 0, 1),
+(8, 3, 'Mua quần dài', '', 'Chiếc quần màu đỏ + cam + vàng', '', '2022-11-14 17:35:25', 0, 2),
+(9, 4, 'Đi phú quốc', '', 'Vui chơi thôi', '', '2022-11-14 17:38:25', 0, 1),
+(10, 4, 'Ra Hà Nội', '', 'Tắm Hồ Gươm', '', '2022-11-14 17:38:50', 0, 2),
+(11, 1, 'Học Tiếng Anh', '', 'Coi film', '', '2022-11-14 17:39:25', 1, 3),
+(12, 1, 'Luyện nói', '', 'Nói nhiều hơn mỗi ngày', '', '2022-11-15 18:22:16', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +128,7 @@ CREATE TABLE `note_box` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `status` tinyint(1) NOT NULL DEFAULT 0,
-  `priority` bigint(20) NOT NULL
+  `priority` tinyint(1) NOT NULL DEFAULT 2
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -130,9 +136,9 @@ CREATE TABLE `note_box` (
 --
 
 INSERT INTO `note_box` (`note_box_id`, `user_id`, `note_box_title`, `note_box_description`, `created_at`, `updated_at`, `status`, `priority`) VALUES
-(1, 1, 'Hoc tap', NULL, '2022-11-12 04:32:14', '2022-11-12 04:32:14', 0, 1),
-(3, 1, 'Mua sắm', 'Mua nhiều tí ba!', '2022-11-13 09:59:02', '2022-11-13 09:59:02', 0, 2),
-(4, 1, 'Du lịch', 'Đi xa luôn!', '2022-11-13 09:59:28', '2022-11-13 09:59:28', 0, 3);
+(1, 1, 'Học tập', 'Mua dụng cụ học tập', '2022-11-12 04:32:14', '2022-10-14 02:18:20', 1, 1),
+(3, 1, 'Mua sắm', 'Mua nhiều nhiều nhé chú em', '2022-11-13 09:59:02', '2022-10-17 00:16:35', 0, 1),
+(4, 1, 'Du lịch', 'Đi du lịch nhiều nhiều nhé chú em', '2022-11-13 09:59:28', '2022-11-16 06:08:00', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -293,13 +299,13 @@ ALTER TABLE `goal`
 -- AUTO_INCREMENT cho bảng `note`
 --
 ALTER TABLE `note`
-  MODIFY `note_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `note_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `note_box`
 --
 ALTER TABLE `note_box`
-  MODIFY `note_box_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `note_box_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT cho bảng `step`

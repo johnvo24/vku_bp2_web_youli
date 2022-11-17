@@ -12,7 +12,6 @@ noteBoxAPI().getView()
         noteBoxListInit = res.data;
     }).catch((err) => { console.log(err) });
 
-
 function NotePage() {
     const data = useContext(MyUserContext);
     const [noteBoxList, setNodeBoxList] = useState(noteBoxListInit)

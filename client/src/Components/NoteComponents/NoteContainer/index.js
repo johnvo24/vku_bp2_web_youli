@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import NoteBox from '../NoteBox';
 import styles from './NoteContainer.module.css'
 

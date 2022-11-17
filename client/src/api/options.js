@@ -12,3 +12,6 @@ export const NOTEBOX = axios.create({
     baseURL: '/api/notebox'
 >>>>>>> afd4438969bba1a5b361e87f93c67507c264eba4
 })
+export const NOTE = axios.create({
+    baseURL: '/api/note'
+})
