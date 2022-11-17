@@ -2,8 +2,18 @@ const db = require('../config/db')
 
 class User {
     async initWallet(username) {
-        new Promise((resolve, reject) => {
-            db.query('insert')
+        const id = await new Promise((resolve, reject) => {
+            db.query('select user_id from user where username = ?',
+                [username],
+                async (err, result) => {
+                    if(err) reject(err)
+                    await db.query('insert into wallet(user_id, budget) values (?, ?)',
+                        [result[0].user_id, 0],
+                        (err, result_) => {
+                            if(err) reject(err)
+                            resolve()
+                        })
+                })
         })
     }
 
