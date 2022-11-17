@@ -13,7 +13,7 @@ import Statistic from "../../Components/BudgetComponents/Statistic";
 import Reset from "../../Components/BudgetComponents/Reset";
 import axios from "axios";
 
-function BudgetPage(props) {
+function BudgetPage() {
     const [wallet, setWallet] = useState({})
     const data = useContext(MyUserContext)
     const [mainTheme, setMainTheme] = useState(true)
@@ -22,10 +22,10 @@ function BudgetPage(props) {
     const [addItemTheme, setAddItemTheme] = useState(false)
     const [resetTheme, setResetTheme] = useState(false)
 
-
     useEffect(() => {
         async function fetch() {
-            const data = await getWalletData(props.user.UID)
+            const data = await getWalletData(JSON.parse(localStorage.getItem('YoleUSer')).user_id)
+
             setWallet(data)
             const status = document.getElementById('status')
             if (data.yourWallet === '0')

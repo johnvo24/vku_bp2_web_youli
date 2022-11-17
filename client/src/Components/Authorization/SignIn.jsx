@@ -9,7 +9,7 @@ export default function SignIn() {
     const [open, setOpen] = useState(false)
 
     useEffect(() => {
-        if (localStorage.getItem('YoleUser') === null)
+        if (localStorage.getItem('YoleUser') !== null)
             window.location.href = '/home'
     }, [])
 

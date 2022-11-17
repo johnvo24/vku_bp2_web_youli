@@ -3,16 +3,12 @@ import './App.css';
 import Layout from './Layouts';
 import RoutersNav from './Routes/RoutersNav';
 import {listOfNavBar} from './Constants/GlobalVariables';
-import {useState} from "react";
-import * as IMAGE from "./Constants/IMAGE";
-import Authentication from "./Pages/Authentication";
 
 let lang = 1;
 let data = [listOfNavBar, lang]
 export const MyUserContext = createContext(undefined)
 
 function App() {
-    // localStorage.setItem("YoleUser", {})
 
     return (
         <>

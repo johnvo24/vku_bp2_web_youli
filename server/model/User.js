@@ -14,7 +14,6 @@ class User {
                 async (err, result) => {
                     if (err) reject(err)
                     const wallet = await this.initWallet(username)
-
                     resolve()
                 })
         })
