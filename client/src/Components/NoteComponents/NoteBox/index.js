@@ -35,9 +35,23 @@ function NoteBox({ noteBoxData }) {
             note_box_title: noteBoxData1.note_box_title,
             note_box_description: noteBoxData1.note_box_description,
             created_at: noteBoxData1.created_at,
-            updated_at: (timeConverter(new Date(), 'y-m-d h:i:s')),
+            updated_at: noteBoxData1.updated_at,
             status: noteBoxData1.status,
             priority: pri
+        }
+        noteBoxAPI().update(data);
+        setNoteBoxData(data);
+    }
+    const handleClickStatus = () => {
+        const data = {
+            note_box_id: noteBoxData1.note_box_id,
+            user_id: noteBoxData1.user_id,
+            note_box_title: noteBoxData1.note_box_title,
+            note_box_description: noteBoxData1.note_box_description,
+            created_at: noteBoxData1.created_at,
+            updated_at: noteBoxData1.updated_at,
+            status: (!noteBoxData1.status) ? 1 : 0,
+            priority: noteBoxData.priority
         }
         noteBoxAPI().update(data);
         setNoteBoxData(data);
@@ -57,7 +71,10 @@ function NoteBox({ noteBoxData }) {
                     >{noteBoxData1.note_box_title}</span>
                 </div>
                 <div className={`g_status ${(noteBoxData1.status === 1) && "g_success"}`}>
-                    <i className="fa-solid fa-check"></i>
+                    <i 
+                        className="fa-solid fa-check"
+                        onClick={handleClickStatus}
+                    ></i>
                 </div>
             </div>
             <div className="g_body">
