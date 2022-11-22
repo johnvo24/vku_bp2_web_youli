@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/AddItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/AddItem.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +105,11 @@
       <workItem from="1668258733175" duration="3968000" />
       <workItem from="1668402432729" duration="36000" />
       <workItem from="1668685758894" duration="7589000" />
-      <workItem from="1668699256249" duration="6975000" />
+      <workItem from="1668699256249" duration="7219000" />
+      <workItem from="1668738872868" duration="100000" />
+      <workItem from="1668936276234" duration="402000" />
+      <workItem from="1669082681912" duration="605000" />
+      <workItem from="1669121178217" duration="587000" />
     </task>
     <servers />
   </component>

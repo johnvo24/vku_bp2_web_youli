@@ -29,7 +29,7 @@ export default function AddItem(props) {
                         <input type='date' id='time' className={styles.input}/>
                         <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
                         <select id='classify' className={styles.input}>
-                            
+
                         </select>
                     </div>
                     <div className={styles.btnGroup}>

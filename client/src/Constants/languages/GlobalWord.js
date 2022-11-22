@@ -10,5 +10,5 @@ export const save = [
 
 export const reset = [
     'Reset',
-    'Làm Lại'
+    'Làm Mới'
 ]
