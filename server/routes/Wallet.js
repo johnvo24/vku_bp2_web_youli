@@ -4,5 +4,6 @@ const controller = require('../controllers/walletController')
 
 walletRouter.post('/inf', controller.getInf)
 walletRouter.post('/update', controller.updateBudget)
+walletRouter.post('/categories', controller.getCategories)
 
 module.exports = walletRouter

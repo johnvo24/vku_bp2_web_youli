@@ -9,3 +9,7 @@ export async function getWalletData(id) {
 export async function updateWalletBudget(walletId, budget) {
     await WALLET.post('/update', {wallet_id: walletId, budget: budget})
 }
+
+export async function getCategory(userId) {
+    return (await WALLET.post('/categories', {user_id: userId})).data // array
+}

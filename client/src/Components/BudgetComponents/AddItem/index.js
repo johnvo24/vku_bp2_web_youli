@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useEffect, useState} from "react"
 
 //components
 import styles from './AddItem.module.css'
@@ -6,9 +6,21 @@ import Container from "../../Container";
 import * as CONTENT from '../../../Constants/languages/Expenditure'
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
 import {MyUserContext} from "../../../App";
+import {getCategory} from "../../../api/BudgetPageAPI";
 
 export default function AddItem(props) {
     const data = useContext(MyUserContext)
+    const user = JSON.parse(localStorage.getItem('YoleUser'))
+    const [loading, setLoading] = useState(false)
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        getCategory(user.user_id)
+            .then(res => {
+                setCategories(res)
+                setLoading(true)
+            })
+    }, [])
 
     return (
         <>
@@ -29,7 +41,18 @@ export default function AddItem(props) {
                         <input type='date' id='time' className={styles.input}/>
                         <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
                         <select id='classify' className={styles.input}>
-
+                            {loading && (
+                                <>
+                                    {categories.map((items, id) => (
+                                            <option key={id} style={{
+                                                color: items.type === 'cost' ? 'red' : 'black'
+                                            }}>
+                                                {items.category_name}
+                                            </option>
+                                        )
+                                    )}
+                                </>
+                            )}
                         </select>
                     </div>
                     <div className={styles.btnGroup}>
