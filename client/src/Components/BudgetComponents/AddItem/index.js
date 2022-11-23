@@ -6,7 +6,7 @@ import Container from "../../Container";
 import * as CONTENT from '../../../Constants/languages/Expenditure'
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
 import {MyUserContext} from "../../../App";
-import {getCategory} from "../../../api/BudgetPageAPI";
+import {getCategory, submitItemForm} from "../../../api/BudgetPageAPI";
 
 export default function AddItem(props) {
     const data = useContext(MyUserContext)
@@ -22,6 +22,26 @@ export default function AddItem(props) {
             })
     }, [])
 
+    const onSubmit = () => {
+        submitItemForm({
+            wallet_id: props.id,
+            item_title: document.getElementById('name').value,
+            item_description: document.getElementById('description').value,
+            item_cost: document.getElementById('price').value,
+            bill_time: document.getElementById('time').value,
+            category_id: document.getElementById('classify').value
+        })
+            .then()
+    }
+
+    const reset = () => {
+        document.getElementById('name').value = ''
+        document.getElementById('description').value = ''
+        document.getElementById('price').value = ''
+        document.getElementById('time').value = ''
+        document.getElementById('classify').selectedIndex = 0
+    }
+
     return (
         <>
             <div className={styles.itemTheme}>
@@ -35,6 +55,8 @@ export default function AddItem(props) {
                     <div className={styles.informationContainer}>
                         <label className={styles.label} htmlFor='name'>{CONTENT.purchasedItemName[data[1]]}</label>
                         <input type='text' id='name' className={styles.input}/>
+                        <label className={styles.label} htmlFor='description'>{CONTENT.itemDescription[data[1]]}</label>
+                        <input type='text' id='description' className={styles.input}/>
                         <label className={styles.label} htmlFor='price'>{CONTENT.itemPrice[data[1]]}</label>
                         <input type='text' id='price' className={styles.input}/>
                         <label className={styles.label} htmlFor='time'>{CONTENT.purchaseTime[data[1]]}</label>
@@ -46,7 +68,9 @@ export default function AddItem(props) {
                                     {categories.map((items, id) => (
                                             <option key={id} style={{
                                                 color: items.type === 'cost' ? 'red' : 'black'
-                                            }}>
+                                            }}
+                                                value={items.category_id}
+                                            >
                                                 {items.category_name}
                                             </option>
                                         )
@@ -61,8 +85,10 @@ export default function AddItem(props) {
                                 props.itemTheme(false)
                                 props.mainTheme(true)
                             }}>{GCONTENT.back[data[1]]}</button>
-                        <button className={styles.btn}>{GCONTENT.reset[data[1]]}</button>
-                        <button className={styles.btn}>{GCONTENT.save[data[1]]}</button>
+                        <button className={styles.btn}
+                                onClick={reset}>{GCONTENT.reset[data[1]]}</button>
+                        <button className={styles.btn}
+                                onClick={onSubmit}>{GCONTENT.save[data[1]]}</button>
                     </div>
                 </Container>
             </div>

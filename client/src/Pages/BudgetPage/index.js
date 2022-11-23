@@ -44,6 +44,7 @@ function BudgetPage() {
                 setStatusColor('#E1D046')
             else if (wallet.status === 3)
                 setStatusColor('red')
+            console.log(wallet)
         }
     }, [wallet])
 
@@ -103,7 +104,7 @@ function BudgetPage() {
                                 <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
                             )}
                             {addItemTheme && (
-                                <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme}/>
+                                <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>
                             )}
                             {statisticTheme && (
                                 <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>

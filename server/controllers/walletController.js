@@ -1,5 +1,6 @@
 const wallet = require('../model/Wallet')
 const category = require('../model/Category')
+const bill = require('../model/Bill')
 
 async function getInf(req, res) {
     await wallet.getInf(req.body.user_id)
@@ -29,8 +30,17 @@ async function getCategories(req, res) {
     res.send(defaultList)
 }
 
+async function saveBill(req, res) {
+    const save = await bill.saveBill(req.body)
+        .then(() => {
+            res.status(200)
+            res.send()
+        })
+}
+
 module.exports = {
     getInf,
     updateBudget,
-    getCategories
+    getCategories,
+    saveBill
 }

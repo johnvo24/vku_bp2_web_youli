@@ -41,6 +41,11 @@ export const purchasedItemName = [
     'Tên Vật Phẩm:'
 ]
 
+export const itemDescription = [
+    'Description:',
+    'Mô tả'
+]
+
 export const itemPrice = [
     'Price:',
     'Tốn Hết:'
