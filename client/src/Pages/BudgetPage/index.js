@@ -10,7 +10,7 @@ import '../../Components/GlobalStyle'
 import Wallet from "../../Components/BudgetComponents/Wallet";
 import AddItem from "../../Components/BudgetComponents/AddItem";
 import Statistic from "../../Components/BudgetComponents/Statistic";
-import Reset from "../../Components/BudgetComponents/Reset";
+import List from "../../Components/BudgetComponents/List";
 
 function BudgetPage() {
     const [wallet, setWallet] = useState({})
@@ -19,7 +19,7 @@ function BudgetPage() {
     const [walletTheme, setWalletTheme] = useState(false)
     const [statisticTheme, setStatisticTheme] = useState(false)
     const [addItemTheme, setAddItemTheme] = useState(false)
-    const [resetTheme, setResetTheme] = useState(false)
+    const [listTheme, setListTheme] = useState(false)
     const [loading, setLoading] = useState(false)
     const [statusColor, setStatusColor] = useState('')
 
@@ -92,7 +92,7 @@ function BudgetPage() {
                                         }}>
                                             <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
                                         </div>
-                                        <div className={styles.reset} onClick={() => setResetTheme(true)}>
+                                        <div className={styles.reset} onClick={() => setListTheme(true)}>
                                             <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
                                         </div>
                                         <div className={styles.dot}/>
@@ -109,8 +109,8 @@ function BudgetPage() {
                             {statisticTheme && (
                                 <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
                             )}
-                            {resetTheme && (
-                                <Reset resetTheme={setResetTheme}/>
+                            {listTheme && (
+                                <List resetTheme={setListTheme}/>
                             )}
                         </div>
                     </>

@@ -1,9 +1,9 @@
 import React from "react"
 
 //components
-import styles from './Reset.module.css'
+import styles from './List.module.css'
 
-export default function Reset(props) {
+export default function List(props) {
 
     return (
         <>

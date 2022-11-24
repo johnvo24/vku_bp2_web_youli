@@ -9,6 +9,6 @@ export const save = [
 ]
 
 export const reset = [
-    'Reset',
+    'View',
     'Làm Mới'
 ]
