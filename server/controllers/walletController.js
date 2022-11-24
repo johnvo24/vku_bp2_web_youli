@@ -38,9 +38,22 @@ async function saveBill(req, res) {
         })
 }
 
+async function getBills(req, res) {
+    const list = await bill.getBills(req.body.wallet_id)
+        .then(response => {
+            res.status(200)
+            res.send(response)
+        })
+        .catch(err => {
+            res.status(501)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
 module.exports = {
     getInf,
     updateBudget,
     getCategories,
-    saveBill
+    saveBill,
+    getBills
 }

@@ -24,13 +24,13 @@ export default function AddItem(props) {
 
     const onSubmit = () => {
         submitItemForm({
-            wallet_id: props.id,
-            item_title: document.getElementById('name').value,
-            item_description: document.getElementById('description').value,
-            item_cost: document.getElementById('price').value,
-            bill_time: document.getElementById('time').value,
-            category_id: document.getElementById('classify').value
-        })
+                wallet_id: props.id,
+                item_title: document.getElementById('name').value,
+                item_description: document.getElementById('description').value,
+                item_cost: document.getElementById('price').value,
+                bill_time: document.getElementById('time').value
+            }, document.getElementById('classify').options[document.getElementById('classify').selectedIndex].text,
+            document.getElementById('classify').value)
             .then()
     }
 
@@ -67,9 +67,9 @@ export default function AddItem(props) {
                                 <>
                                     {categories.map((items, id) => (
                                             <option key={id} style={{
-                                                color: items.type === 'cost' ? 'red' : 'black'
+                                                color: items.user_id ? items.type === 'cost' ? '#A33523' : '#575757' : items.type === 'cost' ? '#EA1D1D' : 'black'
                                             }}
-                                                value={items.category_id}
+                                                    value={items.category_id}
                                             >
                                                 {items.category_name}
                                             </option>

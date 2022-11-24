@@ -63,7 +63,7 @@ function BudgetPage() {
                                 <h1 className={styles.title}>{CONTENT.totalCost[data[1]]}</h1>
                                 <h1 className={styles.wallet}>{0}</h1>
                             </div>
-                            <div className={styles.resetContainer}>
+                            <div className={styles.listContainer}>
                                 <h1 className={styles.title}>{CONTENT.status[data[1]]}</h1>
                                 <div className={styles.circle} style={{backgroundColor: statusColor}}/>
                             </div>
@@ -92,7 +92,10 @@ function BudgetPage() {
                                         }}>
                                             <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
                                         </div>
-                                        <div className={styles.reset} onClick={() => setListTheme(true)}>
+                                        <div className={styles.list} onClick={() => {
+                                            setListTheme(true)
+                                            setMainTheme(false)
+                                        }}>
                                             <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
                                         </div>
                                         <div className={styles.dot}/>

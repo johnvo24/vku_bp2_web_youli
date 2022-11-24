@@ -13,7 +13,11 @@ export async function getCategory(userId) {
     return (await WALLET.post('/categories', {user_id: userId})).data // array
 }
 
-export async function submitItemForm(data) {
+export async function submitItemForm(data, name, id) {
+    if(name === 'market' || name === 'salary' || name === 'monthly home fee')
+        data = {...data, category_id: id}
+    else
+        data = {...data, c_category_id: id}
     await WALLET.post('/item/submit', data)
     // console.log(data)
 }

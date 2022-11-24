@@ -6,10 +6,70 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Reset/Reset.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Reset/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Constants/languages/GlobalWord.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/languages/GlobalWord.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server-legacy.browser.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server-legacy.browser.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server-legacy.node.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server-legacy.node.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.browser.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-server.node.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom-test-utils.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.profiling.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/cjs/react-dom.profiling.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/server.browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/server.browser.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/server.node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/server.node.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server-legacy.browser.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server-legacy.browser.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-server.browser.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom-test-utils.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.profiling.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react-dom/umd/react-dom.profiling.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.profiling.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-dev-runtime.profiling.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.profiling.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react-jsx-runtime.profiling.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/cjs/react.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.shared-subset.development.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/cjs/react.shared-subset.production.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/react.shared-subset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/umd/react.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/umd/react.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/react/umd/react.profiling.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/react/umd/react.profiling.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_mock.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler-unstable_post_task.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/cjs/scheduler.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.development.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.development.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/scheduler/umd/scheduler-unstable_mock.production.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/walletController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/walletController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/Bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/Bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/Wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/Wallet.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +176,9 @@
       <workItem from="1669184912524" duration="3323000" />
       <workItem from="1669212227983" duration="5253000" />
       <workItem from="1669271960803" duration="21000" />
-      <workItem from="1669279229154" duration="2071000" />
+      <workItem from="1669279229154" duration="2480000" />
+      <workItem from="1669287868547" duration="1030000" />
+      <workItem from="1669293395140" duration="3568000" />
     </task>
     <servers />
   </component>

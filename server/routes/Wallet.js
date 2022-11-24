@@ -6,5 +6,6 @@ walletRouter.post('/inf', controller.getInf)
 walletRouter.post('/update', controller.updateBudget)
 walletRouter.post('/categories', controller.getCategories)
 walletRouter.post('/item/submit', controller.saveBill)
+walletRouter.post('/bill', controller.getBills)
 
 module.exports = walletRouter
