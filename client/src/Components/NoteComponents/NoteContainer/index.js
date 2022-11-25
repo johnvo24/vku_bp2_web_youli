@@ -1,7 +1,7 @@
 import NoteBox from '../NoteBox';
 import styles from './NoteContainer.module.css'
 
-function NoteContainer({ noteBoxList }) {
+function NoteContainer({ noteBoxList, handleReRenderNoteBoxList}) {
 
     return (
         <ul className={styles.noteContainer}>
@@ -9,6 +9,7 @@ function NoteContainer({ noteBoxList }) {
                 <NoteBox
                     key={noteBox.note_box_id}
                     noteBoxData={noteBox}
+                    handleReRenderNoteBoxList={handleReRenderNoteBoxList}
                 />
             ))}
         </ul>

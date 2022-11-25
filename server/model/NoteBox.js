@@ -6,7 +6,7 @@ const NoteBoxModel = () => {
     noteBoxModel.getNoteBox = async (user_id) => {
         let noteBoxList = [];
         noteBoxList = await new Promise((resolve, reject) => {
-            let sql = 'select * from note_box where user_id = ? order by priority ASC';
+            let sql = 'select * from note_box where user_id = ? order by status ASC, priority ASC';
             db.query(
                 sql,
                 [user_id],
@@ -20,26 +20,13 @@ const NoteBoxModel = () => {
             .catch((err) => console.log(err));
         return noteBoxList;
     }
-    noteBoxModel.creatNoteBox = async (user_id) => {
-        const noteboxs = [
-            [
-                user_id,
-                "Hello1",
-                "Okie không sao"
-            ],
-            [
-                user_id,
-                "Hello2",
-                "Okie không sao"
-            ]
-        ]
+    noteBoxModel.creatNoteBox = (newnoteBox) => {
         let sql = 'insert into note_box (user_id, note_box_title, note_box_description) values ?';
-        await db.query(
+        db.query(
             sql,
-            [noteboxs],
+            [newnoteBox],
             (err, result) => {
                 if (err) throw err;
-                console.log(result);
             }
         )
     }

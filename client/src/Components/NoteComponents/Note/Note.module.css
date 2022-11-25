@@ -4,6 +4,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    user-select: none;
 }
 
 .noteTitle i, .noteTitle span {
@@ -16,7 +17,7 @@
 }
 .header i:hover {
     cursor: pointer;
-    transform: scale(1.2) rotateZ(10deg);
+    transform: scale(1.2);
     transition: 150ms;
 }
 .header i:active {

@@ -15,4 +15,8 @@
 .NoteList {
     width: 100%;
     height: fit-content;
+    position: relative;
+}
+.placeHolder {
+    border: solid 1px red;
 }

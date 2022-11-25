@@ -11,6 +11,9 @@ const noteBoxAPI = () => {
             JSON.parse(localStorage.getItem('YoleUser')).user_id
         }`);
     }
+    noteBoxAPI.create = (data) => {
+        return NOTEBOX.post('/create', data);
+    }
     noteBoxAPI.update = async (data) => {
         return await NOTEBOX.post(`/update`, data);
     }

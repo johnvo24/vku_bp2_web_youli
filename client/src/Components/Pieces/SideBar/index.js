@@ -1,37 +1,23 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './SideBar.module.css'
 import './SideBar.css';
+import BtnView from '../Buttons/BtnView';
+import { getCurrentUser } from '../../../Middlewares/Middlewares';
+import { listOfNavBar } from '../../../Constants/GlobalVariables';
+import BtnNew from '../Buttons/BtnNew';
 
-function SideBar({ list, handleClickSideBar }) {
-    const [checker, setChecker] = useState(false)
-
-    const handleHideName = (e) => {
-        e.preventDefault()
-        setChecker((prev) => prev = !prev)
-    }
-
+function SideBar({ handleClickSideBar }) {
     return (
         <div className={styles.sideBar}>
             <ul type="none">
-                {list.map((item, index) => (
-                    <Link
-                        key={index}
-                        to={`/note/${item.alt}`}
-                        onClick={(e) => handleClickSideBar(e, item.alt)}
-                    >
-                        <li className={item.alt}>
-                            <i className={item.icon}></i>
-                            {checker && (<span>{item.name}</span>)}
-                        </li>
-                    </Link>
-                ))}
-                <a href="null" onClick={handleHideName}>
-                    <li className='btn_toggle'>
-                        <i className="fa-sharp fa-solid fa-eye-slash"></i>
-                        {checker && (<span>Ẩn chữ</span>)}
-                    </li>
-                </a>
+                <BtnView
+                    lang={getCurrentUser('YoleUser').language}
+                    handleClickSideBar={handleClickSideBar}
+                />
+                <BtnNew 
+                    lang={getCurrentUser('YoleUser').language}
+                    handleClickSideBar={handleClickSideBar}
+                />
             </ul>
         </div>
     )
