@@ -42,6 +42,7 @@ async function getBills(req, res) {
     const list = await bill.getBills(req.body.wallet_id)
         .then(response => {
             res.status(200)
+            console.log(response)
             res.send(response)
         })
         .catch(err => {

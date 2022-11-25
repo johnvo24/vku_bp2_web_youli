@@ -96,7 +96,7 @@ function BudgetPage() {
                                             setListTheme(true)
                                             setMainTheme(false)
                                         }}>
-                                            <i className="fa-solid fa-rotate-right" style={{fontSize: '4.5em'}}></i>
+                                            <i className="fa-solid fa-clipboard-list" style={{fontSize: '4.5em'}}></i>
                                         </div>
                                         <div className={styles.dot}/>
                                     </div>
@@ -113,7 +113,7 @@ function BudgetPage() {
                                 <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
                             )}
                             {listTheme && (
-                                <List resetTheme={setListTheme}/>
+                                <List resetTheme={setListTheme} id={wallet.wallet_id}/>
                             )}
                         </div>
                     </>

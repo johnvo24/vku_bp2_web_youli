@@ -13,14 +13,31 @@ const saveBill = async data => {
 }
 
 const getBills = async walletId => {
-    return await new Promise((resolve, reject) => {
-        db.query('select bill_id, item_title, item_cost, item_description, bill_time from bills where wallet_id = ?',
+
+    return await new Promise(async (resolve, reject) => {
+        let array = []
+
+        await db.query('select bill_id, categories.category_name, item_title, item_cost, item_description, bill_time ' +
+            'from bills inner join categories on bills.category_id = categories.category_id where wallet_id = ?',
             [walletId],
             (err, result) => {
                 if (err) reject(err)
-                resolve(result) //array
+                for(let i = 0; i < result.length; ++i)
+                    array.push(result[i])
             })
+
+        await db.query('select bill_id, custom_categories.category_name, item_title, item_cost, item_description, bill_time ' +
+            'from (bills inner join custom_categories on bills.c_category_id = custom_categories.category_id) where wallet_id = ?',
+            [walletId],
+            (err, result) => {
+                if(err) reject(err)
+                for(let i = 0; i < result.length; ++i)
+                    array.push(result[i])
+                resolve(array)
+            })
+
     })
 }
+
 
 module.exports = {saveBill, getBills}
