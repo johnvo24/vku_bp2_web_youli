@@ -1,7 +1,15 @@
 :root {
     --headerColor1: #22e000;
 }
-
+.g_d_none {
+    display: none;
+}
+.g_d_flex {
+    display: flex;
+}
+.g_d_block {
+    display: block;
+}
 .g_header {
     display: flex;
     justify-content: space-between;
@@ -115,4 +123,81 @@
     text-decoration: line-through;
     font-weight: unset;
     color:  rgb(50, 50, 50); 
+}
+
+.g_upcase {
+    text-transform: uppercase;
+}
+.g_center {
+    justify-content: center;
+}
+.g_loosen_up_child > div:not(.g_loosen_up_child > div:last-child) {
+    margin-bottom: 10px;
+}
+.g_m_t1 {margin-top: 5px;}
+.g_m_t2 {margin-top: 10px;}
+.g_m_t3 {margin-top: 20px;}
+.g_m_r1 {margin-right: 5px;}
+.g_m_r2 {margin-right: 10px;}
+.g_m_r3 {margin-right: 20px;}
+.g_m_b1 {margin-bottom: 5px;}
+.g_m_b2 {margin-bottom: 10px;}
+.g_m_b3 {margin-bottom: 20px;}
+.g_m_l1 {margin-left: 5px;}
+.g_m_l2 {margin-left: 10px;}
+.g_m_l3 {margin-left: 20px;}
+.g_j-c_space-between  {
+    justify-content: space-between;
+}
+.g_label {
+    padding: 5px 0px;
+}
+.g_input {
+    width: 100%;
+    padding: 7px;
+    border: solid 1px rgb(170, 170, 170);   
+    border-radius: 5px;
+    outline: unset;
+    font-size: var(--fontSizeTextMini);
+}
+.g_textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 7px;
+    border: solid 1px rgb(170, 170, 170);   
+    border-radius: 5px;
+    outline: unset;
+    font-size: var(--fontSizeTextMini);
+}
+.g_input:focus, .g_textarea:focus {
+    border: solid 1px rgb(86, 86, 86);
+}
+
+.g_dialog {
+    width: 80%px;
+    max-width: 350px;
+    min-width: 250px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: var(--boxShadow1);
+}
+.g_message_dialog {
+    text-align: center;
+    padding: 20px 20px;
+    font-weight: 500;
+    font-size: var(--fontSizeTextMini);
+    background-color: rgb(228, 228, 228);
+}
+.g_option_btn {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }

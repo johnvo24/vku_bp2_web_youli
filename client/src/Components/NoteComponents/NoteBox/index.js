@@ -23,7 +23,7 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
     }
     const handleClickTitle = () => {
         const e = document.getElementById(`note_box_${noteBoxData1.note_box_id}`)
-            .children[1].children[0].style;
+            .children[1].children[1].style;
         (e.display === "none") ? (e.display = "block") : (e.display = "none");
     }
     const handleClickPriority = () => {
@@ -164,9 +164,6 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
                 </div>
             </div>
             <div className="g_body">
-                <div className="g_description" style={{ display: "none" }}>
-                    {noteBoxData1.note_box_description || "Không có mô tả nào cả!"}
-                </div>
                 <div className={styles.NoteList} id="note-list">
                     {noteList.map((note) => (
                         <Note
@@ -177,6 +174,9 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
                             handleMouseDown={handleMouseDown}
                         />
                     ))}
+                </div>
+                <div className="g_description" style={{ display: "none" }}>
+                    {noteBoxData1.note_box_description || "Không có mô tả nào cả!"}
                 </div>
             </div>
             <div className="g_footer">

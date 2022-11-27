@@ -9,6 +9,11 @@ export const save = [
 ]
 
 export const reset = [
-    'View',
-    'Làm Mới'
+    'Reset',
+    'Làm Lại'
+]
+
+export const confirmDialog = [
+    'Confirm',
+    'Xác nhận'
 ]

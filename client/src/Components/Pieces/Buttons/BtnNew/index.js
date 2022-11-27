@@ -1,10 +1,10 @@
 import { listOfNavBar } from '../../../../Constants/GlobalVariables';
 import styles from './BtnNew.module.css'
 
-function BtnNew({lang, handleClickSideBar }) {
+function BtnNew({ handleClickSideBar }) {
     return (
         <a
-            onClick={(e) => handleClickSideBar(e, listOfNavBar.new.lang[lang])}
+            onClick={(e) => handleClickSideBar(e, 'new')}
             className={styles.btnNew}
         >
             <li>

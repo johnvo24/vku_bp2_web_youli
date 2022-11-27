@@ -21,6 +21,11 @@ const noteBoxController = () => {
     noteBoxController.delete = (req, res) => {
         return false;
     }
+    noteBoxController.clean = (req, res) => {
+        NoteBox().cleanNoteBox();
+        res.status(200);
+        res.send("Cleaned notebox successfully")
+    } 
     
     return noteBoxController;
 }
