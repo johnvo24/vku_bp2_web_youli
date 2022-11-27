@@ -21,4 +21,15 @@ const getCustomCategories = async userId => {
     })
 }
 
-module.exports = {getDefaultCategory, getCustomCategories}
+const createCustomCategory = async data => {
+    return await new Promise((resolve, reject) => {
+        db.query('insert into custom_categories(user_id, category_name, type) values (?, ?, ?)',
+            [data.user_id, data.category_name, data.type],
+            (err, result) => {
+                if (err) reject(err)
+                resolve()
+            })
+    })
+}
+
+module.exports = {getDefaultCategory, getCustomCategories, createCustomCategory}

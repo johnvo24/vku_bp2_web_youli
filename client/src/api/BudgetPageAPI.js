@@ -25,3 +25,7 @@ export async function submitItemForm(data, name, id) {
 export async function getBills(walletId) {
     return (await WALLET.post('/bill', {wallet_id: walletId})).data //array
 }
+
+export async function addCategory(data) {
+    return (await WALLET.post('/category/add', data)).data
+}

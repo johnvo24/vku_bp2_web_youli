@@ -113,7 +113,7 @@ function BudgetPage() {
                                 <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
                             )}
                             {listTheme && (
-                                <List resetTheme={setListTheme} id={wallet.wallet_id}/>
+                                <List resetTheme={setListTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>
                             )}
                         </div>
                     </>

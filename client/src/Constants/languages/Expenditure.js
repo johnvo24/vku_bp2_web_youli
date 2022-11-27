@@ -61,6 +61,33 @@ export const itemClassify = [
     'Phân Loại:'
 ]
 
+//List Theme
+
+export const addCategory = [
+    'Add New Category',
+    'Tạo phân loại mới'
+]
+
+export const categoryName = [
+    'Category Name',
+    'Tên Phân Loại'
+]
+
+export const categoryCat = [
+    'Type',
+    'Loại'
+]
+
+export const incomeCat = [
+    'income',
+    'Thu nhập'
+]
+
+export const costCat = [
+    'cost',
+    'Tiêu tốn'
+]
+
 
 
 

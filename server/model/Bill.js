@@ -17,7 +17,7 @@ const getBills = async walletId => {
     return await new Promise(async (resolve, reject) => {
         let array = []
 
-        await db.query('select bill_id, categories.category_name, item_title, item_cost, item_description, bill_time ' +
+        await db.query('select bill_id, categories.category_name, categories.type, item_title, item_cost, item_description, bill_time ' +
             'from bills inner join categories on bills.category_id = categories.category_id where wallet_id = ?',
             [walletId],
             (err, result) => {
@@ -26,7 +26,7 @@ const getBills = async walletId => {
                     array.push(result[i])
             })
 
-        await db.query('select bill_id, custom_categories.category_name, item_title, item_cost, item_description, bill_time ' +
+        await db.query('select bill_id, custom_categories.category_name, custom_categories.type, item_title, item_cost, item_description, bill_time ' +
             'from (bills inner join custom_categories on bills.c_category_id = custom_categories.category_id) where wallet_id = ?',
             [walletId],
             (err, result) => {

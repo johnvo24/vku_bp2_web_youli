@@ -51,10 +51,24 @@ async function getBills(req, res) {
         })
 }
 
+async function createCustomCategory(req, res) {
+    const add = await category.createCustomCategory(req.body)
+        .then(response => {
+            res.status(200)
+            console.log(response)
+            res.send('Added')
+        })
+        .catch(err => {
+            res.status(501)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
 module.exports = {
     getInf,
     updateBudget,
     getCategories,
     saveBill,
-    getBills
+    getBills,
+    createCustomCategory
 }
