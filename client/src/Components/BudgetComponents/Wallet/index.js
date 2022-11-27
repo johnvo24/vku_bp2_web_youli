@@ -7,18 +7,41 @@ import * as CONTENT from "../../../Constants/languages/Expenditure";
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
 import {useState} from "react";
 import {MyUserContext} from "../../../App";
+import {updateWalletBudget} from "../../../api/BudgetPageAPI";
+import SnackBar from "../../SnackBar";
 
 export default function Wallet(props) {
     const [isEdit, setEdit] = useState({
-        balance: false,
-        income: false
+        balance: false
     })
-
+    const [msg, setMsg] = useState('')
+    const [open, setOpen] = useState(false)
     const data = useContext(MyUserContext)
+
+    const onSubmit = async () => {
+        const value = document.getElementById('balance').value
+        await updateWalletBudget(props.wallet.wallet_id, value)
+            .then(() => window.location.reload())
+            .catch(err => {
+                setMsg(err.response.data)
+                setOpen(true)
+            })
+    }
 
     return (
         <>
             <div className={styles.walletTheme}>
+                <SnackBar
+                    open={open}
+                    setOpen={setOpen}
+                    style={{
+                        backgroundColor: 'pink'
+                    }}
+                    duration={5000}
+                >
+                    {msg}
+                </SnackBar>
+
                 <Container customStyles={{
                     border: '1px solid red',
                     display: 'flex',
@@ -31,7 +54,7 @@ export default function Wallet(props) {
                             (
                                 <>
                                     <input type='text' id='balance' className={styles.walletEditor}
-                                           defaultValue={props.wallet.yourWallet}/>
+                                           defaultValue={props.wallet.budget.toString()}/>
                                     <div className={styles.cancel} onClick={() => {
                                         setEdit({...isEdit, balance: false})
                                     }}>
@@ -42,7 +65,7 @@ export default function Wallet(props) {
                             (
                                 <>
                                     <label
-                                        className={styles.walletTitle2}>{`${props.wallet.yourWallet}$`}</label>
+                                        className={styles.walletTitle2}>{`${props.wallet.budget.toString()}$`}</label>
                                     <div className={styles.touchable} onClick={() => {
                                         setEdit({...isEdit, balance: true})
                                     }}>
@@ -51,31 +74,7 @@ export default function Wallet(props) {
                                 </>
                             )}
                     </div>
-                    <div className={styles.income}>
-                        <label className={styles.walletTitle}>{CONTENT.income[data[1]]}</label>
-                        {isEdit.income ?
-                            (
-                                <>
-                                    <input type='text' id='income' className={styles.walletEditor}
-                                           defaultValue={props.wallet.income}/>
-                                    <div className={styles.cancel} onClick={() => {
-                                        setEdit({...isEdit, income: false})
-                                    }}>
-                                        <i className="fa-solid fa-xmark"></i>
-                                    </div>
-                                </>
-                            ) :
-                            (
-                                <>
-                                    <label className={styles.walletTitle2}>{`${props.wallet.income}$`}</label>
-                                    <div className={styles.touchable} onClick={() => {
-                                        setEdit({...isEdit, income: true})
-                                    }}>
-                                        <i className="fa-regular fa-pen-to-square"></i>
-                                    </div>
-                                </>
-                            )}
-                    </div>
+
                     <div className={styles.bankContainer}>
                         <h1 className={styles.walletTitle3}>{CONTENT.bank[data[1]]}</h1>
                         <div className={styles.bank}>
@@ -93,7 +92,7 @@ export default function Wallet(props) {
                                 props.mainTheme(true)
                                 props.walletTheme(false)
                             }}>{GCONTENT.back[data[1]]}</button>
-                        <button type='button' className={styles.save}>{GCONTENT.save[data[1]]}</button>
+                        <button type='button' className={styles.save} onClick={onSubmit}>{GCONTENT.save[data[1]]}</button>
                     </div>
                 </Container>
             </div>

@@ -35,7 +35,9 @@ export default function SignUp() {
                 {msg}
             </SnackBar>
             <div className={styles.body}>
-                <div className={styles.container}>
+                <div className={styles.container} style={{
+                    height: '400px'
+                }}>
                     <p className={styles.header}>Sign Up</p>
                     <div className={styles.fill}>
                         <div className={styles.input}>

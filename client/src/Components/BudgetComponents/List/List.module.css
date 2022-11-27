@@ -1,0 +1,41 @@
+.list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slideToggle {
+
+}
+
+.btn {
+    outline: none;
+    border: none;
+    font-size: 2em;
+    background-color: transparent;
+}
+
+.content {
+    padding: 5px;
+}
+
+.content:hover::after {
+    content: '';
+    width: 100%;
+    background-color: black;
+    height: 1px;
+    display: block;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.overflow {
+    overflow: auto;
+    width: 100%;
+    height: 350px;
+    float: left;
+}

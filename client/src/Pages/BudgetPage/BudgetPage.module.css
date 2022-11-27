@@ -12,6 +12,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: row;
+    background-color: #fff;
 }
 
 .title {
@@ -50,7 +51,7 @@
     align-items: center;
 }
 
-.walletContainer, .costContainer, .resetContainer {
+.walletContainer, .costContainer, .listContainer {
     text-align: center;
 }
 
@@ -71,7 +72,7 @@
     border-radius: 100%;
 }
 
-.yourWallet, .statistic, .reset, .addItem, .dot {
+.yourWallet, .statistic, .list, .addItem, .dot {
     position: absolute;
     transition: font-size 500ms, margin-top 500ms, margin-left 500ms;
 }
@@ -85,7 +86,7 @@
     transform: translate(320px, 195px);
 }
 
-.reset {
+.list {
     transform: translate(195px, 330px);
 }
 
@@ -93,7 +94,7 @@
     transform: translate(40px, 195px);
 }
 
-.addItem:hover, .reset:hover, .statistic:hover, .yourWallet:hover {
+.addItem:hover, .list:hover, .statistic:hover, .yourWallet:hover {
     cursor: pointer;
     font-size: 2em;
     margin-top: -30px;

@@ -9,7 +9,7 @@ function routes(app) {
     app.use('/api/authorization', auth);
     app.use('/api/notebox/', noteBoxRouter);
     app.use('/api/note/', noteRouter);
-    app.use('/api/wallet/:id', wallet);
+    app.use('/api/wallet', wallet);
     app.listen(PORT);
 }
 
