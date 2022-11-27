@@ -1,23 +1,22 @@
-.btnNew {
+.btnSave {
     display: block;
-    width: 100%;
-    margin-bottom: 8px;
-    border-radius: 8px
+    width: fit-content;
+    border-radius: 8px;
 }
-.btnNew li {
+.btnSave li {
     display: flex;
     width: 100%;
     height: 100%;
     align-items: center;
 }
-.btnNew:hover li i {
+.btnSave:hover li i {
     transform: scale(1.07);
 }
-.btnNew:active li i {
+.btnSave:active li i {
     transform: scale(1);
 }
 
-.btnNew li i {
+.btnSave li i {
     display: block;
     width: 26px;
     height: 26px;
@@ -28,8 +27,8 @@
     cursor: pointer;
     box-shadow: var(--boxShadow) inset;
 }
-.btnNew i{
-    background-color: #00ff66;
+.btnSave i{
+    background-color: #00bfff;
     color: white;
     text-shadow: 0 0 3px black;
 }

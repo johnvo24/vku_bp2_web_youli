@@ -24,7 +24,7 @@ const NoteBoxModel = () => {
         let sql = 'insert into note_box (user_id, note_box_title, note_box_description) values ?';
         db.query(
             sql,
-            [newnoteBox],
+            [[newnoteBox]],
             (err, result) => {
                 if (err) throw err;
             }
@@ -43,6 +43,16 @@ const NoteBoxModel = () => {
                 data.priority,
                 data.note_box_id
             ],
+            (err, result) => {
+                if(err) throw err;
+            }
+        )
+    }
+    noteBoxModel.cleanNoteBox = () => {
+        let sql = 'delete from note_box where status = 1';
+        db.query(
+            sql,
+            [],
             (err, result) => {
                 if(err) throw err;
             }

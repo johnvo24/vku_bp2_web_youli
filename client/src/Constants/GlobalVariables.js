@@ -64,5 +64,24 @@ export const listOfNavBar = {
             'Xóa bỏ'
         ],
         icon: 'fa-solid fa-trash'
+    },
+    clean: {
+        lang: [
+            'clean',
+            'Dọn dẹp'
+        ],
+        icon: 'fa-solid fa-trash-arrow-up'
+    },
+    yes: {
+        lang: [
+            'Yes',
+            'Có'
+        ]
+    },
+    no: {
+        lang: [
+            'No',
+            'Không'
+        ]
     }
 }

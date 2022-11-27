@@ -1,25 +1,4 @@
-export function getCurrentDevice() {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return "tablet";
-    }
-    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        return "mobile";
-    }
-    return "desktop";
-}
-
-export function getCurrentUser(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-export function getLanguage(key) {
-    return getCurrentUser(key).language;
-}
-export function getObjectLocalStore(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
-
-export function timeConverter(time, string) {
+function timeConverter(time, string) {
     let t = new Date(time);
     let stringconerted = "";
     let DAY = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -47,3 +26,6 @@ export function timeConverter(time, string) {
     }
     return stringconerted;
 }
+
+const date = new Date();
+console.log(timeConverter(date, 'd'));

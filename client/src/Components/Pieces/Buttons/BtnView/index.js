@@ -1,10 +1,11 @@
 import { listOfNavBar } from '../../../../Constants/GlobalVariables';
 import styles from './BtnView.module.css'
 
-function BtnView({lang, handleClickSideBar }) {
+function BtnView({ handleClickSideBar }) {
     return (
         <a
-            onClick={(e) => handleClickSideBar(e, listOfNavBar.view.lang[lang])}
+            href='#'
+            onClick={(e) => handleClickSideBar(e, 'view')}
             className={styles.btnView}
         >
             <li>

@@ -1,34 +1,37 @@
 import styles from "./NotePage.module.css"
 import SideBar from "../../Components/Pieces/SideBar";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import MainContainer from "../../Components/Pieces/MainContainer";
-import noteBoxAPI from "../../api/noteBoxAPI";
 import NoteContainer from "../../Components/NoteComponents/NoteContainer";
 import { action } from "./action";
 import Detail from "../../Components/Pieces/Detail";
+import DetailNoteBox from "../../Components/NoteComponents/DetailNoteBox";
+import ConfirmationDialog from "../../Components/NoteComponents/ConfirmationDialog";
+
+export const NotePageContext = createContext();
 
 function NotePage() {
-    const [noteBoxList, setNodeBoxList] = useState([])
-    const [reRender, setReRender] = useState(false)
+    const [noteBoxList, setNodeBoxList] = useState([]);
+    const [detailNoteBox, setDetailNoteBox] = useState(false);
+    const [confirmDialog, setConfirmDialog] = useState(false);
+    const [reRender, setReRender] = useState(false);
 
+    const reSetNoteBoxList = () => {
+        action.reSetNoteBoxList(setNodeBoxList);
+    }
     useEffect(() => {
-        noteBoxAPI().getView()
-            .then((res) => {
-                setNodeBoxList(res.data)
-            }).catch((err) => { console.log(err) });
+        reSetNoteBoxList();
     }, [reRender])
 
     const handleClickSideBar = (event, action) => {
         event.preventDefault();
         switch (action) {
-            case "view":
-                noteBoxAPI().getView()
-                    .then((res) => {
-                        setNodeBoxList(res.data);
-                    }).catch((err) => { console.log(err) })
-                break;
             case "new":
-                
+                setDetailNoteBox(!detailNoteBox);
+                break;
+            case "clean":
+                setConfirmDialog(!confirmDialog);
+                break;
             default:
                 break;
         }
@@ -37,26 +40,33 @@ function NotePage() {
         setReRender(!reRender)
     }
 
-
-
     return (
-        <div
-            className={styles.notePage}
+        <NotePageContext.Provider
+            value={{
+                setDetailNoteBox: setDetailNoteBox,
+                reSetNoteBoxList: reSetNoteBoxList,
+                setConfirmDialog: setConfirmDialog,
+            }}
         >
-            <MainContainer>
-                <NoteContainer
-                    noteBoxList={noteBoxList}
-                    handleReRenderNoteBoxList={handleReRenderNoteBoxList}
-                />
-            </MainContainer>
+            <div
+                className={styles.notePage}
+            >
+                <MainContainer>
+                    <NoteContainer
+                        noteBoxList={noteBoxList}
+                        handleReRenderNoteBoxList={handleReRenderNoteBoxList}
+                    />
+                </MainContainer>
 
-            <SideBar
-                handleClickSideBar={handleClickSideBar}
-            />
-            <Detail>
-                
-            </Detail>
-        </div>
+                <SideBar
+                    handleClickSideBar={handleClickSideBar}
+                />
+                {(detailNoteBox || confirmDialog) && (<Detail>
+                    {(detailNoteBox) && <DetailNoteBox />}
+                    {(confirmDialog) && <ConfirmationDialog />}
+                </Detail>)}
+            </div>
+        </NotePageContext.Provider>
     )
 }
 
