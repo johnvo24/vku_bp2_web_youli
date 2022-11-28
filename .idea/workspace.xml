@@ -6,18 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Statistic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Statistic/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/BudgetPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/BudgetPageAPI.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/walletController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/walletController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/model/Bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/Bill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/model/Category.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/Category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/Wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/Wallet.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/Item.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/Item.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,6 +132,8 @@
       <workItem from="1669517737306" duration="2574000" />
       <workItem from="1669527733130" duration="13961000" />
       <workItem from="1669558551410" duration="2250000" />
+      <workItem from="1669603028726" duration="4165000" />
+      <workItem from="1669610565460" duration="4908000" />
     </task>
     <servers />
   </component>

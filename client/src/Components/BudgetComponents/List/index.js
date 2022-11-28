@@ -10,6 +10,7 @@ import * as CONTENT from '../../../Constants/languages/Expenditure'
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
 import {MyUserContext} from "../../../App";
 import Category from "../Category";
+import Header from "../Header";
 
 export default function List(props) {
     const [loading, setLoading] = useState(false)
@@ -28,16 +29,31 @@ export default function List(props) {
             })
     }, [])
 
+    const sort = array => {
+        for (let i = 0; i < array.length - 1; ++i)
+            for (let j = i + 1; j < array.length; ++j)
+                if (array[i].key < array[j].key) {
+                    const temp = array[i].key
+                    array[i].key = array[j].key
+                    array[j].key = temp;
+                }
+
+        for (let i = 0; i < array.length; ++i)
+            array[i].key = array[i].key.slice(0, 10)
+
+        return array
+    }
+
     const handleData = input => {
         console.log(input)
-        let stack_name = []
+        let stack_date = []
         let stack_list = {}
         for (let i = 0; i < input.length; ++i) {
-            if (!stack_name.includes(input[i].category_name)) {
-                stack_name.push(input[i].category_name)
-                stack_list[input[i].category_name] = [input[i]]
+            if (!stack_date.includes(input[i].bill_time)) {
+                stack_date.push(input[i].bill_time)
+                stack_list[input[i].bill_time] = [input[i]]
             } else {
-                stack_list[input[i].category_name] = [...stack_list[input[i].category_name], input[i]]
+                stack_list[input[i].bill_time] = [...stack_list[input[i].bill_time], input[i]]
             }
             // console.log(stack_list)
         }
@@ -48,9 +64,21 @@ export default function List(props) {
             stack_array.push({key, value})
         })
 
+        stack_array = sort(stack_array)
+
         console.log(stack_array)
 
         return stack_array
+    }
+
+    const totalExpense = data => {
+        let sum = 0
+
+        for(let i = 0; i < data.length; ++i)
+            if(data[i].type === 'cost')
+                sum += data[i].item_cost
+
+        return sum
     }
 
     return (
@@ -58,64 +86,50 @@ export default function List(props) {
             {loading && (
                 <>
                     <div className={styles.list}>
-                        <Container customStyles={{
-                            border: '1px solid red',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: itemTheme ? 'center' : ''
-                        }}>
 
                             {!itemTheme && !catTheme && (
                                 <>
+                                    <Header context='Budget'
+                                            onClick={() => {
+                                                props.mainTheme(true)
+                                                props.resetTheme(false)
+                                            }}/>
                                     <div className={styles.overflow}>
                                         {data.map((items, idx) => (
                                             <>
-                                                <SlideToggle
-                                                    bestPerformance={true}
-                                                    key={idx}
-                                                >
-                                                    {({toggle, setCollapsibleElement}) => (
-                                                        <div className={styles.slideToggle}>
-                                                            <button className={styles.btn} onClick={toggle}>
-                                                                > {items.key}
-                                                            </button>
-                                                            <div className={styles.contentCtn}
-                                                                 ref={setCollapsibleElement}>
-                                                                {items.value.map((sub_items, idx) => (
-                                                                    <li className={styles.content} key={idx}
-                                                                        onClick={() => {
-                                                                            setItemTheme(true)
-                                                                            setItem(sub_items)
-                                                                        }}>{sub_items.item_title}</li>
-                                                                ))}
+                                                <div className={styles.contentContainer} key={idx}>
+                                                    <div className={styles.contentTitle}>
+                                                        <div className={styles.time}>{items.key}</div>
+                                                        <div className={styles.total}>{`Expense: ${totalExpense(items.value)}`}</div>
+                                                    </div>
+                                                    <div className={styles.contentBody}>
+                                                        {items.value.map((sub_item, index) => (
+                                                            <div className={styles.contentItemContainer} key={index}>
+                                                                <div className={styles.contentItem} onClick={() => {
+                                                                    setItem(sub_item)
+                                                                    setItemTheme(true)
+                                                                }}>
+                                                                    {sub_item.item_title} <span
+                                                                    className={styles.contentCat}>{sub_item.category_name}</span>
+                                                                </div>
+                                                                <div style={{color: sub_item.type === 'cost' ? 'red': 'green'}}>
+                                                                    {`${sub_item.type === 'cost' ? '-' : '+'}${sub_item.item_cost}`}
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    )}
-                                                </SlideToggle>
-
+                                                        ))}
+                                                    </div>
+                                                </div>
                                             </>
                                         ))}
-                                    </div>
-                                    <div className={styles.btnGroup}>
-                                        <button type='button' className={styles.btnCat} onClick={() => {
-                                            props.mainTheme(true)
-                                            props.resetTheme(false)
-                                        }}>{GCONTENT.back[context[1]]}</button>
-                                        <button type='button' className={styles.btnCat} onClick={() => {
-                                            setCatTheme(true)
-                                        }}>{CONTENT.addCategory[context[1]]}</button>
                                     </div>
                                 </>
                             )}
                             {itemTheme && (
                                 <Item data={item} theme={setItemTheme}/>
                             )}
-                            {catTheme && (
-                                <Category theme={setCatTheme}/>
-                            )}
-
-
-                        </Container>
+                            {/*{catTheme && (*/}
+                            {/*    <Category theme={setCatTheme}/>*/}
+                            {/*)}*/}
                     </div>
                 </>
             )}

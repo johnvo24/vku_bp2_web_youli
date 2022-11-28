@@ -5,7 +5,7 @@ import RoutersNav from './Routes/RoutersNav';
 import * as IMAGE from "./Constants/IMAGE";
 
 let lang = 1;
-let data = [lang]
+let data = ['', lang]
 export const MyUserContext = createContext(undefined)
 
 function App() {
