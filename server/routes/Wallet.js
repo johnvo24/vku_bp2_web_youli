@@ -8,5 +8,7 @@ walletRouter.post('/categories', controller.getCategories)
 walletRouter.post('/item/submit', controller.saveBill)
 walletRouter.post('/bill', controller.getBills)
 walletRouter.post('/category/add', controller.createCustomCategory)
+walletRouter.post('/bill/statistic', controller.statistic)
+walletRouter.post('/bill/total', controller.totalCost)
 
 module.exports = walletRouter

@@ -31,6 +31,7 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.20",
     "react-slide-toggle": "^0.3.5",
+    "recharts": "^2.1.16",
     "styled-components": "^5.3.6"
   }
 }

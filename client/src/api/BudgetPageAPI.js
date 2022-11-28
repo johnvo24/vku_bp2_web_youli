@@ -29,3 +29,11 @@ export async function getBills(walletId) {
 export async function addCategory(data) {
     return (await WALLET.post('/category/add', data)).data
 }
+
+export async function statistic(walletId) {
+    return (await WALLET.post('/bill/statistic', {wallet_id: walletId})).data //array
+}
+
+export async function totalCost(walletId) {
+    return (await WALLET.post('/bill/total', {wallet_id: walletId})).data.total
+}

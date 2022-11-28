@@ -10,6 +10,7 @@ const saveBill = async data => {
         (err, result) => {
             if (err) throw err
         })
+
 }
 
 const getBills = async walletId => {
@@ -22,7 +23,7 @@ const getBills = async walletId => {
             [walletId],
             (err, result) => {
                 if (err) reject(err)
-                for(let i = 0; i < result.length; ++i)
+                for (let i = 0; i < result.length; ++i)
                     array.push(result[i])
             })
 
@@ -30,8 +31,8 @@ const getBills = async walletId => {
             'from (bills inner join custom_categories on bills.c_category_id = custom_categories.category_id) where wallet_id = ?',
             [walletId],
             (err, result) => {
-                if(err) reject(err)
-                for(let i = 0; i < result.length; ++i)
+                if (err) reject(err)
+                for (let i = 0; i < result.length; ++i)
                     array.push(result[i])
                 resolve(array)
             })
@@ -39,5 +40,60 @@ const getBills = async walletId => {
     })
 }
 
+const statistic = async wallet_id => {
 
-module.exports = {saveBill, getBills}
+    return await new Promise(async (resolve, reject) => {
+        let array = []
+
+        await db.query('SELECT item_cost, bill_time, custom_categories.type ' +
+            'FROM bills inner join custom_categories on c_category_id = custom_categories.category_id ' +
+            'where wallet_id = ? ORDER BY bill_time ASC',
+            [wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                for (let i = 0; i < result.length; ++i)
+                    array.push(result[i])
+            })
+
+        await db.query('SELECT item_cost, bill_time, categories.type ' +
+            'FROM bills inner join categories on bills.category_id = categories.category_id ' +
+            'where wallet_id = ? ORDER BY bill_time ASC',
+            [wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                for (let i = 0; i < result.length; ++i)
+                    array.push(result[i])
+                resolve(array)
+            })
+    })
+}
+
+const totalCost = async wallet_id => {
+    return await new Promise(async (resolve, reject) => {
+        let array = []
+
+        await db.query('SELECT item_cost ' +
+            'FROM bills inner join custom_categories on c_category_id = custom_categories.category_id ' +
+            'where wallet_id = ? and custom_categories.type = ?',
+            [wallet_id, 'cost'],
+            (err, result) => {
+                if (err) reject(err)
+                for (let i = 0; i < result.length; ++i)
+                    array.push(result[i])
+            })
+
+        await db.query('SELECT item_cost ' +
+            'FROM bills inner join categories on bills.category_id = categories.category_id ' +
+            'where wallet_id = ? and categories.type = ?',
+            [wallet_id, 'cost'],
+            (err, result) => {
+                if (err) reject(err)
+                for (let i = 0; i < result.length; ++i)
+                    array.push(result[i])
+                resolve(array)
+            })
+    })
+}
+
+
+module.exports = {saveBill, getBills, statistic, totalCost}

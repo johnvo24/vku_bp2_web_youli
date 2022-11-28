@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 //components
 import styles from "./BudgetPage.module.css"
-import {getWalletData} from "../../api/BudgetPageAPI";
+import {getWalletData, totalCost} from "../../api/BudgetPageAPI";
 import * as CONTENT from "../../Constants/languages/Expenditure";
 import {useContext} from "react";
 import {MyUserContext} from "../../App";
@@ -22,20 +22,25 @@ function BudgetPage() {
     const [listTheme, setListTheme] = useState(false)
     const [loading, setLoading] = useState(false)
     const [statusColor, setStatusColor] = useState('')
+    const [cost, setCost] = useState()
 
     useEffect(() => {
-        async function fetch() {
-            const data = await getWalletData(JSON.parse(localStorage.getItem('YoleUser')).user_id)
-            setWallet(data)
-        }
+        getWalletData(JSON.parse(localStorage.getItem('YoleUser')).user_id)
+            .then(res => {
+                setWallet(res)
+            })
 
-        fetch().then()
+
     }, [])
 
     useEffect(() => {
-        if (wallet.length !== 0) {
-
-            setLoading(true)
+        totalCost(wallet.wallet_id)
+            .then(res => {
+                setCost(res)
+                console.log(res)
+                setLoading(true)
+            })
+        if (wallet)
             if (wallet.budget === 0)
                 setStatusColor('darkgray')
             else if (wallet.status === 1)
@@ -44,8 +49,6 @@ function BudgetPage() {
                 setStatusColor('#E1D046')
             else if (wallet.status === 3)
                 setStatusColor('red')
-            console.log(wallet)
-        }
     }, [wallet])
 
     return (
@@ -61,7 +64,7 @@ function BudgetPage() {
                             </div>
                             <div className={styles.costContainer}>
                                 <h1 className={styles.title}>{CONTENT.totalCost[data[1]]}</h1>
-                                <h1 className={styles.wallet}>{0}</h1>
+                                <h1 className={styles.wallet}>{cost}</h1>
                             </div>
                             <div className={styles.listContainer}>
                                 <h1 className={styles.title}>{CONTENT.status[data[1]]}</h1>
@@ -110,7 +113,8 @@ function BudgetPage() {
                                 <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>
                             )}
                             {statisticTheme && (
-                                <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}/>
+                                <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}
+                                           id={wallet.wallet_id}/>
                             )}
                             {listTheme && (
                                 <List resetTheme={setListTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>

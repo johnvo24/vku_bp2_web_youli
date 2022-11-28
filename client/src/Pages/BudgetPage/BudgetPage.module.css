@@ -28,7 +28,7 @@
 }
 
 .wallet::after {
-    content: '$';
+    content: ' Đ';
 }
 
 .leftSide {

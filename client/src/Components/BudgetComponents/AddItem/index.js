@@ -28,7 +28,8 @@ export default function AddItem(props) {
                 item_title: document.getElementById('name').value,
                 item_description: document.getElementById('description').value,
                 item_cost: document.getElementById('price').value,
-                bill_time: document.getElementById('time').value
+                bill_time: document.getElementById('time').value,
+                user_id: user.user_id
             }, document.getElementById('classify').options[document.getElementById('classify').selectedIndex].text,
             document.getElementById('classify').value)
             .then()
@@ -60,7 +61,7 @@ export default function AddItem(props) {
                         <label className={styles.label} htmlFor='price'>{CONTENT.itemPrice[data[1]]}</label>
                         <input type='text' id='price' className={styles.input}/>
                         <label className={styles.label} htmlFor='time'>{CONTENT.purchaseTime[data[1]]}</label>
-                        <input type='date' id='time' className={styles.input}/>
+                        <input type='datetime-local' id='time' className={styles.input}/>
                         <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
                         <select id='classify' className={styles.input}>
                             {loading && (
