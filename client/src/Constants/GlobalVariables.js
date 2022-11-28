@@ -85,3 +85,9 @@ export const listOfNavBar = {
         ]
     }
 }
+
+export const SYSTEM_CATEGORY = [
+    'market',
+    'salary',
+    'monthly home fee'
+]

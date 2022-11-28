@@ -88,6 +88,11 @@ export const costCat = [
     'Tiêu tốn'
 ]
 
+export const refund = [
+    'Do you want to refund your money ?',
+    'Bạn có muốn hoàn tiền không ?'
+]
+
 
 
 

@@ -49,11 +49,11 @@ export default function List(props) {
         let stack_date = []
         let stack_list = {}
         for (let i = 0; i < input.length; ++i) {
-            if (!stack_date.includes(input[i].bill_time)) {
-                stack_date.push(input[i].bill_time)
-                stack_list[input[i].bill_time] = [input[i]]
+            if (!stack_date.includes(input[i].bill_time.slice(0, 10))) {
+                stack_date.push(input[i].bill_time.slice(0, 10))
+                stack_list[input[i].bill_time.slice(0, 10)] = [input[i]]
             } else {
-                stack_list[input[i].bill_time] = [...stack_list[input[i].bill_time], input[i]]
+                stack_list[input[i].bill_time.slice(0, 10)] = [...stack_list[input[i].bill_time.slice(0, 10)], input[i]]
             }
             // console.log(stack_list)
         }
@@ -125,7 +125,7 @@ export default function List(props) {
                                 </>
                             )}
                             {itemTheme && (
-                                <Item data={item} theme={setItemTheme}/>
+                                <Item data={item} theme={setItemTheme} id={props.id}/>
                             )}
                             {/*{catTheme && (*/}
                             {/*    <Category theme={setCatTheme}/>*/}

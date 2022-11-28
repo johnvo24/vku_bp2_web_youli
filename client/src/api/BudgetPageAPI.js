@@ -1,4 +1,5 @@
 import {WALLET} from "./options";
+import {SYSTEM_CATEGORY} from "../Constants/GlobalVariables";
 
 export async function getWalletData(id) {
     // 1: good, 2: normal, 3: not good
@@ -14,7 +15,7 @@ export async function getCategory(userId) {
 }
 
 export async function submitItemForm(data, name, id) {
-    if(name === 'market' || name === 'salary' || name === 'monthly home fee')
+    if(name.includes(SYSTEM_CATEGORY))
         data = {...data, category_id: id}
     else
         data = {...data, c_category_id: id}
@@ -36,4 +37,18 @@ export async function statistic(walletId) {
 
 export async function totalCost(walletId) {
     return (await WALLET.post('/bill/total', {wallet_id: walletId})).data.total
+}
+
+export async function deleteWithRefund(data, name, id) {
+    // console.log(data)
+    if(name.includes(SYSTEM_CATEGORY))
+        data = {...data, category_id: id}
+    else
+        data = {...data, c_category_id: id}
+    // console.log(data)
+    await WALLET.post('/bill/delete/refund', data)
+}
+
+export async function deleteWithoutRefund(data) {
+    await WALLET.post('/bill/delete', {bill_id: data})
 }

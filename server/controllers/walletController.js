@@ -33,19 +33,28 @@ async function getCategories(req, res) {
 calc = async (response, user_id, wallet_id, value) => {
     const getWallet = await wallet.getInf(user_id)
     console.log(response.type)
-    if(response.type === 'cost')
+    if (response.type === 'cost')
         wallet.updateBudget(wallet_id, getWallet.budget - value).then()
     else
         wallet.updateBudget(wallet_id, getWallet.budget + value).then()
 }
 
+reCalc = async (response, user_id, wallet_id, value) => {
+    const getWallet = await wallet.getInf(user_id)
+    console.log(response.type)
+    if (response.type === 'cost')
+        wallet.updateBudget(wallet_id, getWallet.budget + value).then()
+    else
+        wallet.updateBudget(wallet_id, getWallet.budget - value).then()
+}
+
 async function saveBill(req, res) {
     const save = await bill.saveBill(req.body)
         .then()
-    if(req.body.category_id)
+    if (req.body.category_id)
         category.getDefaultCategoryById(req.body.category_id)
             .then(response => {
-                console.log(response)
+                // console.log(response)
                 calc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
             })
     else
@@ -53,6 +62,41 @@ async function saveBill(req, res) {
             .then(response => {
                 calc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
             })
+}
+
+async function deleteBillWithoutRefund(req, res) {
+    const deleted = await bill.deleteBill(req.body.bill_id)
+        .then(() => {
+            res.status(200)
+            res.send()
+        })
+        .catch(err => {
+            res.status(502)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
+async function deleteBillWithRefund(req, res) {
+    if (req.body.category_id)
+        category.getDefaultCategoryById(req.body.category_id)
+            .then(response => {
+                // console.log(response)
+                reCalc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
+            })
+    else
+        category.getCustomCategoryById(req.body.c_category_id)
+            .then(response => {
+                reCalc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
+            })
+    const deleted = await bill.deleteBill(req.body.bill_id)
+        .then(() => {
+            res.status(200)
+            res.send()
+        })
+        .catch(err => {
+            res.status(502)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
 }
 
 async function getBills(req, res) {
@@ -97,7 +141,7 @@ async function totalCost(req, res) {
     const cost = await bill.totalCost(req.body.wallet_id)
         .then(response => {
             let sum = 0;
-            for(let i = 0; i < response.length; ++i) {
+            for (let i = 0; i < response.length; ++i) {
                 sum += response[i].item_cost
             }
             console.log(sum)
@@ -118,5 +162,7 @@ module.exports = {
     getBills,
     createCustomCategory,
     statistic,
-    totalCost
+    totalCost,
+    deleteBillWithoutRefund,
+    deleteBillWithRefund
 }
