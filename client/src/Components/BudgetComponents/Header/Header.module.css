@@ -49,3 +49,9 @@
     cursor: pointer;
     background-color: #276EC3;
 }
+
+.btnGroup {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

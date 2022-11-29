@@ -43,12 +43,12 @@ export const purchasedItemName = [
 
 export const itemDescription = [
     'Description:',
-    'Mô tả'
+    'Mô tả:'
 ]
 
 export const itemPrice = [
-    'Price:',
-    'Tốn Hết:'
+    'Value:',
+    'Trị Giá:'
 ]
 
 export const purchaseTime = [
@@ -91,6 +91,11 @@ export const costCat = [
 export const refund = [
     'Do you want to refund your money ?',
     'Bạn có muốn hoàn tiền không ?'
+]
+
+export const createBill = [
+    'Create Bill',
+    'Tạo Hóa Đơn'
 ]
 
 
