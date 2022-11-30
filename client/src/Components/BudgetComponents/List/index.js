@@ -45,7 +45,6 @@ export default function List(props) {
     }
 
     const handleData = input => {
-        console.log(input)
         let stack_date = []
         let stack_list = {}
         for (let i = 0; i < input.length; ++i) {
@@ -55,7 +54,6 @@ export default function List(props) {
             } else {
                 stack_list[input[i].bill_time.slice(0, 10)] = [...stack_list[input[i].bill_time.slice(0, 10)], input[i]]
             }
-            // console.log(stack_list)
         }
 
         let stack_array = []
@@ -66,16 +64,14 @@ export default function List(props) {
 
         stack_array = sort(stack_array)
 
-        console.log(stack_array)
-
         return stack_array
     }
 
     const totalExpense = data => {
         let sum = 0
 
-        for(let i = 0; i < data.length; ++i)
-            if(data[i].type === 'cost')
+        for (let i = 0; i < data.length; ++i)
+            if (data[i].type === 'cost')
                 sum += data[i].item_cost
 
         return sum
@@ -87,49 +83,56 @@ export default function List(props) {
                 <>
                     <div className={styles.list}>
 
-                            {!itemTheme && !catTheme && (
-                                <>
-                                    <Header context='Budget'
-                                            onClick={() => {
-                                                props.mainTheme(true)
-                                                props.resetTheme(false)
-                                            }}/>
-                                    <div className={styles.overflow}>
-                                        {data.map((items, idx) => (
-                                            <>
-                                                <div className={styles.contentContainer} key={idx}>
-                                                    <div className={styles.contentTitle}>
-                                                        <div className={styles.time}>{items.key}</div>
-                                                        <div className={styles.total}>{`Expense: ${totalExpense(items.value)}`}</div>
-                                                    </div>
-                                                    <div className={styles.contentBody}>
-                                                        {items.value.map((sub_item, index) => (
-                                                            <div className={styles.contentItemContainer} key={index}>
-                                                                <div className={styles.contentItem} onClick={() => {
-                                                                    setItem(sub_item)
-                                                                    setItemTheme(true)
-                                                                }}>
-                                                                    {sub_item.item_title} <span
-                                                                    className={`${styles.contentCat} g_m_l2`}>{` ${sub_item.category_name}`}</span>
-                                                                </div>
-                                                                <div style={{color: sub_item.type === 'cost' ? 'red': 'green'}}>
-                                                                    {`${sub_item.type === 'cost' ? '-' : '+'}${sub_item.item_cost}`}
-                                                                </div>
-                                                            </div>
-                                                        ))}
-                                                    </div>
+                        {!itemTheme && !catTheme && (
+                            <>
+                                <Header context='Budget'
+                                        onClick={() => {
+                                            props.mainTheme(true)
+                                            props.resetTheme(false)
+                                        }}/>
+                                <div className={styles.overflow}>
+                                    {data.length !== 0 && data.map((items, idx) => (
+                                        <>
+                                            <div className={styles.contentContainer} key={idx}>
+                                                <div className={styles.contentTitle}>
+                                                    <div className={styles.time}>{items.key}</div>
+                                                    <div
+                                                        className={styles.total}>{`Expense: ${totalExpense(items.value)}`}</div>
                                                 </div>
-                                            </>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
-                            {itemTheme && (
-                                <Item data={item} theme={setItemTheme} id={props.id}/>
-                            )}
-                            {/*{catTheme && (*/}
-                            {/*    <Category theme={setCatTheme}/>*/}
-                            {/*)}*/}
+                                                <div className={styles.contentBody}>
+                                                    {items.value.map((sub_item, index) => (
+                                                        <div className={styles.contentItemContainer} key={index}>
+                                                            <div className={styles.contentItem} onClick={() => {
+                                                                setItem(sub_item)
+                                                                setItemTheme(true)
+                                                            }}>
+                                                                {sub_item.item_title} <span
+                                                                className={`${styles.contentCat} g_m_l2`}>{` ${sub_item.category_name}`}</span>
+                                                            </div>
+                                                            <div
+                                                                style={{color: sub_item.type === 'cost' ? 'red' : 'green'}}>
+                                                                {`${sub_item.type === 'cost' ? '-' : '+'}${sub_item.item_cost}`}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </>
+                                    ))}
+                                    {data.length === 0 && (
+                                        <div className={styles.emptyContainer}>
+                                            <p className={styles.empty}>There is no data to show :/</p>
+                                        </div>
+                                    )}
+                                </div>
+                            </>
+                        )}
+                        {itemTheme && (
+                            <Item data={item} theme={setItemTheme} id={props.id}/>
+                        )}
+                        {/*{catTheme && (*/}
+                        {/*    <Category theme={setCatTheme}/>*/}
+                        {/*)}*/}
                     </div>
                 </>
             )}

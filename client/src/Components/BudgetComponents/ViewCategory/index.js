@@ -21,7 +21,6 @@ export default function ViewCategory() {
     useEffect(() => {
         viewCategories(user.user_id)
             .then(res => {
-                console.log(res)
                 setData(res)
                 setLoading(true)
             })
@@ -30,7 +29,6 @@ export default function ViewCategory() {
     useEffect(() => {
         viewCategories(user.user_id)
             .then(res => {
-                console.log(res)
                 setData(res)
                 setLoading(true)
             })
@@ -78,41 +76,48 @@ export default function ViewCategory() {
                     onAccept={onEdit}
                 />
                 {loading && (
-                    <table className={styles.table}>
-                        <tbody>
-                        <tr>
-                            <th>Id</th>
-                            <th>{GCONTENT.name[context[1]]}</th>
-                        </tr>
-                        {data.map(items => (
-                            <tr
-                                key={items.category_id}
-                                className={styles.row}
-                            >
-                                <td className={styles.id}>{items.category_id}</td>
-                                <td className={styles.name}>
+                    <>
+                        {data.length !== 0 && (
+                            <table className={styles.table}>
+                                <tbody>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>{GCONTENT.name[context[1]]}</th>
+                                </tr>
+                                {data.map(items => (
+                                    <tr
+                                        key={items.category_id}
+                                        className={styles.row}
+                                    >
+                                        <td className={styles.id}>{items.category_id}</td>
+                                        <td className={styles.name}>
                                 <span
                                     style={{color: items.type === 'cost' ? 'red' : 'green'}}
                                 >{items.category_name}</span>
-                                    <div className={styles.iconGroup}>
-                                        <i
-                                            className={`fa-solid fa-trash-can ${styles.icon}`}
-                                            onClick={onDelete(items.category_id)}
-                                        ></i>
-                                        <i
-                                            className={`fa-solid fa-pen ${styles.icon}`}
-                                            onClick={() => {
-                                                setName(items.category_name)
-                                                setId(items.category_id)
-                                                setClick(true)
-                                            }}
-                                        ></i>
-                                    </div>
-                                </td>
-                            </tr>
-                        ))}
-                        </tbody>
-                    </table>
+                                            <div className={styles.iconGroup}>
+                                                <i
+                                                    className={`fa-solid fa-trash-can ${styles.icon}`}
+                                                    onClick={onDelete(items.category_id)}
+                                                ></i>
+                                                <i
+                                                    className={`fa-solid fa-pen ${styles.icon}`}
+                                                    onClick={() => {
+                                                        setName(items.category_name)
+                                                        setId(items.category_id)
+                                                        setClick(true)
+                                                    }}
+                                                ></i>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                                </tbody>
+                            </table>
+                        )}
+                        {data.length === 0 && (
+                            <p className={styles.empty}>There is no data to show :/</p>
+                        )}
+                    </>
                 )}
             </div>
         </>

@@ -13,8 +13,6 @@ export default function Item(props) {
     const [dialog, setDialog] = useState(false)
     const user = JSON.parse(localStorage.getItem('YoleUser'))
 
-    console.log(props.data)
-
     const format = input => {
         return input.slice(0, 10) + ', ' + input.slice(11, 19)
     }

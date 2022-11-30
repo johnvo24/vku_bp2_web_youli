@@ -44,7 +44,6 @@ async function getPrivateCategory(req, res) {
 
 calc = async (response, user_id, wallet_id, value) => {
     const getWallet = await wallet.getInf(user_id)
-    console.log(response.type)
     if (response.type === 'cost')
         wallet.updateBudget(wallet_id, getWallet.budget - value).then()
     else
@@ -53,7 +52,6 @@ calc = async (response, user_id, wallet_id, value) => {
 
 reCalc = async (response, user_id, wallet_id, value) => {
     const getWallet = await wallet.getInf(user_id)
-    console.log(response.type)
     if (response.type === 'cost')
         wallet.updateBudget(wallet_id, getWallet.budget + value).then()
     else
@@ -61,18 +59,15 @@ reCalc = async (response, user_id, wallet_id, value) => {
 }
 
 async function saveBill(req, res) {
-    if(req.body.bill_time === '' || req.body.item_cost === '' || req.body.item_description === '' || req.body.item_title === '')
-    {
+    if (req.body.bill_time === '' || req.body.item_cost === '' || req.body.item_description === '' || req.body.item_title === '') {
         res.status(500)
         res.send('Empty Input Is Not Allowed!')
-    }
-    else {
+    } else {
         const save = await bill.saveBill(req.body)
             .then()
         if (req.body.category_id)
             await category.getDefaultCategoryById(req.body.category_id)
                 .then(response => {
-                    // console.log(response)
                     calc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
                 })
         else
@@ -101,7 +96,6 @@ async function deleteBillWithRefund(req, res) {
     if (req.body.category_id)
         category.getDefaultCategoryById(req.body.category_id)
             .then(response => {
-                // console.log(response)
                 reCalc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
             })
     else
@@ -134,16 +128,21 @@ async function getBills(req, res) {
 }
 
 async function createCustomCategory(req, res) {
-    const add = await category.createCustomCategory(req.body)
-        .then(response => {
-            res.status(200)
-            console.log(response)
-            res.send('Added')
-        })
-        .catch(err => {
-            res.status(501)
-            res.send('Oops, There are some error occurred, Please try again later')
-        })
+    if (req.body.type === '' || req.body.category_name === '') {
+        res.status(500)
+        res.send('Empty Input is not allowed')
+    } else {
+        const add = await category.createCustomCategory(req.body)
+            .then(response => {
+                res.status(200)
+                console.log(response)
+                res.send('Added')
+            })
+            .catch(err => {
+                res.status(501)
+                res.send('Oops, There are some error occurred, Please try again later')
+            })
+    }
 }
 
 async function statistic(req, res) {

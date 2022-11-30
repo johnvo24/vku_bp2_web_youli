@@ -30,7 +30,6 @@ export default function Statistic(props) {
                 for(let i = 0; i < res.length; ++i) {
                     res[i].bill_time = timeConverter(res[i].bill_time, 'd/m/y')
                 }
-                console.log(res)
                 setData(res)
                 setLoading(true)
             })
