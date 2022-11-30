@@ -70,16 +70,18 @@ async function saveBill(req, res) {
         const save = await bill.saveBill(req.body)
             .then()
         if (req.body.category_id)
-            category.getDefaultCategoryById(req.body.category_id)
+            await category.getDefaultCategoryById(req.body.category_id)
                 .then(response => {
                     // console.log(response)
                     calc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
                 })
         else
-            category.getCustomCategoryById(req.body.c_category_id)
+            await category.getCustomCategoryById(req.body.c_category_id)
                 .then(response => {
                     calc(response, req.body.user_id, req.body.wallet_id, Number(req.body.item_cost))
                 })
+        res.status(200)
+        res.send()
     }
 }
 

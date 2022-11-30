@@ -15,7 +15,7 @@ export async function getCategory(userId) {
 }
 
 export async function submitItemForm(data, name, id) {
-    if(name.includes(SYSTEM_CATEGORY))
+    if(SYSTEM_CATEGORY.includes(name))
         data = {...data, category_id: id}
     else
         data = {...data, c_category_id: id}
@@ -41,7 +41,7 @@ export async function totalCost(walletId) {
 
 export async function deleteWithRefund(data, name, id) {
     // console.log(data)
-    if(name.includes(SYSTEM_CATEGORY))
+    if(SYSTEM_CATEGORY.includes(name))
         data = {...data, category_id: id}
     else
         data = {...data, c_category_id: id}
