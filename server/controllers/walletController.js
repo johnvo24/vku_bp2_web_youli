@@ -30,6 +30,18 @@ async function getCategories(req, res) {
     res.send(defaultList)
 }
 
+async function getPrivateCategory(req, res) {
+    const list = await category.getCustomCategories(req.body.user_id)
+        .then(response => {
+            res.status(200)
+            res.send(response)
+        })
+        .catch(err => {
+            res.status(502)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
 calc = async (response, user_id, wallet_id, value) => {
     const getWallet = await wallet.getInf(user_id)
     console.log(response.type)
@@ -161,6 +173,30 @@ async function totalCost(req, res) {
         })
 }
 
+async function deleteCategory(req, res) {
+    const deleted = await category.deleteCategory(req.body.category_id)
+        .then(response => {
+            res.status(200)
+            res.send()
+        })
+        .catch(err => {
+            res.status(500)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
+async function renameCategory(req, res) {
+    const rename = await category.renameCategory(req.body.category_id, req.body.category_name)
+        .then(response => {
+            res.status(200)
+            res.send()
+        })
+        .catch(err => {
+            res.status(500)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
 module.exports = {
     getInf,
     updateBudget,
@@ -171,5 +207,8 @@ module.exports = {
     statistic,
     totalCost,
     deleteBillWithoutRefund,
-    deleteBillWithRefund
+    deleteBillWithRefund,
+    getPrivateCategory,
+    deleteCategory,
+    renameCategory
 }

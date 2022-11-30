@@ -7,7 +7,7 @@ import * as CONTENT from "../../Constants/languages/Expenditure";
 import {useContext} from "react";
 import {MyUserContext} from "../../App";
 import '../../Components/GlobalStyle'
-import Wallet from "../../Components/BudgetComponents/Wallet";
+import Wallet from "../../Components/BudgetComponents/CategoryManage";
 import AddItem from "../../Components/BudgetComponents/AddItem";
 import Statistic from "../../Components/BudgetComponents/Statistic";
 import List from "../../Components/BudgetComponents/List";
@@ -16,7 +16,7 @@ function BudgetPage() {
     const [wallet, setWallet] = useState({})
     const data = useContext(MyUserContext)
     const [mainTheme, setMainTheme] = useState(true)
-    const [walletTheme, setWalletTheme] = useState(false)
+    const [categoryTheme, setCategoryTheme] = useState(false)
     const [statisticTheme, setStatisticTheme] = useState(false)
     const [addItemTheme, setAddItemTheme] = useState(false)
     const [listTheme, setListTheme] = useState(false)
@@ -40,15 +40,6 @@ function BudgetPage() {
                 console.log(res)
                 setLoading(true)
             })
-        if (wallet)
-            if (wallet.budget === 0)
-                setStatusColor('darkgray')
-            else if (wallet.status === 1)
-                setStatusColor('lawngreen')
-            else if (wallet.status === 2)
-                setStatusColor('#E1D046')
-            else if (wallet.status === 3)
-                setStatusColor('red')
     }, [wallet])
 
     return (
@@ -56,7 +47,6 @@ function BudgetPage() {
             <div className={styles.container}>
                 {loading && (
                     <>
-
                         <div className={styles.leftSide}>
                             <div className={styles.walletContainer}>
                                 <h1 className={styles.title}><i className={`fa - solid fa-wallet ${styles.icon}`}></i>{CONTENT.yourWallet[data[1]]}</h1>
@@ -73,11 +63,11 @@ function BudgetPage() {
                                     <div className={styles.circleBar}>
                                         <div className={styles.lineUp}/>
                                         <div className={styles.lineDown}/>
-                                        <div className={styles.yourWallet} onClick={() => {
-                                            setWalletTheme(true)
+                                        <div className={styles.yourCate} onClick={() => {
+                                            setCategoryTheme(true)
                                             setMainTheme(false)
                                         }}>
-                                            <i className="fa-solid fa-wallet" style={{fontSize: '4.5em'}}></i>
+                                            <i className="fa-solid fa-cube" style={{fontSize: '4.5em'}}></i>
                                         </div>
                                         <div className={styles.statistic} onClick={() => {
                                             setStatisticTheme(true)
@@ -102,8 +92,8 @@ function BudgetPage() {
                                 </>
                             )}
 
-                            {walletTheme && (
-                                <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setWalletTheme}/>
+                            {categoryTheme && (
+                                <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setCategoryTheme}/>
                             )}
                             {addItemTheme && (
                                 <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>

@@ -81,13 +81,13 @@
     border-radius: 100%;
 }
 
-.yourWallet, .statistic, .list, .addItem, .dot {
+.yourCate, .statistic, .list, .addItem, .dot {
     position: absolute;
     transition: font-size 500ms, margin-top 500ms, margin-left 500ms;
 }
 
 
-.yourWallet {
+.yourCate {
     transform: translate(195px, 70px);
 }
 
@@ -103,7 +103,7 @@
     transform: translate(40px, 195px);
 }
 
-.addItem:hover, .list:hover, .statistic:hover, .yourWallet:hover {
+.addItem:hover, .list:hover, .statistic:hover, .yourCate:hover {
     cursor: pointer;
     font-size: 2em;
     margin-top: -30px;

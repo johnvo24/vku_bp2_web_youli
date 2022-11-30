@@ -1,8 +1,13 @@
 // 0: en, 1: vi
-//Wallet Theme
+//CategoryManage Theme
 export const yourWallet = [
     'Your Wallet:',
     'Ví Của Bạn:'
+]
+
+export const yourCate = [
+    'Category Manager:',
+    'Quản Lý Phân Loại:'
 ]
 
 export const totalCost = [
@@ -10,24 +15,9 @@ export const totalCost = [
     'Tổng Chi Tiêu:'
 ]
 
-export const status = [
-    'Status:',
-    'Trạng Thái:'
-]
-
-export const balance = [
-    'Balance:',
-    'Số Dư:'
-]
-
 export const income = [
     'Income:',
     'Tiền Lương:'
-]
-
-export const bank = [
-    'Connect To Your Bank Account',
-    'Kết Nối Với Tài Khoản Ngân Hàng Của Bạn'
 ]
 
 //Item Theme
@@ -98,6 +88,10 @@ export const createBill = [
     'Tạo Hóa Đơn'
 ]
 
+export const statistic = [
+    'Statistic',
+    'Thống Kê'
+]
 
 
 

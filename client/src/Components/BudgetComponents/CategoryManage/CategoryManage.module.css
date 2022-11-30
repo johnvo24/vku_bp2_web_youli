@@ -1,14 +1,14 @@
 .walletTheme {
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
+    flex-direction: column;
 }
 
 .balance, .income {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -88,4 +88,9 @@
     width: 100%;
     height: 2px;
     background-color: black;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
 }

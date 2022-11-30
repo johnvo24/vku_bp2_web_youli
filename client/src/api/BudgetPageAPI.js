@@ -52,3 +52,15 @@ export async function deleteWithRefund(data, name, id) {
 export async function deleteWithoutRefund(data) {
     await WALLET.post('/bill/delete', {bill_id: data})
 }
+
+export async function viewCategories(user_id) {
+    return (await WALLET.post('/category/view', {user_id: user_id})).data //array
+}
+
+export async function deleteCategory(cate_id) {
+    return await WALLET.post('/category/delete', {category_id: cate_id})
+}
+
+export async function renameCategory(cate_id, cate_name) {
+    return await WALLET.post('/category/rename', {category_id: cate_id, category_name: cate_name})
+}

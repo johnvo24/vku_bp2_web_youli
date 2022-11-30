@@ -17,3 +17,8 @@ export const confirmDialog = [
     'Confirm',
     'Xác nhận'
 ]
+
+export const name = [
+    'Name',
+    'Tên'
+]

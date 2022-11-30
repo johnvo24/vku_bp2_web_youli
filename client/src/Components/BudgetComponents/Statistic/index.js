@@ -3,8 +3,10 @@ import React, {useContext, useEffect, useState} from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 import {statistic} from "../../../api/BudgetPageAPI";
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
+import * as CONTENT from '../../../Constants/languages/Expenditure'
 import {MyUserContext} from "../../../App";
 import {timeConverter} from "../../../Middlewares/Middlewares";
+import Header from "../Header";
 
 export default function Statistic(props) {
     const [data, setData] = useState([])
@@ -37,9 +39,16 @@ export default function Statistic(props) {
     return (
         <>
             <div className={styles.statistic}>
+                <Header
+                    context={CONTENT.statistic[context[1]]}
+                    onClick={() => {
+                        props.statisticTheme(false)
+                        props.mainTheme(true)
+                    }}
+                />
                 {loading && (
                     <LineChart
-                        width={500}
+                        width={650}
                         height={300}
                         data={data}
                         margin={{
@@ -49,7 +58,10 @@ export default function Statistic(props) {
                             bottom: 5
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3"/>
+                        <CartesianGrid
+                            strokeDasharray="4"
+                            horizontal={true}
+                        />
                         <XAxis dataKey="bill_time"/>
                         <YAxis/>
                         <Tooltip/>
@@ -64,12 +76,6 @@ export default function Statistic(props) {
                         <Legend/>
                     </LineChart>
                 )}
-                <div className={styles.btnGroup}>
-                    <button type='button' className={styles.btn} onClick={() => {
-                        props.statisticTheme(false)
-                        props.mainTheme(true)
-                    }}>{GCONTENT.back[context[1]]}</button>
-                </div>
             </div>
         </>
     )

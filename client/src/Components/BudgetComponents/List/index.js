@@ -110,7 +110,7 @@ export default function List(props) {
                                                                     setItemTheme(true)
                                                                 }}>
                                                                     {sub_item.item_title} <span
-                                                                    className={styles.contentCat}>{sub_item.category_name}</span>
+                                                                    className={`${styles.contentCat} g_m_l2`}>{` ${sub_item.category_name}`}</span>
                                                                 </div>
                                                                 <div style={{color: sub_item.type === 'cost' ? 'red': 'green'}}>
                                                                     {`${sub_item.type === 'cost' ? '-' : '+'}${sub_item.item_cost}`}

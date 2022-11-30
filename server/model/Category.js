@@ -1,4 +1,5 @@
 const db = require('../config/db')
+const {categoryName} = require("../../client/src/Constants/languages/Expenditure");
 
 const getDefaultCategory = async () => {
     return await new Promise((resolve, reject) => {
@@ -26,7 +27,7 @@ const getCustomCategories = async userId => {
         db.query('select * from custom_categories where user_id = ?',
             [userId],
             (err, result) => {
-                if (err) reject(err)
+                // if (err) reject(err)
                 resolve(result) //array
             })
     })
@@ -54,4 +55,34 @@ const createCustomCategory = async data => {
     })
 }
 
-module.exports = {getDefaultCategory, getCustomCategories, createCustomCategory, getDefaultCategoryById, getCustomCategoryById}
+const deleteCategory = async category_id => {
+    return await new Promise((resolve, reject) => {
+        db.query('delete from custom_categories where category_id = ?',
+            [category_id],
+            (err, result) => {
+                if (err) reject(err)
+                resolve()
+            })
+    })
+}
+
+const renameCategory = async (category_id, category_name) => {
+    return await new Promise((resolve, reject) => {
+        db.query('update custom_categories set category_name = ? where category_id = ?',
+            [category_name, category_id],
+            (err, result) => {
+                if (err) reject(err)
+                resolve()
+            })
+    })
+}
+
+module.exports = {
+    getDefaultCategory,
+    getCustomCategories,
+    createCustomCategory,
+    getDefaultCategoryById,
+    getCustomCategoryById,
+    deleteCategory,
+    renameCategory
+}

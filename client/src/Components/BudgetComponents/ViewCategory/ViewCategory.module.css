@@ -1,0 +1,59 @@
+.view {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.row:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.table {
+    font-family: arial, sans-serif;
+    /*border-collapse: collapse;*/
+    width: 80%;
+}
+
+.id, .name{
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.id {
+    text-align: center;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 100ms;
+    border-radius: 100%;
+}
+
+.icon:hover {
+    cursor: pointer;
+    background-color: #38D8FF;
+}
+

@@ -11,13 +11,16 @@ export default function Header(props) {
             </div>
             <div className={styles.btnGroup}>
                 {props.useDelete && (
-                    <i className={`fa - solid fa-trash-can ${styles.delete}`} onClick={props.onDelete}></i>
+                    <i className={`fa-solid fa-trash-can ${styles.delete}`} onClick={props.onDelete}></i>
                 )}
                 {props.useReset && (
-                    <i className={`fa - solid fa-rotate-right ${styles.delete}`} onClick={props.onReset}></i>
+                    <i className={`fa-solid fa-rotate-right ${styles.delete}`} onClick={props.onReset}></i>
                 )}
                 {props.useSave && (
-                    <i className={`fa - solid fa-check ${styles.delete}`} onClick={props.onSave}></i>
+                    <i className={`fa-solid fa-check ${styles.delete}`} onClick={props.onSave}></i>
+                )}
+                {props.useCreate && (
+                    <i className={`fa-solid fa-plus ${styles.delete}`} onClick={props.onCreate}></i>
                 )}
             </div>
         </div>
