@@ -1,5 +1,4 @@
 const db = require('../config/db')
-const {categoryName} = require("../../client/src/Constants/languages/Expenditure");
 
 const getDefaultCategory = async () => {
     return await new Promise((resolve, reject) => {
