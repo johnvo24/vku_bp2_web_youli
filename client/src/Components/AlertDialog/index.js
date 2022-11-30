@@ -10,6 +10,9 @@ export default function AlertDialog(props) {
                 <div className={styles.container}>
                     <div className={styles.box}>
                         <h1>{props.content}</h1>
+                        {props.edit && (
+                            <input type='text' className={styles.edit} id='AlertEditor' placeholder={props.placeHolder}/>
+                        )}
                         <div className={styles.btnGroup}>
                             {props.thirdButton && (
                                 <button type='button' onClick={props.onThird}

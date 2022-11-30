@@ -1,4 +1,4 @@
-import React, {useContext} from "react"
+import React, {useContext, useState} from "react"
 
 import styles from '../AddItem/AddItem.module.css'
 import Container from "../../Container";
@@ -6,11 +6,15 @@ import * as CONTENT from "../../../Constants/languages/Expenditure";
 import * as GCONTENT from "../../../Constants/languages/GlobalWord";
 import {MyUserContext} from "../../../App";
 import {addCategory} from "../../../api/BudgetPageAPI";
+import Header from "../Header";
+import SnackBar from "../../SnackBar";
 
 export default function Category(props) {
 
     const data = useContext(MyUserContext)
     const user = JSON.parse(localStorage.getItem('YoleUser'))
+    const [open, setOpen] = useState(false)
+    const [msg, setMsg] = useState('')
 
     const onsubmit = () => {
         addCategory({
@@ -18,13 +22,39 @@ export default function Category(props) {
             type: document.getElementById('classify').value,
             category_name: document.getElementById('name').value
         })
-            .then()
+            .then(() => {
+                setMsg('Created Successful')
+                setOpen(true)
+            })
+            .catch(err => {
+                setMsg(err.response.data)
+                setOpen(true)
+            })
+    }
+
+    const reset = () => {
+        document.getElementById('name').value = ''
+        document.getElementById('classify').selectedIndex = 0
     }
 
     return (
         <>
-            <div className={styles.header}>{CONTENT.addCategory[data[1]]}</div>
-            <div className={styles.informationContainer}>
+            <Header
+                context={CONTENT.addCategory[data[1]]}
+                onClick={() => props.theme(false)}
+                useReset={true}
+                useSave={true}
+                onReset={reset}
+                onSave={onsubmit}
+            />
+            <SnackBar
+                open={open}
+                duration={5000}
+                setOpen={setOpen}
+            >
+                {msg}
+            </SnackBar>
+            <div className={styles.informationContainer} style={{marginTop: '100px'}}>
                 <label className={styles.label} htmlFor='name'>{CONTENT.categoryName[data[1]]}</label>
                 <input type='text' id='name' className={styles.input}/>
                 <label className={styles.label} htmlFor='classify'>{CONTENT.categoryCat[data[1]]}</label>
@@ -33,15 +63,6 @@ export default function Category(props) {
                     <option value='cost'>{CONTENT.costCat[data[1]]}</option>
                 </select>
 
-            </div>
-            <div className={styles.btnGroup}>
-                <button className={styles.btn} onClick={
-                    () => {
-                        props.theme(false)
-                    }}>{GCONTENT.back[data[1]]}</button>
-                <button className={styles.btn}
-                        onClick={onsubmit}
-                >{GCONTENT.save[data[1]]}</button>
             </div>
         </>
     )
