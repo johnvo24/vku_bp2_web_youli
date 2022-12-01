@@ -32,7 +32,7 @@ async function getUser(req, res) {
             res.status(409)
             res.send('Can not found Username that you inputted')
         }
-        if (data[0].userpassword !== req.body.userpassword) {
+        else if (data[0].userpassword !== req.body.userpassword) {
             res.status(409)
             res.send('Password incorrect')
         } else {

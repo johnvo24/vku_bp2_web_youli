@@ -1,7 +1,7 @@
 import {AUTH} from "./options";
 
 export async function PostDataForSignin(data) {
-
+    // console.log(data)
     return (await AUTH.post('/sign-in', data))
 
 }
