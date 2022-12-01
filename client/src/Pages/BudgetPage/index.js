@@ -50,12 +50,12 @@ function BudgetPage() {
                     <>
                         <div className={styles.leftSide}>
                             <div className={styles.walletContainer}>
-                                <h1 className={styles.title}><i className={`fa - solid fa-wallet ${styles.icon}`}></i>{CONTENT.yourWallet[data[1]]}</h1>
-                                <h1 className={styles.wallet} style={{color: 'green'}}>{wallet.budget}</h1>
+                                <h1 className={styles.title}>{CONTENT.yourWallet[data[1]]}</h1>
+                                <h1 className={styles.wallet} style={{color: 'green'}}><i className={`fa - solid fa-wallet ${styles.icon}`}></i>{wallet.budget}</h1>
                             </div>
                             <div className={styles.costContainer}>
-                                <h1 className={styles.title}><i className={`fa - solid fa-money-bill-transfer ${styles.icon}`}></i>{CONTENT.totalCost[data[1]]}</h1>
-                                <h1 className={styles.wallet} style={{color: 'red'}}>{cost}</h1>
+                                <h1 className={styles.title}>{CONTENT.totalCost[data[1]]}</h1>
+                                <h1 className={styles.wallet} style={{color: 'red'}}><i className={`fa - solid fa-money-bill-transfer ${styles.icon}`}></i>{cost}</h1>
                             </div>
                         </div>
                         <div className={styles.rightSide}>
