@@ -11,6 +11,7 @@ import Wallet from "../../Components/BudgetComponents/CategoryManage";
 import AddItem from "../../Components/BudgetComponents/AddItem";
 import Statistic from "../../Components/BudgetComponents/Statistic";
 import List from "../../Components/BudgetComponents/List";
+import {hasLoggedIn} from "../../Middlewares/Middlewares";
 
 function BudgetPage() {
     const [wallet, setWallet] = useState({})
@@ -25,12 +26,12 @@ function BudgetPage() {
     const [cost, setCost] = useState()
 
     useEffect(() => {
+        if(!hasLoggedIn())
+            window.location.href='/sign-in'
         getWalletData(JSON.parse(localStorage.getItem('YoleUser')).user_id)
             .then(res => {
                 setWallet(res)
             })
-
-
     }, [])
 
     useEffect(() => {

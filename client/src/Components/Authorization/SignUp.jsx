@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 
 import styles from './Authorization.module.css'
 import SnackBar from "../SnackBar";
@@ -8,6 +8,12 @@ import {useState} from "react";
 export default function SignUp() {
     const [msg, setMsg] = useState('')
     const [open, setOpen] = useState(false)
+    const user = JSON.parse(localStorage.getItem('YoleUser'))
+
+    useEffect(() => {
+        if(user)
+            window.location.href='/home'
+    }, [])
 
     const handleSubmit = () => {
         const data = {

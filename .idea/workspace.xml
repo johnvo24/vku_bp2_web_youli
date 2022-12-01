@@ -6,11 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/ViewCategory.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/ViewCategory.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/walletController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/walletController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +145,8 @@
       <workItem from="1669805293895" duration="1228000" />
       <workItem from="1669807459229" duration="106000" />
       <workItem from="1669807573311" duration="924000" />
-      <workItem from="1669821036461" duration="3422000" />
+      <workItem from="1669821036461" duration="4052000" />
+      <workItem from="1669882779226" duration="3968000" />
     </task>
     <servers />
   </component>

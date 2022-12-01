@@ -47,3 +47,11 @@ export function timeConverter(time, string) {
     }
     return stringconerted;
 }
+
+export function hasLoggedIn() {
+    const user = JSON.parse(localStorage.getItem('YoleUser'))
+    if(user)
+        return true
+    else
+        return false
+}

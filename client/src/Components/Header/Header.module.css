@@ -40,5 +40,37 @@
 
 .signin:hover, .signup:hover {
     cursor: pointer;
+}
 
+.userBtn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+
+.user {
+    margin-right: 75px;
+}
+
+.userBtn:hover, .btn:hover {
+    cursor: pointer;
+}
+
+.btngroup {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.btn {
+    padding: 3px 10px;
+    display: flex;
+    width: 100px;
+    /*justify-content: space-between;*/
+    gap: 10px;
+    outline: none;
+    border: none;
+    background-color: #CBCBCB;
+    color: black;
 }
