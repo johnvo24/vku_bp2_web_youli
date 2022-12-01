@@ -1,3 +1,5 @@
+import noteBoxAPI from "../../../api/noteBoxAPI";
+
 export const action = {
 
     checkOverPreEle: (pointer, PreEle) => {
@@ -25,5 +27,11 @@ export const action = {
 
         // Move `nodeB` to before the sibling of `nodeA`
         parentA.insertBefore(nodeB, siblingA);
+    },
+    reSetNoteBoxData: (setNoteBoxData, note_box_id) => {
+        noteBoxAPI().getNoteBox(note_box_id)
+            .then((res) => {
+                setNoteBoxData(res.data)
+            }).catch((err) => console.log(err))
     }
 };

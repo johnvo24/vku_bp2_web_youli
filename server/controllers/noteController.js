@@ -8,14 +8,18 @@ const noteController = () => {
         res.send(await NoteModel().getNode(req.params.note_box_id));
     }
     noteController.create = (req, res) => {
-        const data = req.body;
-        const newNote = [
-            data.note_box_id,
-            data.note_title,
-            data.note_img,
-            data.note_description,
-            data.note_link
-        ]
+        const newNote = req.body;
+        NoteModel().creatNote(
+            [
+                newNote.note_box_id, 
+                newNote.note_title, 
+                newNote.note_img, 
+                newNote.note_description, 
+                newNote.note_link
+            ]
+        );
+        res.status(200);
+        res.send("Created note successfully");
     }
     noteController.update = (req, res) => {
         NoteModel().updateNote(req.body);
@@ -33,6 +37,12 @@ const noteController = () => {
     noteController.delete = (req, res) => {
         return false;
     }
+    noteController.uploadFile = (req, res) => {
+        const data = req.file;
+        res.status(200);
+        res.send(data.filename);
+    }
+
 
     return noteController;
 }

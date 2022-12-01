@@ -26,7 +26,7 @@ const NoteModel = () => {
         let sql = 'insert into note (note_box_id, note_title, note_img, note_description, note_link) values ?';
         db.query(
             sql,
-            [newNote],
+            [[newNote]],
             (err, result) => {
                 if (err) throw err;
             }

@@ -20,6 +20,23 @@ const NoteBoxModel = () => {
             .catch((err) => console.log(err));
         return noteBoxList;
     }
+    noteBoxModel.getNoteBoxById = async (note_box_id) => {
+        let noteBox = [];
+        noteBox = await new Promise((resolve, reject) => {
+            let sql = 'select * from note_box where note_box_id = ?';
+            db.query(
+                sql,
+                [note_box_id],
+                (err, result) => {
+                    if (err) reject(err);
+                    resolve(result);
+                }
+            )
+        })
+            .then((result) => noteBox = result)
+            .catch((err) => console.log(err));
+        return noteBox;
+    }
     noteBoxModel.creatNoteBox = (newnoteBox) => {
         let sql = 'insert into note_box (user_id, note_box_title, note_box_description) values ?';
         db.query(
@@ -44,7 +61,23 @@ const NoteBoxModel = () => {
                 data.note_box_id
             ],
             (err, result) => {
-                if(err) throw err;
+                if (err) throw err;
+            }
+        )
+    }
+    noteBoxModel.updateEditNoteBox = (data) => {
+        let sql = 'update note_box set note_box_title=?, note_box_description=?, updated_at=? where note_box_id=?';
+
+        db.query(
+            sql,
+            [
+                data.note_box_title,
+                data.note_box_description,
+                data.updated_at,
+                data.note_box_id
+            ],
+            (err, result) => {
+                if (err) throw err;
             }
         )
     }
@@ -54,7 +87,7 @@ const NoteBoxModel = () => {
             sql,
             [],
             (err, result) => {
-                if(err) throw err;
+                if (err) throw err;
             }
         )
     }

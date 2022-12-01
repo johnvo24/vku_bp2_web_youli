@@ -72,6 +72,13 @@ export const listOfNavBar = {
         ],
         icon: 'fa-solid fa-trash-arrow-up'
     },
+    chooseFile: {
+        lang: [
+            'Choose an image file',
+            'Chọn tệp ảnh'
+        ],
+        icon: 'fa-solid fa-image'
+    },
     yes: {
         lang: [
             'Yes',

@@ -3,13 +3,25 @@ export const noteLang = {
         'Note Box',
         'Hộp ghi chú'
     ],
+    note: [
+        'Note',
+        'Ghi chú'
+    ],
     title: [
         'Title:',
         'Tiêu đề:'
     ],
+    img: [
+        'Image:',
+        'Ảnh:'
+    ],
     description: [
         'Description:',
         'Mô tả:'
+    ],
+    link: [
+        'Links:',
+        'Liên kết:'
     ],
     creationDate: [
         'Created:',
@@ -22,6 +34,10 @@ export const noteLang = {
     noteBoxMessengeDialog: [
         'Do you want to clear all completed note boxes?',
         'Bạn có muốn xóa tất cả các hộp ghi chú đã hoàn thành không?'
+    ],
+    newNote: [
+        'New Note',
+        'Thêm ghi chú'
     ]
 
 }

@@ -1,69 +1,86 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import noteAPI from '../../../api/noteAPI';
 import noteBoxAPI from '../../../api/noteBoxAPI';
-import { timeConverter } from '../../../Middlewares/Middlewares';
+import { noteLang } from '../../../Constants/languages/NoteLanguages';
+import { getLanguage, timeConverter } from '../../../Middlewares/Middlewares';
+import { NotePageContext } from '../../../Pages/NotePage';
+import BtnEditChild from '../../Pieces/Buttons/BtnEditChild';
 import Note from '../Note';
 import { action } from './action';
 import styles from './NoteBox.module.css';
 
 function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
     const [reRender, setReRender] = useState(false);
-    const [noteBoxData1, setNoteBoxData] = useState(noteBoxData);
+    const varNotePage = useContext(NotePageContext);
     const [noteList, setNoteList] = useState([]);
 
     useEffect(() => {
-        noteAPI().getNote(noteBoxData1.note_box_id)
+        noteAPI().getNote(noteBoxData.note_box_id)
             .then((res) => {
                 setNoteList(res.data)
             }).catch((err) => console.log(err))
-    }, [noteBoxData1.note_box_id, reRender]);
+    }, [noteBoxData.note_box_id, reRender]);
 
     const handleReRenderNoteBox = () => {
         setReRender(!reRender)
     }
     const handleClickTitle = () => {
-        const e = document.getElementById(`note_box_${noteBoxData1.note_box_id}`)
+        const e = document.getElementById(`note_box_${noteBoxData.note_box_id}`)
             .children[1].children[1].style;
         (e.display === "none") ? (e.display = "block") : (e.display = "none");
     }
     const handleClickPriority = () => {
-        let pri = noteBoxData1.priority;
-        if (noteBoxData1.priority === 2) {
+        let pri = noteBoxData.priority;
+        if (noteBoxData.priority === 2) {
             pri = 1;
-        } else if (noteBoxData1.priority !== 3) {
+        } else if (noteBoxData.priority !== 3) {
             pri = 2;
         }
         if (pri === 3) return;
         const data = {
-            note_box_id: noteBoxData1.note_box_id,
-            user_id: noteBoxData1.user_id,
-            note_box_title: noteBoxData1.note_box_title,
-            note_box_description: noteBoxData1.note_box_description,
-            created_at: noteBoxData1.created_at,
-            updated_at: noteBoxData1.updated_at,
-            status: noteBoxData1.status,
+            note_box_id: noteBoxData.note_box_id,
+            user_id: noteBoxData.user_id,
+            note_box_title: noteBoxData.note_box_title,
+            note_box_description: noteBoxData.note_box_description,
+            created_at: noteBoxData.created_at,
+            updated_at: noteBoxData.updated_at,
+            status: noteBoxData.status,
             priority: pri
         }
         noteBoxAPI().update(data);
-        setNoteBoxData(data);
+        varNotePage.reSetNoteBoxList();
         handleReRenderNoteBoxList();
     }
     const handleClickStatus = () => {
-        const stt = (!noteBoxData1.status) ? 1 : 0;
+        const stt = (!noteBoxData.status) ? 1 : 0;
         const data = {
-            note_box_id: noteBoxData1.note_box_id,
-            user_id: noteBoxData1.user_id,
-            note_box_title: noteBoxData1.note_box_title,
-            note_box_description: noteBoxData1.note_box_description,
-            created_at: noteBoxData1.created_at,
-            updated_at: noteBoxData1.updated_at,
+            note_box_id: noteBoxData.note_box_id,
+            user_id: noteBoxData.user_id,
+            note_box_title: noteBoxData.note_box_title,
+            note_box_description: noteBoxData.note_box_description,
+            created_at: noteBoxData.created_at,
+            updated_at: noteBoxData.updated_at,
             status: stt,
             priority: (stt === 1) ? 3 : 2
         }
         noteBoxAPI().update(data);
-        setNoteBoxData(data);
+        varNotePage.reSetNoteBoxList();
         handleReRenderNoteBoxList();
     }
+    const handleClickBtnEditChild = (e) => {
+        e.preventDefault();
+        varNotePage.setCurrentNoteBox({
+            note_box_id: noteBoxData.note_box_id,
+            note_box_title: noteBoxData.note_box_title,
+            note_box_description: noteBoxData.note_box_description
+        })
+        varNotePage.setEditNoteBox(!varNotePage.editNoteBox);
+        varNotePage.setDetailNoteBox(!varNotePage.detaiNoteBox);
+    }
+    const handleClickBtnAddNote = (e) => {
+        varNotePage.setDetailNote(!varNotePage.detailNote);
+        varNotePage.setCurrentNoteBox(noteBoxData);
+    } 
 
     // Phần code xử lý drag, swap and drop
     let CurrentEle;
@@ -86,7 +103,6 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseup", handleMouseUp);
     }
-
     const handleMouseMove = (e) => {
         CurrentEle.style.position = "absolute";
         CurrentEle.style.width = figure.width + "px";
@@ -134,7 +150,7 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
         placeHolder && placeHolder.parentElement && placeHolder.parentElement.removeChild(placeHolder);
         isDragging = false;
 
-        const thisNoteBox = document.getElementById(`note_box_${noteBoxData1.note_box_id}`)
+        const thisNoteBox = document.getElementById(`note_box_${noteBoxData.note_box_id}`)
         const newList = Array.from(thisNoteBox.querySelectorAll("#note-list > .g_item"));
         const data = [];
         newList.forEach((item, index) => {
@@ -144,24 +160,30 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
     }
 
     return (
-        <div className={styles.noteBox} id={`note_box_${noteBoxData1.note_box_id}`}>
+        <div className={styles.noteBox} id={`note_box_${noteBoxData.note_box_id}`}>
             <div className="g_header">
                 <div className="g_title">
                     <i
-                        className={`fa-solid fa-star g_boxpriority_${noteBoxData1.priority}`}
+                        className={`fa-solid fa-star g_boxpriority_${noteBoxData.priority}`}
                         onClick={handleClickPriority}
                     ></i>
                     <span
                         style={{ cursor: "pointer" }}
                         onClick={handleClickTitle}
-                    >{noteBoxData1.note_box_title}</span>
+                    >{noteBoxData.note_box_title}</span>
                 </div>
-                <div className={`g_status ${(noteBoxData1.status === 1) && "g_boxsuccess"}`}>
-                    <i
-                        className="fa-solid fa-check"
-                        onClick={handleClickStatus}
-                    ></i>
-                </div>
+                {
+                    (varNotePage.editMode)
+                        ? (<BtnEditChild
+                            handleClickBtnEditChild={handleClickBtnEditChild}
+                        />)
+                        : (<div className={`g_status ${(noteBoxData.status === 1) && "g_boxsuccess"}`}>
+                            <i
+                                className="fa-solid fa-check"
+                                onClick={handleClickStatus}
+                            ></i>
+                        </div>)
+                }
             </div>
             <div className="g_body">
                 <div className={styles.NoteList} id="note-list">
@@ -174,20 +196,31 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
                             handleMouseDown={handleMouseDown}
                         />
                     ))}
+                    {(varNotePage.editMode) && (
+                        <div className="g_item">
+                            <div 
+                                className={`${styles.btnAddNote}`}
+                                onClick={handleClickBtnAddNote}
+                            >
+                                <i className="fa-solid fa-square-pen g_m_r1"></i>
+                                <span>{noteLang.newNote[getLanguage('YoleUser')]}</span>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className="g_description" style={{ display: "none" }}>
-                    {noteBoxData1.note_box_description || "Không có mô tả nào cả!"}
+                    {noteBoxData.note_box_description || "Không có mô tả nào cả!"}
                 </div>
             </div>
             <div className="g_footer">
                 <div className="g_createdAt">
                     Tạo: {
-                        timeConverter(noteBoxData1.created_at, "d/m/y h:i:s")
+                        timeConverter(noteBoxData.created_at, "d/m/y h:i:s")
                     }
                 </div>
                 <div className="g_updatedAt">
                     Cập nhật: {
-                        timeConverter(noteBoxData1.updated_at, "d/m/y h:i:s")
+                        timeConverter(noteBoxData.updated_at, "d/m/y h:i:s")
                     }
                 </div>
             </div>

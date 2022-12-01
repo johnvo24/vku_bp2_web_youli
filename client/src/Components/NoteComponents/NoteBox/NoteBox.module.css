@@ -20,3 +20,32 @@
 .placeHolder {
     border: solid 1px red;
 }
+.btnAddNote {
+    user-select: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    width: fit-content;
+    background-color: #e5ac02;
+    box-shadow: 0 0 3px rgb(63, 63, 63) inset;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -3px;
+    margin-bottom: -3px;
+}
+.btnAddNote:hover {
+    transform: scale(1.02);
+}
+.btnAddNote:active {
+    transform: scale(0.98);
+}
+.btnAddNote span {
+    font-size: var(--fontSizeTextMini);
+    font-weight: bolder;
+    color: white;
+    text-shadow: 0 0 3px black;
+}
+.btnAddNote i {
+    color: white;
+    text-shadow: 0 0 3px black;
+}

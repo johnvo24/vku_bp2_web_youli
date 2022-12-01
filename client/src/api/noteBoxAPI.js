@@ -11,11 +11,17 @@ const noteBoxAPI = () => {
             JSON.parse(localStorage.getItem('YoleUser')).user_id
         }`);
     }
+    noteBoxAPI.getNoteBox = async (note_box_id) => {
+        return await NOTEBOX.get(`/get_note_box/${note_box_id}`)
+    }
     noteBoxAPI.create = (data) => {
         return NOTEBOX.post('/create', data);
     }
     noteBoxAPI.update = async (data) => {
         return await NOTEBOX.post(`/update`, data);
+    }
+    noteBoxAPI.updateEdit = async (data) => {
+        return await NOTEBOX.post(`/update_edit`, data);
     }
     noteBoxAPI.clean = async () => {
         return await NOTEBOX.delete(`/clean`);
