@@ -2,18 +2,20 @@ import styles from './Note.module.css'
 import { noteLang } from '../../../Constants/languages/NoteLanguages';
 import { getCurrentUser, timeConverter } from '../../../Middlewares/Middlewares';
 import noteAPI from '../../../api/noteAPI';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { NotePageContext } from '../../../Pages/NotePage';
+import BtnEditChild from '../../Pieces/Buttons/BtnEditChild';
 
-function Note({ noteData, handleReRenderNoteBoxList, handleReRenderNoteBox, handleMouseDown}) {
+function Note({ noteData, handleReRenderNoteBoxList, handleReRenderNoteBox, handleMouseDown }) {
+    const varNotePage = useContext(NotePageContext);
     const [noteData1, setNoteData1] = useState(noteData);
-    
+
     const handleClickNoteTitle = () => {
         const e = document.querySelector(`#note_${noteData1.note_id}`).childNodes[1];
         (e.style.display === "block")
             ? (e.style.display = "none")
             : (e.style.display = "block")
     }
-
     const handleClickNoteStatus = () => {
         const stt = (!noteData1.status) ? 1 : 0;
         const data = {};
@@ -31,7 +33,10 @@ function Note({ noteData, handleReRenderNoteBoxList, handleReRenderNoteBox, hand
         handleReRenderNoteBox();
         handleReRenderNoteBoxList();
     }
-
+    const handleClickBtnEditChild = (e) => {
+        e.preventDefault();
+        console.log("edit note");
+    }
     return (
         <div className={styles.note + " g_item"} id={`note_${noteData1.note_id}`}>
             <div className={styles.header}>
@@ -42,19 +47,25 @@ function Note({ noteData, handleReRenderNoteBoxList, handleReRenderNoteBox, hand
                     ></i>
                     <span onClick={handleClickNoteTitle}>{noteData1.note_title}</span>
                 </div>
-                <div className={`g_status ${(noteData1.status) && "g_success"}`}>
-                    <i
-                        className="fa-solid fa-check"
-                        onClick={handleClickNoteStatus}
-                    ></i>
-                </div>
+                {
+                    (varNotePage.editMode)
+                        ? (<BtnEditChild
+                            handleClickBtnEditChild={handleClickBtnEditChild}
+                        />)
+                        : (<div className={`g_status ${(noteData1.status) && "g_success"}`}>
+                            <i
+                                className="fa-solid fa-check"
+                                onClick={handleClickNoteStatus}
+                            ></i>
+                        </div>)
+                }
             </div>
             <div className={styles.body}>
                 <div className={styles.detail}>
                     {noteData1.note_img && (
                         <div className={`${styles.img} g_padding`}>
                             <img
-                                src={noteData1.note_img}
+                                src={"/resources/uploads/"+ noteData1.note_img}
                                 alt="Ảnh bị lỗi x<!"
                             ></img>
                         </div>

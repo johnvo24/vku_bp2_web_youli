@@ -18,6 +18,9 @@ const noteAPI = () => {
     noteAPI.updatePriority = (data) => {
         return NOTE.post('/update-priority', data);
     }
+    noteAPI.uploadFile = (data) => {
+        return NOTE.post('/upload-file', data, {headers: {"Content-Type":"multipart/form-data"}});
+    }
 
     return noteAPI;
 }

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import noteBoxAPI from "../../../api/noteBoxAPI";
 import { noteLang } from "../../../Constants/languages/NoteLanguages";
 import { getCurrentUser, getLanguage, getObjectLocalStore } from "../../../Middlewares/Middlewares";
@@ -8,35 +8,61 @@ import BtnSave from "../../Pieces/Buttons/BtnSave";
 
 function DetailNoteBox() {
     const varNotePage = useContext(NotePageContext);
-
     let lang = getLanguage('YoleUser');
+    let newNoteBox = {};
     
-    const [title, setTitle] = useState(getObjectLocalStore('newNoteBox') ? getObjectLocalStore('newNoteBox').note_box_title : "");
-    const [description, setDescription] = useState(getObjectLocalStore('newNoteBox') ? getObjectLocalStore('newNoteBox').note_box_description : "");
+    if(varNotePage.editNoteBox) {
+        newNoteBox = varNotePage.currentNoteBox;
+    }
+
+    const [title, setTitle] = useState(
+        (varNotePage.editNoteBox)
+        ? newNoteBox.note_box_title
+        : (getObjectLocalStore('newNoteBox')
+            ? getObjectLocalStore('newNoteBox').note_box_title 
+            : "")
+    );
+    const [description, setDescription] = useState(
+        (varNotePage.editNoteBox)
+        ? newNoteBox.note_box_description
+        : (getObjectLocalStore('newNoteBox') 
+            ? getObjectLocalStore('newNoteBox').note_box_description 
+            : "")
+    );
+
+    newNoteBox = {
+        note_box_id: newNoteBox.note_box_id,
+        user_id: getCurrentUser('YoleUser').user_id,
+        note_box_title: title || "(no name)",
+        note_box_description: description,
+        created_at: new Date()
+    }
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
     }
-    const newNoteBox = {
-        user_id: getCurrentUser('YoleUser').user_id,
-        note_box_title: title  || "(no name)",
-        note_box_description:  description
-    }
-    useEffect(() => {
-        // localStorage.getItem('newNoteBox') && localStorage.removeItem('newNoteBox');
-        localStorage.setItem('newNoteBox', JSON.stringify(newNoteBox));
-    }, [newNoteBox]);
+    
+    (!varNotePage.editNoteBox) && localStorage.setItem('newNoteBox', JSON.stringify(newNoteBox));
 
     const handleClickBtnSave = (e) => {
         e.preventDefault();
-        noteBoxAPI().create(newNoteBox);
-        localStorage.removeItem('newNoteBox');
+        if(varNotePage.editNoteBox) {
+            noteBoxAPI().updateEdit(newNoteBox);
+            varNotePage.setEditNoteBox(false);
+        } else {
+            noteBoxAPI().create(newNoteBox);
+            localStorage.removeItem('newNoteBox');
+        }
         varNotePage.setDetailNoteBox(false);
         varNotePage.reSetNoteBoxList();
     }
     const handleClickBtnDelete = (e) => {
         e.preventDefault();
-        localStorage.removeItem('newNoteBox');
+        if(varNotePage.editNoteBox) {
+            varNotePage.setEditNoteBox(false);
+        } else {
+            localStorage.removeItem('newNoteBox');
+        }
         varNotePage.setDetailNoteBox(false);
     }
 
@@ -75,7 +101,7 @@ function DetailNoteBox() {
                     <BtnSave
                         handleClickBtnSave={handleClickBtnSave}
                     />
-                    <BtnDelete 
+                    <BtnDelete
                         handleClickBtnDelete={handleClickBtnDelete}
                     />
                 </div>

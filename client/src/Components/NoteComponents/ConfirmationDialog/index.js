@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import noteBoxAPI from '../../../api/noteBoxAPI';
 import { confirmDialog } from '../../../Constants/languages/GlobalWord';
-import { noteLang } from '../../../Constants/languages/NoteLanguages';
 import { getLanguage } from '../../../Middlewares/Middlewares';
 import { NotePageContext } from '../../../Pages/NotePage';
 import BtnNo from '../../Pieces/Buttons/BtnNo';
@@ -27,7 +26,7 @@ function ConfirmationDialog({ children }) {
                 {confirmDialog[getLanguage('YoleUser')]}
             </div>
             <div className="g_message_dialog">
-                {noteLang.noteBoxMessengeDialog[getLanguage('YoleUser')]}
+                { children }
                 <div className="g_option_btn">
                     <BtnYes
                         handleClickBtnYes={handleClickBtnYes}
