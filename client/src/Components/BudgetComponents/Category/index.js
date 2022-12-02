@@ -41,6 +41,7 @@ export default function Category(props) {
         <>
             <Header
                 context={CONTENT.addCategory[data[1]]}
+                useBack={true}
                 onClick={() => props.theme(false)}
                 useReset={true}
                 useSave={true}
@@ -58,11 +59,16 @@ export default function Category(props) {
                 <label className={styles.label} htmlFor='name'>{CONTENT.categoryName[data[1]]}</label>
                 <input type='text' id='name' className={styles.input}/>
                 <label className={styles.label} htmlFor='classify'>{CONTENT.categoryCat[data[1]]}</label>
-                <select id='classify' className={styles.input}>
-                    <option value='income'>{CONTENT.incomeCat[data[1]]}</option>
-                    <option value='cost'>{CONTENT.costCat[data[1]]}</option>
-                </select>
-
+                <div className={styles.selectCtn}>
+                    <select id='classify' className={`${styles.input} ${styles.select}`}
+                            onFocus={e => e.target.size=2}
+                            onBlur={e => e.target.size=1}
+                            onChange={e => e.target.blur()}
+                    >
+                        <option value='income'>{CONTENT.incomeCat[data[1]]}</option>
+                        <option value='cost'>{CONTENT.costCat[data[1]]}</option>
+                    </select>
+                </div>
             </div>
         </>
     )

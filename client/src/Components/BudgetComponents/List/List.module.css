@@ -31,7 +31,7 @@
 .overflow {
     overflow: auto;
     width: 100%;
-    height: calc(100% - 50px);
+    height: 100%;
     float: left;
     display: flex;
     flex-direction: column;
