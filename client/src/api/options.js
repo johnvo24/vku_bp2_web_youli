@@ -14,3 +14,8 @@ export const NOTEBOX = axios.create({
 export const NOTE = axios.create({
     baseURL: '/api/note'
 })
+
+export const PROFILE = axios.create({
+    baseURL: '/api/profile',
+    headers: { "Content-Type": "multipart/form-data" }
+})

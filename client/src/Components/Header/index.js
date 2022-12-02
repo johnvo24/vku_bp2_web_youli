@@ -1,9 +1,12 @@
 import styles from './Header.module.css'
 import SlideToggle from "react-slide-toggle";
+import {useEffect} from "react";
+import {hasLoggedIn} from "../../Middlewares/Middlewares";
 
 function Header() {
 
     const user = JSON.parse(localStorage.getItem('YoleUser'))
+
 
     return (
         <div className={styles.header}>
@@ -29,9 +32,19 @@ function Header() {
                         render={({toggle, setCollapsibleElement}) => (
                             <div className={styles.user}>
                                 <button className={styles.userBtn} onClick={toggle}>
+                                    <img src={`./resources/uploads/${user.user_avatar}`} alt='avatar' className={styles.avatar}/>
                                     {user.display_name}
                                 </button>
                                 <div className={styles.btngroup} ref={setCollapsibleElement}>
+                                    <button
+                                        type='button'
+                                        className={styles.btn}
+                                        onClick={() => {
+                                            window.location.href='/profile'
+                                        }}
+                                    >
+                                        <i className="fa-solid fa-address-card" />Profile
+                                    </button>
                                     <button
                                         type='button'
                                         className={styles.btn}

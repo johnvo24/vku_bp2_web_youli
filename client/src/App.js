@@ -4,8 +4,8 @@ import Layout from './Layouts';
 import RoutersNav from './Routes/RoutersNav';
 import * as IMAGE from "./Constants/IMAGE";
 
-let lang = 1;
-let data = ['', lang]
+const user = JSON.parse(localStorage.getItem('YoleUser'))
+let data = ['', Number(user.language)]
 export const MyUserContext = createContext(undefined)
 
 function App() {
