@@ -19,6 +19,7 @@ function NotePage() {
     const [detailNoteBox, setDetailNoteBox] = useState(false);
     const [detailNote, setDetailNote] = useState(false);
     const [editNoteBox, setEditNoteBox] = useState(false);
+    const [editNote, setEditNote] = useState(false);
     const [confirmDialog, setConfirmDialog] = useState(false);
     const [reRender, setReRender] = useState(false);
 
@@ -81,6 +82,9 @@ function NotePage() {
 
                 editNoteBox: editNoteBox,
                 setEditNoteBox: setEditNoteBox,
+
+                editNote: editNote,
+                setEditNote: setEditNote
             }}
         >
             <div

@@ -19,7 +19,7 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
             .then((res) => {
                 setNoteList(res.data)
             }).catch((err) => console.log(err))
-    }, [noteBoxData.note_box_id, reRender]);
+    }, [noteBoxData, reRender]);
 
     const handleReRenderNoteBox = () => {
         setReRender(!reRender)

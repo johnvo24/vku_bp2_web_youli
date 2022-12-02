@@ -33,11 +33,15 @@ function DetailNote() {
 
     const handleClickBtnSave = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('upload_file', file);
-
-        await noteAPI().uploadFile(formData)
-            .then((res) => newNote.note_img = res.data);
+        if(file.name) {
+            const formData = new FormData();
+            formData.append('upload_file', file);
+    
+            await noteAPI().uploadFile(formData)
+                .then((res) => newNote.note_img = res.data);
+        }else {
+            newNote.note_img = "";
+        }  
         noteAPI().create(newNote);
 
         varNotePage.setDetailNote(false);
