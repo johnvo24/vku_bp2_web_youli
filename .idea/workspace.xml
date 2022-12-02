@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/resources/images/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/Header.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Routes/RoutersNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Routes/RoutersNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/api/options.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/api/options.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/model/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/Wallet.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/Wallet.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -155,7 +143,7 @@
       <workItem from="1669899083115" duration="8713000" />
       <workItem from="1669951346513" duration="4995000" />
       <workItem from="1669959483304" duration="9087000" />
-      <workItem from="1669974662336" duration="14457000" />
+      <workItem from="1669974662336" duration="14948000" />
     </task>
     <servers />
   </component>
