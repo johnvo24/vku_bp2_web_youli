@@ -35,8 +35,7 @@ function Note({ noteData, handleReRenderNoteBoxList, handleReRenderNoteBox, hand
     }
     const handleClickBtnEditChild = (e) => {
         e.preventDefault();
-        
-        varNotePage.setEditNote(!varNotePage.editNote);
+        console.log("edit note");
     }
     return (
         <div className={styles.note + " g_item"} id={`note_${noteData1.note_id}`}>
