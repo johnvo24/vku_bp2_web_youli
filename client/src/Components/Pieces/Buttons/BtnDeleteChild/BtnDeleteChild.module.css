@@ -1,34 +1,35 @@
-.btnSave {
+.btnDeleteChild {
     display: block;
     width: fit-content;
+    margin-top: -3px;
     border-radius: 8px;
 }
-.btnSave li {
+.btnDeleteChild li {
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: fit-content;
+    height: fit-content;
     align-items: center;
 }
-.btnSave:hover li span {
+.btnDeleteChild:hover li i {
     transform: scale(1.07);
 }
-.btnSave:active li span {
-    transform: scale(1);
+.btnDeleteChild:active li i {
+    transform: scale(0.95);
 }
 
-.btnSave li span {
+.btnDeleteChild li i {
     display: block;
-    width: 60px;
-    height: 35px;
-    line-height: 35px;
+    width: 24px;
+    height: 24px;
     text-align: center;
+    line-height: 24px;
     font-size: 12px;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: var(--boxShadow) inset;
 }
-.btnSave span {
-    background-color: #00bfff;
+.btnDeleteChild i{
+    background-color: #ff002b;
     color: white;
     text-shadow: 0 0 3px black;
 }

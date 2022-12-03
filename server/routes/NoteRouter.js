@@ -10,5 +10,6 @@ noteRouter.post('/create', noteController().create);
 noteRouter.post('/update', noteController().update);
 noteRouter.post('/update-priority',  noteController().updatePriority);
 noteRouter.post('/upload-file', upload.single('upload_file'), noteController().uploadFile)
+noteRouter.delete('/delete/:note_id',  noteController().deleteNote);
 
 module.exports = noteRouter;

@@ -9,7 +9,7 @@ import DetailNoteBox from "../../Components/NoteComponents/DetailNoteBox";
 import ConfirmationDialog from "../../Components/NoteComponents/ConfirmationDialog";
 import { noteLang } from "../../Constants/languages/NoteLanguages";
 import { getLanguage } from "../../Middlewares/Middlewares";
-import DetailNote from "../../Components/NoteComponents/DetailNode";
+import DetailNote from "../../Components/NoteComponents/DetailNote";
 
 export const NotePageContext = createContext();
 
@@ -21,7 +21,8 @@ function NotePage() {
     const [editNoteBox, setEditNoteBox] = useState(false);
     const [editNote, setEditNote] = useState(false);
     const [confirmDialog, setConfirmDialog] = useState(false);
-    const [reRender, setReRender] = useState(false);
+
+    const [deleteFunction, setDeleteFunction] = useState(() => {});
 
     const [currentNoteBox, setCurrentNoteBox] = useState(null);
     const [currentNote, setCurrentNote] = useState(null);
@@ -31,19 +32,20 @@ function NotePage() {
     }
     useEffect(() => {
         reSetNoteBoxList();
-    }, [reRender])
+    }, [])
 
     const handleClickBtnEdit = (event) => {
         event.preventDefault();
         handleClickSideBar(event, 'edit');
     }
-    const handleClickSideBar = (event, action, ) => {
+    const handleClickSideBar = (event, act, ) => {
         event.preventDefault();
-        switch (action) {
+        switch (act) {
             case "new":
                 setDetailNoteBox(!detailNoteBox);
                 break;
             case "clean":
+                setDeleteFunction("clean-note-box");
                 setConfirmDialog(!confirmDialog);
                 break;
             case "edit":
@@ -54,10 +56,7 @@ function NotePage() {
                 break;
         }
     }
-    const handleReRenderNoteBoxList = () => {
-        setReRender(!reRender)
-    }
-
+    
     return (
         <NotePageContext.Provider
             value={{
@@ -84,7 +83,9 @@ function NotePage() {
                 setEditNoteBox: setEditNoteBox,
 
                 editNote: editNote,
-                setEditNote: setEditNote
+                setEditNote: setEditNote,
+
+                setDeleteFunction: setDeleteFunction,
             }}
         >
             <div
@@ -93,7 +94,6 @@ function NotePage() {
                 <MainContainer>
                     <NoteContainer
                         noteBoxList={noteBoxList}
-                        handleReRenderNoteBoxList={handleReRenderNoteBoxList}
                     />
                 </MainContainer>
 
@@ -104,7 +104,15 @@ function NotePage() {
                 {(detailNoteBox || confirmDialog || detailNote) && (<Detail>
                     {(detailNoteBox) && <DetailNoteBox />}
                     {(detailNote) && <DetailNote />}
-                    {(confirmDialog) && (<ConfirmationDialog>
+                    {(confirmDialog) && (<ConfirmationDialog
+                        deleteFunction={
+                            (deleteFunction === "clean-note-box")
+                                ? (() => action.deleteFinishedNoteBox())
+                                : ((deleteFunction === "delete-note-box")
+                                    ? (() => action.deleteNoteBox(currentNoteBox.note_box_id))
+                                    : (() => action.deleteNote(currentNote.note_id)))
+                        }
+                    >
                         {noteLang.noteBoxMessengeDialog[getLanguage('YoleUser')]}
                     </ConfirmationDialog>)}
                 </Detail>)}

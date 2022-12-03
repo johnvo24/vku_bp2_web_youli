@@ -33,5 +33,5 @@ export const action = {
             .then((res) => {
                 setNoteBoxData(res.data)
             }).catch((err) => console.log(err))
-    }
+    },
 };

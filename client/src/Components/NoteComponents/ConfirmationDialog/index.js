@@ -1,22 +1,25 @@
 import { useContext } from 'react';
-import noteBoxAPI from '../../../api/noteBoxAPI';
 import { confirmDialog } from '../../../Constants/languages/GlobalWord';
 import { getLanguage } from '../../../Middlewares/Middlewares';
 import { NotePageContext } from '../../../Pages/NotePage';
 import BtnNo from '../../Pieces/Buttons/BtnNo';
 import BtnYes from '../../Pieces/Buttons/BtnYes';
 
-function ConfirmationDialog({ children }) {
+function ConfirmationDialog({ children, deleteFunction }) {
     const varNotePage = useContext(NotePageContext);
 
-    const handleClickBtnYes = (e) => {
+    const handleClickBtnYes = async (e) => {
         e.preventDefault();
-        noteBoxAPI().clean();
+        deleteFunction();
         varNotePage.setConfirmDialog(false);
+        varNotePage.setCurrentNoteBox(null);
+        varNotePage.setCurrentNote(null);
         varNotePage.reSetNoteBoxList();
     }
     const handleClickBtnNo = (e) => {
         e.preventDefault();
+        varNotePage.setCurrentNoteBox(null);
+        varNotePage.setCurrentNote(null);
         varNotePage.setConfirmDialog(false);
     }
 
