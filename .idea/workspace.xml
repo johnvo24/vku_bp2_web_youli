@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/.$Use Case.drawio.dtmp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/draw.io/Use Case.drawio" beforeDir="false" afterPath="$PROJECT_DIR$/documents/draw.io/Use Case.drawio" afterDir="false" />
-    </list>
+    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +143,7 @@
       <workItem from="1669899083115" duration="8713000" />
       <workItem from="1669951346513" duration="4995000" />
       <workItem from="1669959483304" duration="9087000" />
-      <workItem from="1669974662336" duration="16888000" />
+      <workItem from="1669974662336" duration="17580000" />
     </task>
     <servers />
   </component>
