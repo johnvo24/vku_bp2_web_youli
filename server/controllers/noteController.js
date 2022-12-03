@@ -26,16 +26,23 @@ const noteController = () => {
         res.status(200);
         res.send("Update note successfully");
     }
+    noteController.updateEdit = (req, res) => {
+        NoteModel().updateEditNote(req.body);
+        res.status(200);
+        res.send("Edited note successfully")
+    }
     noteController.updatePriority = (req, res) => {
         const list = req.body;
         list.forEach((item, index) => {
             NoteModel().updatePriority(index, item);
         });
         res.status(200);
-        res.send("Update note successfully");
+        res.send("Updated note successfully");
     }
-    noteController.delete = (req, res) => {
-        return false;
+    noteController.deleteNote= (req, res) => {
+        NoteModel().deleteNote(req.params.note_id)
+        res.status(200);
+        res.send("Deleted note successfully");
     }
     noteController.uploadFile = (req, res) => {
         const data = req.file;

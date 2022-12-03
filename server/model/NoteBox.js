@@ -81,6 +81,16 @@ const NoteBoxModel = () => {
             }
         )
     }
+    noteBoxModel.deleteNoteBox = (note_box_id) => {
+        let sql = 'delete from note_box where note_box_id=?';
+        db.query(
+            sql,
+            [note_box_id],
+            (err) => {
+                if(err) throw err;
+            }
+        )
+    }
     noteBoxModel.cleanNoteBox = () => {
         let sql = 'delete from note_box where status = 1';
         db.query(

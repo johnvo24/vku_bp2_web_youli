@@ -3,7 +3,7 @@ import noteBoxAPI from "../../../api/noteBoxAPI";
 import { noteLang } from "../../../Constants/languages/NoteLanguages";
 import { getCurrentUser, getLanguage, getObjectLocalStore } from "../../../Middlewares/Middlewares";
 import { NotePageContext } from "../../../Pages/NotePage";
-import BtnDelete from "../../Pieces/Buttons/BtnDelete";
+import BtnCancel from "../../Pieces/Buttons/BtnCancel";
 import BtnSave from "../../Pieces/Buttons/BtnSave";
 
 function DetailNoteBox() {
@@ -56,7 +56,7 @@ function DetailNoteBox() {
         varNotePage.setDetailNoteBox(false);
         varNotePage.reSetNoteBoxList();
     }
-    const handleClickBtnDelete = (e) => {
+    const handleClickBtnCancel = (e) => {
         e.preventDefault();
         if(varNotePage.editNoteBox) {
             varNotePage.setEditNoteBox(false);
@@ -101,8 +101,8 @@ function DetailNoteBox() {
                     <BtnSave
                         handleClickBtnSave={handleClickBtnSave}
                     />
-                    <BtnDelete
-                        handleClickBtnDelete={handleClickBtnDelete}
+                    <BtnCancel
+                        handleClickBtnCancel={handleClickBtnCancel}
                     />
                 </div>
             </div>

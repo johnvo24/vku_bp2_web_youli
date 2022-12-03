@@ -23,6 +23,9 @@ const noteBoxAPI = () => {
     noteBoxAPI.updateEdit = async (data) => {
         return await NOTEBOX.post(`/update_edit`, data);
     }
+    noteBoxAPI.delete = async (note_box_id) => {
+        return await NOTEBOX.delete('/delete/'+ note_box_id);
+    }
     noteBoxAPI.clean = async () => {
         return await NOTEBOX.delete(`/clean`);
     }
