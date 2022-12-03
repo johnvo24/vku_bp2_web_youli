@@ -98,3 +98,5 @@ export const SYSTEM_CATEGORY = [
     'salary',
     'monthly home fee'
 ]
+
+export const defaultAvatar = 'e23fd0380eea0512487d261d83354c68'

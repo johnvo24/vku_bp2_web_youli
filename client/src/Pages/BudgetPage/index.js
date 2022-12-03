@@ -16,13 +16,11 @@ import {hasLoggedIn} from "../../Middlewares/Middlewares";
 function BudgetPage() {
     const [wallet, setWallet] = useState({})
     const data = useContext(MyUserContext)
-    const [mainTheme, setMainTheme] = useState(true)
     const [categoryTheme, setCategoryTheme] = useState(false)
     const [statisticTheme, setStatisticTheme] = useState(false)
     const [addItemTheme, setAddItemTheme] = useState(false)
-    const [listTheme, setListTheme] = useState(false)
+    const [listTheme, setListTheme] = useState(true)
     const [loading, setLoading] = useState(false)
-    const [statusColor, setStatusColor] = useState('')
     const [cost, setCost] = useState()
 
     useEffect(() => {
@@ -57,54 +55,53 @@ function BudgetPage() {
                                 <h1 className={styles.title}>{CONTENT.totalCost[data[1]]}</h1>
                                 <h1 className={styles.wallet} style={{color: 'red'}}><i className={`fa - solid fa-money-bill-transfer ${styles.icon}`}></i>{cost}</h1>
                             </div>
+                            <div className={styles.addItem} onClick={() => {
+                                setAddItemTheme(true)
+                                setListTheme(false)
+                                setCategoryTheme(false)
+                                setStatisticTheme(false)
+                            }}>
+                                <i className={`fa-solid fa-cart-plus ${styles.icon}`}></i>{CONTENT.addExpenditure[data[1]]}
+                            </div>
+                            <div className={styles.yourCate} onClick={() => {
+                                setAddItemTheme(false)
+                                setListTheme(false)
+                                setCategoryTheme(true)
+                                setStatisticTheme(false)
+                            }}>
+                                <i className={`fa-solid fa-cube ${styles.icon}`}></i>{CONTENT.yourCate[data[1]]}
+                            </div>
+                            <div className={styles.statistic} onClick={() => {
+                                setAddItemTheme(false)
+                                setListTheme(false)
+                                setCategoryTheme(false)
+                                setStatisticTheme(true)
+                            }}>
+                                <i className={`fa-solid fa-chart-pie ${styles.icon}`}></i>{CONTENT.statistic[data[1]]}
+                            </div>
+
+                            <div className={styles.list} onClick={() => {
+                                setListTheme(true)
+                                setAddItemTheme(false)
+                                setCategoryTheme(false)
+                                setStatisticTheme(false)
+                            }}>
+                                <i className={`fa-solid fa-clipboard-list ${styles.icon}`}></i>{CONTENT.expenditureHistory[data[1]]}
+                            </div>
                         </div>
                         <div className={styles.rightSide}>
-                            {mainTheme && (
-                                <>
-                                    <div className={styles.circleBar}>
-                                        <div className={styles.lineUp}/>
-                                        <div className={styles.lineDown}/>
-                                        <div className={styles.yourCate} onClick={() => {
-                                            setCategoryTheme(true)
-                                            setMainTheme(false)
-                                        }}>
-                                            <i className="fa-solid fa-cube" style={{fontSize: '4.5em'}}></i>
-                                        </div>
-                                        <div className={styles.statistic} onClick={() => {
-                                            setStatisticTheme(true)
-                                            setMainTheme(false)
-                                        }}>
-                                            <i className="fa-solid fa-chart-pie" style={{fontSize: '4.5em'}}></i>
-                                        </div>
-                                        <div className={styles.addItem} onClick={() => {
-                                            setAddItemTheme(true)
-                                            setMainTheme(false)
-                                        }}>
-                                            <i className="fa-solid fa-cart-plus" style={{fontSize: '4.5em'}}></i>
-                                        </div>
-                                        <div className={styles.list} onClick={() => {
-                                            setListTheme(true)
-                                            setMainTheme(false)
-                                        }}>
-                                            <i className="fa-solid fa-clipboard-list" style={{fontSize: '4.5em'}}></i>
-                                        </div>
-                                        <div className={styles.dot}/>
-                                    </div>
-                                </>
-                            )}
-
                             {categoryTheme && (
-                                <Wallet wallet={wallet} mainTheme={setMainTheme} walletTheme={setCategoryTheme}/>
+                                <Wallet wallet={wallet} walletTheme={setCategoryTheme}/>
                             )}
                             {addItemTheme && (
-                                <AddItem itemTheme={setAddItemTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>
+                                <AddItem itemTheme={setAddItemTheme} id={wallet.wallet_id}/>
                             )}
                             {statisticTheme && (
-                                <Statistic statisticTheme={setStatisticTheme} mainTheme={setMainTheme}
+                                <Statistic statisticTheme={setStatisticTheme}
                                            id={wallet.wallet_id}/>
                             )}
                             {listTheme && (
-                                <List resetTheme={setListTheme} mainTheme={setMainTheme} id={wallet.wallet_id}/>
+                                <List resetTheme={setListTheme} id={wallet.wallet_id}/>
                             )}
                         </div>
                     </>

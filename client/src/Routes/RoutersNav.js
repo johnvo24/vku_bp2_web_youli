@@ -11,6 +11,7 @@ import {useState} from "react";
 import * as IMAGE from "../Constants/IMAGE";
 import SignIn from "../Components/Authorization/SignIn";
 import SignUp from "../Components/Authorization/SignUp";
+import Profile from "../Pages/Profile";
 
 function RoutersNav() {
 
@@ -24,6 +25,7 @@ function RoutersNav() {
             <Route path="/budget" element={<BudgetPage/>}></Route>
             <Route path='/sign-in' element={<SignIn/>}></Route>
             <Route path='/sign-up' element={<SignUp/>}></Route>
+            <Route path='/profile' element={<Profile/>}></Route>
             <Route path="/*" element={<NoPage/>}></Route>
         </Routes>
     )

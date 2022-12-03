@@ -55,6 +55,7 @@ export default function Item(props) {
                 onAccept={refund}
             />
             <Header context='Details'
+                    useBack={true}
                     onClick={() => {
                         props.theme(false)
                     }}

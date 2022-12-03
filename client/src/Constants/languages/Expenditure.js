@@ -6,8 +6,8 @@ export const yourWallet = [
 ]
 
 export const yourCate = [
-    'Category Manager:',
-    'Quản Lý Phân Loại:'
+    'Category Manager',
+    'Quản Lý Phân Loại'
 ]
 
 export const totalCost = [
@@ -88,9 +88,19 @@ export const createBill = [
     'Tạo Hóa Đơn'
 ]
 
+export const addExpenditure = [
+    'Add Expenditure',
+    'Thêm Chi Tiêu'
+]
+
 export const statistic = [
     'Statistic',
     'Thống Kê'
+]
+
+export const expenditureHistory = [
+    'Expenditure History',
+    'Lịch Sử Chi Tiêu'
 ]
 
 

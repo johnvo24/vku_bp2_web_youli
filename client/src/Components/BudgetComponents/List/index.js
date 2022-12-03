@@ -85,11 +85,7 @@ export default function List(props) {
 
                         {!itemTheme && !catTheme && (
                             <>
-                                <Header context='Budget'
-                                        onClick={() => {
-                                            props.mainTheme(true)
-                                            props.resetTheme(false)
-                                        }}/>
+                                <Header context={CONTENT.expenditureHistory[context[1]]}/>
                                 <div className={styles.overflow}>
                                     {data.length !== 0 && data.map((items, idx) => (
                                         <>

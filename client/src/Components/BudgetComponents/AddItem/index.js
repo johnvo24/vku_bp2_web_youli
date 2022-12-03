@@ -83,22 +83,30 @@ export default function AddItem(props) {
                     <label className={styles.label} htmlFor='time'>{CONTENT.purchaseTime[data[1]]}</label>
                     <input type='datetime-local' id='time' className={styles.input}/>
                     <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
-                    <select id='classify' className={styles.input}>
-                        {loading && (
-                            <>
-                                {categories.map((items, id) => (
-                                        <option key={id} style={{
-                                            color: items.type === 'cost' ? 'red' : 'green'
-                                        }}
-                                                value={items.category_id}
-                                        >
-                                            {items.category_name}
-                                        </option>
-                                    )
-                                )}
-                            </>
-                        )}
-                    </select>
+                    <div className={styles.selectCtn}>
+                        <select id='classify' className={styles.input}
+                                onFocus={(e) => e.target.size = 5}
+                                onBlur={e => e.target.size = 1}
+                                onChange={e => {
+                                    e.target.blur()
+                                }}>
+                            {loading && (
+                                <>
+                                    {categories.map((items, id) => (
+                                            <option key={id} style={{
+                                                color: items.type === 'cost' ? 'red' : 'green',
+                                            }}
+                                                    value={items.category_id}
+                                            >
+                                                {items.category_name}
+                                            </option>
+                                        )
+                                    )}
+
+                                </>
+                            )}
+                        </select>
+                    </div>
                 </div>
             </div>
         </>

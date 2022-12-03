@@ -47,6 +47,11 @@
     outline: none;
     background-color: transparent;
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 3px white;
+    padding: 2px 5px;
 }
 
 .user {
@@ -70,7 +75,15 @@
     /*justify-content: space-between;*/
     gap: 10px;
     outline: none;
-    border: none;
     background-color: #CBCBCB;
     color: black;
+    border: 1px none;
+    border-bottom-style: solid;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    margin-right: 5px;
 }
