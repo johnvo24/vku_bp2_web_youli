@@ -46,7 +46,6 @@
     margin-left: auto;
     margin-right: auto;
 }
-
 .description span {
     display: block;
     font-size: var(--fontSizeTextMini);
@@ -60,7 +59,28 @@
     padding: 10px 15px;
     border: dashed 1px rgb(170, 170, 170);
 }
-
+.detail > .link {
+    margin-top: 20px;
+}
+.link span, .link a {
+    display: block;
+    font-size: var(--fontSizeTextMini);
+}
+.link span:nth-child(1) {
+    padding: 10px 0;
+    font-weight: bolder;
+}
+.link a {
+    color: rgb(0, 198, 7);
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: dashed 1px rgb(170, 170, 170);
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+.link a:hover {
+    text-decoration: underline;
+}
 .time {
     display:  block;
     margin-top: 10px;

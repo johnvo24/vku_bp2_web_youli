@@ -52,6 +52,33 @@ const NoteModel = () => {
             }
         )
     }
+    noteModel.updateEditNote = (data) => {
+        let sql = 'update note set note_title=?, note_img=?, note_description=?, note_link=? where note_id=?';
+
+        db.query(
+            sql,
+            [
+                data.note_title,
+                data.note_img,
+                data.note_description,
+                data.note_link,
+                data.note_id
+            ],
+            (err, result) => {
+                if (err) throw err;
+            }
+        )
+    }
+    noteModel.deleteNote = (note_id) => {
+        let sql = 'delete from note where note_id=?';
+        db.query(
+            sql,
+            [note_id],
+            (err) => {
+                if(err) throw err;
+            }
+        )
+    }
     noteModel.updatePriority = (priority, note_id) => {
         let sql = 'update note set priority=? where note_id=?';
         db.query(

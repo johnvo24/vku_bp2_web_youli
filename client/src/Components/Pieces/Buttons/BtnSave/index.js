@@ -1,5 +1,6 @@
 import styles from './BtnSave.module.css'
 import { listOfNavBar } from '../../../../Constants/GlobalVariables';
+import { getLanguage } from '../../../../Middlewares/Middlewares';
 
 function BtnSave({ handleClickBtnSave })  {
     return (
@@ -8,7 +9,7 @@ function BtnSave({ handleClickBtnSave })  {
             className={styles.btnSave}
         >
             <li>
-                <i className={listOfNavBar.save.icon}></i>
+                <span>{ listOfNavBar.save.lang[getLanguage('YoleUser')] }</span>
             </li>
         </a>
     )

@@ -54,9 +54,16 @@ export const listOfNavBar = {
     save: {
         lang: [
             'save',
-            'Lưu'
+            'Lưu lại'
         ],
         icon: 'fa-solid fa-floppy-disk'
+    },
+    cancle: {
+        lang: [
+            'Cancel',
+            'Hủy bỏ'
+        ],
+        icon: ''
     },
     delete: {
         lang: [

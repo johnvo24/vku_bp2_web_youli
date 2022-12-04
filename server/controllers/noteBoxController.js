@@ -27,13 +27,15 @@ const noteBoxController = () => {
         res.send("Updated notebox successfully")
     }
     noteBoxController.delete = (req, res) => {
-        return false;
+        NoteBox().deleteNoteBox(req.params.note_box_id);
+        res.status(200);
+        res.send("Deleted notebox successfully")
     }
     noteBoxController.clean = (req, res) => {
         NoteBox().cleanNoteBox();
         res.status(200);
         res.send("Cleaned notebox successfully")
-    } 
+    }
     
     return noteBoxController;
 }

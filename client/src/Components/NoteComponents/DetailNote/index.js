@@ -1,22 +1,40 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import noteAPI from "../../../api/noteAPI";
 import { listOfNavBar } from "../../../Constants/GlobalVariables";
 import { noteLang } from "../../../Constants/languages/NoteLanguages";
-import { getCurrentUser, getLanguage } from "../../../Middlewares/Middlewares";
+import { getLanguage } from "../../../Middlewares/Middlewares";
 import { NotePageContext } from "../../../Pages/NotePage";
+import BtnCancel from "../../Pieces/Buttons/BtnCancel";
 import BtnChooseFile from "../../Pieces/Buttons/BtnChooseFile";
-import BtnDelete from "../../Pieces/Buttons/BtnDelete";
 import BtnSave from "../../Pieces/Buttons/BtnSave";
 
 
 function DetailNote() {
     const varNotePage = useContext(NotePageContext);
     let lang = getLanguage('YoleUser')
-    const [title, setTitle] = useState("");
+    const [fileChanged, setFileChaged] = useState(false);
+
+    const [title, setTitle] = useState(
+        varNotePage.editNote
+            ? varNotePage.currentNote.note_title
+            : ""
+    );
     const [file, setFile] = useState({});
-    const [imgPath, setImgPath] = useState("");
-    const [description, setDescription] = useState("");
-    const [link, setLink] = useState("");
+    const [imgPath, setImgPath] = useState(
+        varNotePage.editNote
+            ? (varNotePage.currentNote.note_img)
+            : ""
+    );
+    const [description, setDescription] = useState(
+        varNotePage.editNote
+            ? varNotePage.currentNote.note_description
+            : ""
+    );
+    const [link, setLink] = useState(
+        varNotePage.editNote
+            ? varNotePage.currentNote.note_link
+            : ""
+    );
     const newNote = {};
 
     const handleClickBtnChooseFile = (e) => {
@@ -24,28 +42,47 @@ function DetailNote() {
         document.getElementById("img_to_upload").click();
     }
 
-    useEffect(() => {
-        newNote.note_box_id = varNotePage.currentNoteBox.note_box_id;
-        newNote.note_title = title;
-        newNote.note_description = description;
-        newNote.note_link = link;
-    }, [title, file, description, link])
-
     const handleClickBtnSave = async (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('upload_file', file);
+        newNote.note_box_id = varNotePage.editNote
+            ? varNotePage.currentNote.note_box_id
+            : varNotePage.currentNoteBox.note_box_id
+        newNote.note_title = title;
+        newNote.note_img = imgPath;
+        newNote.note_description = description;
+        newNote.note_link = link;
 
-        await noteAPI().uploadFile(formData)
-            .then((res) => newNote.note_img = res.data);
-        noteAPI().create(newNote);
+        (varNotePage.editNote) && (newNote.note_id = varNotePage.currentNote.note_id);
+
+        if (file.name) {
+            const formData = new FormData();
+            formData.append('upload_file', file);
+
+            await noteAPI().uploadFile(formData)
+                .then((res) => newNote.note_img = res.data);
+        } else {
+            (!varNotePage.editNote) &&  (newNote.note_img = "");
+        }
+
+        if (varNotePage.editNote) {
+            noteAPI().update(newNote);
+        } else {
+            noteAPI().create(newNote);
+        }
 
         varNotePage.setDetailNote(false);
+        varNotePage.setCurrentNote(null);
+        varNotePage.setCurrentNoteBox(null);
         varNotePage.reSetNoteBoxList();
     }
-    const handleClickBtnDelete = (e) => {
+    const handleClickBtnCancel = (e) => {
         e.preventDefault();
         varNotePage.setDetailNote(false);
+        if (varNotePage.editNote) {
+            varNotePage.setEditNote(false);
+        }
+        varNotePage.setCurrentNote(null);
+        varNotePage.setCurrentNoteBox(null);
     }
 
     return (
@@ -75,6 +112,7 @@ function DetailNote() {
                     id="img_to_upload"
                     name="note_img"
                     onChange={(e) => {
+                        setFileChaged(true);
                         setFile(e.target.files[0]);
                         setImgPath(URL.createObjectURL(e.target.files[0]))
                     }}
@@ -88,7 +126,11 @@ function DetailNote() {
                     </div>
 
                     <div className="g_img_container">
-                        {imgPath && (<img className="g_img" src={imgPath} alt="" />)}
+                        {imgPath && (<img 
+                            className="g_img" 
+                            src={(fileChanged) ? imgPath : ("/resources/uploads/"+ imgPath)} 
+                            alt=""
+                        />)}
                     </div>
                 </div>
             </div>
@@ -120,8 +162,8 @@ function DetailNote() {
                 <BtnSave
                     handleClickBtnSave={handleClickBtnSave}
                 />
-                <BtnDelete
-                    handleClickBtnDelete={handleClickBtnDelete}
+                <BtnCancel
+                    handleClickBtnCancel={handleClickBtnCancel}
                 />
             </div>
         </div>

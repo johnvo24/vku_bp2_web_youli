@@ -4,13 +4,13 @@ import noteBoxAPI from '../../../api/noteBoxAPI';
 import { noteLang } from '../../../Constants/languages/NoteLanguages';
 import { getLanguage, timeConverter } from '../../../Middlewares/Middlewares';
 import { NotePageContext } from '../../../Pages/NotePage';
+import BtnDeleteChild from '../../Pieces/Buttons/BtnDeleteChild';
 import BtnEditChild from '../../Pieces/Buttons/BtnEditChild';
 import Note from '../Note';
 import { action } from './action';
 import styles from './NoteBox.module.css';
 
-function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
-    const [reRender, setReRender] = useState(false);
+function NoteBox({ noteBoxData }) {
     const varNotePage = useContext(NotePageContext);
     const [noteList, setNoteList] = useState([]);
 
@@ -19,11 +19,8 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
             .then((res) => {
                 setNoteList(res.data)
             }).catch((err) => console.log(err))
-    }, [noteBoxData.note_box_id, reRender]);
+    }, [noteBoxData]);
 
-    const handleReRenderNoteBox = () => {
-        setReRender(!reRender)
-    }
     const handleClickTitle = () => {
         const e = document.getElementById(`note_box_${noteBoxData.note_box_id}`)
             .children[1].children[1].style;
@@ -49,7 +46,6 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
         }
         noteBoxAPI().update(data);
         varNotePage.reSetNoteBoxList();
-        handleReRenderNoteBoxList();
     }
     const handleClickStatus = () => {
         const stt = (!noteBoxData.status) ? 1 : 0;
@@ -65,7 +61,6 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
         }
         noteBoxAPI().update(data);
         varNotePage.reSetNoteBoxList();
-        handleReRenderNoteBoxList();
     }
     const handleClickBtnEditChild = (e) => {
         e.preventDefault();
@@ -77,10 +72,16 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
         varNotePage.setEditNoteBox(!varNotePage.editNoteBox);
         varNotePage.setDetailNoteBox(!varNotePage.detaiNoteBox);
     }
+    const handleClickBtnDeleteChild = (e) => {
+        e.preventDefault();
+        varNotePage.setCurrentNoteBox(noteBoxData);
+        varNotePage.setDeleteFunction("delete-note-box");
+        varNotePage.setConfirmDialog(true);
+    }
     const handleClickBtnAddNote = (e) => {
         varNotePage.setDetailNote(!varNotePage.detailNote);
         varNotePage.setCurrentNoteBox(noteBoxData);
-    } 
+    }
 
     // Phần code xử lý drag, swap and drop
     let CurrentEle;
@@ -174,9 +175,17 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
                 </div>
                 {
                     (varNotePage.editMode)
-                        ? (<BtnEditChild
-                            handleClickBtnEditChild={handleClickBtnEditChild}
-                        />)
+                        ? (
+                            <div className='g_d_flex'>
+                                <BtnEditChild
+                                    handleClickBtnEditChild={handleClickBtnEditChild}
+                                />
+                                <span className='g_m_l1'></span>
+                                <BtnDeleteChild
+                                    handleClickBtnDeleteChild={handleClickBtnDeleteChild}
+                                />
+                            </div>
+                        )
                         : (<div className={`g_status ${(noteBoxData.status === 1) && "g_boxsuccess"}`}>
                             <i
                                 className="fa-solid fa-check"
@@ -191,14 +200,12 @@ function NoteBox({ noteBoxData, handleReRenderNoteBoxList }) {
                         <Note
                             key={note.note_id}
                             noteData={note}
-                            handleReRenderNoteBoxList={handleReRenderNoteBoxList}
-                            handleReRenderNoteBox={handleReRenderNoteBox}
                             handleMouseDown={handleMouseDown}
                         />
                     ))}
                     {(varNotePage.editMode) && (
                         <div className="g_item">
-                            <div 
+                            <div
                                 className={`${styles.btnAddNote}`}
                                 onClick={handleClickBtnAddNote}
                             >
