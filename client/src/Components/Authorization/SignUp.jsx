@@ -40,33 +40,36 @@ export default function SignUp() {
             >
                 {msg}
             </SnackBar>
-            <div className={styles.body}>
-                <div className={styles.container} style={{
-                    height: '400px'
-                }}>
-                    <p className={styles.header}>Sign Up</p>
-                    <div className={styles.fill}>
-                        <div className={styles.input}>
-                            <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
-                            <input type='text' placeholder='Enter Your Display Name' id='name'/>
+            <div className={styles.bodyContainer}>
+                <div className={styles.body}>
+                    <div className={styles.container} style={{
+                        height: '430px'
+                    }}>
+                        <div className={"g_header"}>Sign Up</div>
+                        <div className={styles.fill}>
+                            <div className={styles.input}>
+                                <i className={`fa-solid fa-signature ${styles.formIcon}`}></i>
+                                <input type='text' placeholder='Enter Your Display Name' id='name'/>
+                            </div>
+                            <div className={styles.input}>
+                                <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
+                                <input type='text' placeholder='Enter Your Username' id='username'/>
+                            </div>
+                            <div className={styles.input}>
+                                <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
+                                <input type='password' placeholder='Enter Your Password' id='password'/>
+                            </div>
                         </div>
-                        <div className={styles.input}>
-                            <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
-                            <input type='text' placeholder='Enter Your Username' id='username'/>
+                        <div className={styles.btnGroup}>
+                            <button type='button' className={styles.signup}
+                                    onClick={() => window.location.href = '/sign-in'}>Already have account ?
+                            </button>
+                            <button type='button' className={styles.submit} onClick={handleSubmit}>Sign Up</button>
                         </div>
-                        <div className={styles.input}>
-                            <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
-                            <input type='password' placeholder='Enter Your Password' id='password'/>
-                        </div>
-                    </div>
-                    <div className={styles.btnGroup}>
-                        <button type='button' className={styles.signup}
-                                onClick={() => window.location.href = '/sign-in'}>Already have account ?
-                        </button>
-                        <button type='button' className={styles.submit} onClick={handleSubmit}>Sign Up</button>
                     </div>
                 </div>
             </div>
+
         </>
     )
 

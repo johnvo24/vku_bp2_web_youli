@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="" />
+    <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -144,6 +151,9 @@
       <workItem from="1669951346513" duration="4995000" />
       <workItem from="1669959483304" duration="9087000" />
       <workItem from="1669974662336" duration="17580000" />
+      <workItem from="1670122770911" duration="5457000" />
+      <workItem from="1670140927226" duration="625000" />
+      <workItem from="1670155237716" duration="821000" />
     </task>
     <servers />
   </component>
