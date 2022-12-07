@@ -44,24 +44,26 @@ export default function SignIn() {
             >
                 {msg}
             </SnackBar>
-            <div className={styles.body}>
-                <div className={styles.container}>
-                    <p className={styles.header}>Sign In</p>
-                    <div className={styles.fill}>
-                        <div className={styles.input}>
-                            <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
-                            <input type='text' placeholder='Enter Your Username' id='username' defaultValue=''/>
+            <div className={styles.bodyContainer}>
+                <div className={styles.body}>
+                    <div className={styles.container}>
+                        <div className={"g_header"}>Sign In</div>
+                        <div className={styles.fill}>
+                            <div className={styles.input}>
+                                <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
+                                <input type='text' placeholder='Enter Your Username' id='username' defaultValue=''/>
+                            </div>
+                            <div className={styles.input}>
+                                <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
+                                <input type='password' placeholder='Enter Your Password' id='password' defaultValue=''/>
+                            </div>
                         </div>
-                        <div className={styles.input}>
-                            <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
-                            <input type='password' placeholder='Enter Your Password' id='password' defaultValue=''/>
+                        <div className={styles.btnGroup}>
+                            <button type='button' className={styles.signup}
+                                    onClick={() => window.location.href = '/sign-up'}>Don't have account ?
+                            </button>
+                            <button type='button' className={styles.submit} onClick={handleSubmit}>Sign In</button>
                         </div>
-                    </div>
-                    <div className={styles.btnGroup}>
-                        <button type='button' className={styles.signup}
-                                onClick={() => window.location.href = '/sign-up'}>Don't have account ?
-                        </button>
-                        <button type='button' className={styles.submit} onClick={handleSubmit}>Sign In</button>
                     </div>
                 </div>
             </div>

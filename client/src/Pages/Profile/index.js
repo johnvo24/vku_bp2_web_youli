@@ -1,9 +1,8 @@
-import React, {useContext, useState} from "react"
+import React, {useContext, useLayoutEffect, useState} from "react"
 
 import styles from './Profile.module.css'
 import * as CONTENT from '../../Constants/languages/Profile'
 import {MyUserContext} from "../../App";
-import {useEffect} from "react";
 import {hasLoggedIn} from "../../Middlewares/Middlewares";
 import SnackBar from "../../Components/SnackBar";
 import BtnChooseFile from "../../Components/Pieces/Buttons/BtnChooseFile";
@@ -16,10 +15,9 @@ export default function Profile() {
     const [msg, setMsg] = useState('')
     const [file, setFile] = useState({})
 
-    useEffect(() => {
-        if (!hasLoggedIn())
-            window.location.href = '/sign-in'
-    }, [])
+    if (!hasLoggedIn()) {
+        window.location.href = '/sign-in'
+    }
 
     const onSubmit = () => {
 
