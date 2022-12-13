@@ -3,6 +3,7 @@ import React, {useContext, useEffect, useState} from "react"
 import styles from './ViewCategory.module.css'
 import {deleteCategory, renameCategory, viewCategories} from "../../../api/BudgetPageAPI";
 import * as GCONTENT from '../../../Constants/languages/GlobalWord'
+import * as CONTENT from '../../../Constants/languages/Expenditure'
 import {MyUserContext} from "../../../App";
 import AlertDialog from "../../AlertDialog";
 import SnackBar from "../../SnackBar";
@@ -67,9 +68,9 @@ export default function ViewCategory() {
             <div className={styles.view}>
                 <AlertDialog
                     active={click}
-                    content={`Old name: ${name}`}
+                    content={`${CONTENT.currentCatName[context[1]]}${name}`}
                     edit={true}
-                    placeHolder='Enter new name here'
+                    placeHolder={CONTENT.newCatNam[context[1]]}
                     denyContent='Cancel'
                     acceptContent='Ok'
                     onDeny={() => setClick(false)}

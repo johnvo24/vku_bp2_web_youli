@@ -47,3 +47,11 @@
 .deny:hover, .accept:hover {
     cursor: pointer;
 }
+
+.edit {
+    border: 1px solid #E7E7E7;
+    outline: none;
+    padding: 5px 5px;
+    background-color: #F4F4F4;
+    border-radius: 5px;
+}

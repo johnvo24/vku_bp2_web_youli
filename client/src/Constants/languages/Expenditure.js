@@ -103,5 +103,15 @@ export const expenditureHistory = [
     'Lịch Sử Chi Tiêu'
 ]
 
+export const newCatNam = [
+    'Enter New Name Here!',
+    'Nhập Tên Mới Ở Đây!'
+]
+
+export const currentCatName = [
+    'Current Name: ',
+    'Tên Hiện Tại: '
+]
+
 
 
