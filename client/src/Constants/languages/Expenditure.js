@@ -119,4 +119,17 @@ export const cashFlow = [
     'Dòng Tiền'
 ]
 
+export const billDetails = [
+    'Details',
+    'Chi Tiết'
+]
 
+export const category = [
+    'Category: ',
+    'Phân Loại: '
+]
+
+export const date = [
+    'Date: ',
+    'Ngày Mua: '
+]

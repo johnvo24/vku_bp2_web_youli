@@ -54,7 +54,7 @@ export default function Item(props) {
                 onDeny={noRefund}
                 onAccept={refund}
             />
-            <Header context='Details'
+            <Header context={Content.billDetails[data[1]]}
                     useBack={true}
                     onClick={() => {
                         props.theme(false)
@@ -70,11 +70,11 @@ export default function Item(props) {
 
                 </div>
                 <div className={styles.item}>
-                    <h1 className={styles.title}><i className="fa-solid fa-cubes"></i>Category: </h1>
+                    <h1 className={styles.title}><i className="fa-solid fa-cubes"></i>{Content.category[data[1]]}</h1>
                     <h1 className={styles.title}>{props.data.category_name}</h1>
                 </div>
                 <div className={styles.item}>
-                    <h1 className={styles.title}><i className="fa-regular fa-calendar-days"></i> Date: </h1>
+                    <h1 className={styles.title}><i className="fa-regular fa-calendar-days"></i>{Content.date[data[1]]}</h1>
                     <h1 className={styles.title}>{format(props.data.bill_time)}</h1>
                 </div>
                 <div className={styles.btnGroup}>

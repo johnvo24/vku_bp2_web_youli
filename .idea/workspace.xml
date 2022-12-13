@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Statistic/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Statistic/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/AddItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/AddItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Item/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +157,7 @@
       <workItem from="1670504882170" duration="17000" />
       <workItem from="1670731514640" duration="383000" />
       <workItem from="1670813462199" duration="277000" />
-      <workItem from="1670935758503" duration="7862000" />
+      <workItem from="1670935758503" duration="8467000" />
     </task>
     <servers />
   </component>
