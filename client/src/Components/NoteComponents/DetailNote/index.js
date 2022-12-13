@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import noteAPI from "../../../api/noteAPI";
+import noteBoxAPI from "../../../api/noteBoxAPI";
 import { listOfNavBar } from "../../../Constants/GlobalVariables";
 import { noteLang } from "../../../Constants/languages/NoteLanguages";
-import { getLanguage } from "../../../Middlewares/Middlewares";
+import { getLanguage, timeConverter } from "../../../Middlewares/Middlewares";
 import { NotePageContext } from "../../../Pages/NotePage";
 import BtnCancel from "../../Pieces/Buttons/BtnCancel";
 import BtnChooseFile from "../../Pieces/Buttons/BtnChooseFile";
@@ -51,6 +52,7 @@ function DetailNote() {
         newNote.note_img = imgPath;
         newNote.note_description = description;
         newNote.note_link = link;
+        newNote.create_at = timeConverter(new Date(), 'y-m-dTh:i:s:SZ');
 
         (varNotePage.editNote) && (newNote.note_id = varNotePage.currentNote.note_id);
 
@@ -69,6 +71,12 @@ function DetailNote() {
         } else {
             noteAPI().create(newNote);
         }
+
+        const latest = {
+            updated_at: timeConverter(new Date(), 'y-m-dTh:i:s:SZ'),
+            note_box_id: newNote.note_box_id
+        }
+        noteBoxAPI().updateLatest(latest);
 
         varNotePage.setDetailNote(false);
         varNotePage.setCurrentNote(null);

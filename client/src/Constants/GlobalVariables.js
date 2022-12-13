@@ -1,6 +1,4 @@
 import { getCurrentDevice } from "../Middlewares/Middlewares";
-import {useState} from "react";
-import * as IMAGE from "./IMAGE";
 
 export const currentDevice = {
     name: getCurrentDevice()
@@ -8,24 +6,36 @@ export const currentDevice = {
 
 export const navList = [
     {
-        name: "Ghi chú",
-        alt: "note"
+        lang: [
+            "Home",
+            "Trang chủ"
+        ],
+        alt: "home",
+        icon: "fa-solid fa-house-chimney"
     },
     {
-        name: "Lịch Trình",
-        alt: "schedule"
+        lang: [
+            "Note",
+            "Ghi chú"
+        ],
+        alt: "note",
+        icon: "fa-solid fa-file-pen"
     },
     {
-        name: "Trang chủ",
-        alt: "home"
+        lang: [
+            "Schedule",
+            "Lịch Trình"
+        ], 
+        alt: "schedule",
+        icon: "fa-solid fa-calendar-days"
     },
     {
-        name: "Mục tiêu",
-        alt: "goal"
-    },
-    {
-        name: "Ngân sách",
-        alt: "budget"
+        lang: [
+            "Budget",
+            "Ngân sách"
+        ],
+        alt: "budget",
+        icon: "fa-solid fa-wallet"
     }
 ]
 
@@ -101,9 +111,9 @@ export const listOfNavBar = {
 }
 
 export const SYSTEM_CATEGORY = [
-    'market',
-    'salary',
-    'monthly home fee'
+    'Market',
+    'Salary',
+    'Home fee'
 ]
 
 export const defaultAvatar = 'e23fd0380eea0512487d261d83354c68'

@@ -23,15 +23,15 @@ export function timeConverter(time, string) {
     let t = new Date(time);
     let stringconerted = "";
     let DAY = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-    let MONTH = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    let MONTH = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12'];
     const timeObj = {
-        d: t.getDate(),
+        d: (t.getDate() < 10) ? `0${t.getDate()}` : t.getDate(),
         D: DAY[t.getDay()],
         m: MONTH[t.getMonth()],
         y: t.getFullYear(),
-        h: t.getHours(),
-        i: t.getMinutes(),
-        s: t.getSeconds(),
+        h: (t.getHours() < 10) ? `0${t.getHours()}` : t.getHours(),
+        i: (t.getMinutes() < 10) ? `0${t.getMinutes()}` : t.getMinutes(),
+        s: (t.getSeconds() < 10) ? `0${t.getSeconds()}` : t.getSeconds(),
         S: t.getMilliseconds(),
     }
     for (let i = 0; i < string.length; i++) {

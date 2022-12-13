@@ -1,8 +1,8 @@
 .mainContainer {
     width: 100%;
-    min-height: 250px;
+    height: 100%;
     padding: 5px 5px 5px 47px;
-    background-color: white;
+    background-color: var(--themeBackgroundColorChild);
     border-radius: 5px;
     border: solid 1px var(--themeBorderColor);
 }

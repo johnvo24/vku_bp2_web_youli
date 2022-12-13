@@ -22,7 +22,7 @@ const noteAPI = () => {
         return NOTE.post('/upload-file', data, {headers: {"Content-Type":"multipart/form-data"}});
     }
     noteAPI.delete = ( note_id ) => {
-        return NOTE.delete('/delete/'+ note_id)
+        return NOTE.delete('/delete/'+ note_id);
     }
 
     return noteAPI;

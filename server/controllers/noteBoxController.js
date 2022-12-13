@@ -11,7 +11,12 @@ const noteBoxController = () => {
     }
     noteBoxController.create = (req, res) => {
         const data = req.body;
-        const newNoteBox = [data.user_id, data.note_box_title, data.note_box_description];
+        const newNoteBox = [data.user_id, 
+                            data.note_box_title, 
+                            data.note_box_description, 
+                            data.created_at, 
+                            data.updated_at
+        ];
         NoteBox().creatNoteBox(newNoteBox);
         res.status(200);
         res.send("Created notebox successfully")
@@ -25,6 +30,11 @@ const noteBoxController = () => {
         NoteBox().updateEditNoteBox(req.body);
         res.status(200);
         res.send("Updated notebox successfully")
+    }
+    noteBoxController.updateLatest = (req, res) => {
+        NoteBox().updateLatest(req.body);
+        res.status(200);
+        res.send("Updated notebox successfully");
     }
     noteBoxController.delete = (req, res) => {
         NoteBox().deleteNoteBox(req.params.note_box_id);

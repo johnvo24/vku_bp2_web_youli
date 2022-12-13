@@ -38,7 +38,7 @@ const NoteBoxModel = () => {
         return noteBox;
     }
     noteBoxModel.creatNoteBox = (newnoteBox) => {
-        let sql = 'insert into note_box (user_id, note_box_title, note_box_description) values ?';
+        let sql = 'insert into note_box (user_id, note_box_title, note_box_description, created_at, updated_at) values ?';
         db.query(
             sql,
             [[newnoteBox]],
@@ -73,6 +73,20 @@ const NoteBoxModel = () => {
             [
                 data.note_box_title,
                 data.note_box_description,
+                data.updated_at,
+                data.note_box_id
+            ],
+            (err, result) => {
+                if (err) throw err;
+            }
+        )
+    }
+    noteBoxModel.updateLatest = (data) => {
+        let sql = 'update note_box set updated_at=? where note_box_id=?';
+
+        db.query(
+            sql,
+            [
                 data.updated_at,
                 data.note_box_id
             ],

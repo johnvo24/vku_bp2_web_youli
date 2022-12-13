@@ -23,7 +23,7 @@ const NoteModel = () => {
         return noteList;
     }
     noteModel.creatNote = (newNote) => {
-        let sql = 'insert into note (note_box_id, note_title, note_img, note_description, note_link) values ?';
+        let sql = 'insert into note (note_box_id, note_title, note_img, note_description, note_link, created_at) values ?';
         db.query(
             sql,
             [[newNote]],
@@ -33,7 +33,7 @@ const NoteModel = () => {
         )
     }
     noteModel.updateNote = (data) => {
-        let sql = 'update note set note_box_id=?, note_title=?, note_img=?, note_description=?, note_link=?, created_at=?, status=?, priority=? where note_id=?';
+        let sql = 'update note set note_box_id=?, note_title=?, note_img=?, note_description=?, note_link=?, status=?, priority=? where note_id=?';
         db.query(
             sql,
             [
@@ -42,7 +42,6 @@ const NoteModel = () => {
                 data.note_img,
                 data.note_description,
                 data.note_link,
-                data.created_at,
                 data.status,
                 data.priority,
                 data.note_id

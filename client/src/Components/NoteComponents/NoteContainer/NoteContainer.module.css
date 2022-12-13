@@ -5,7 +5,20 @@
     width: 100%;
     height: 100%;
     padding: 10px;
-    border: solid 1px var(--themeBorderColorChild);   
+    border: solid 1px var(--themeBorderColorChild);
+    overflow-y: scroll; 
     border-radius: 5px;
     box-shadow: var(--boxShadow1);
+    background-color: white;
 }
+
+.noteContainer::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  
+.noteContainer::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }

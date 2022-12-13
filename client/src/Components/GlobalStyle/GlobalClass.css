@@ -1,5 +1,5 @@
 :root {
-    --headerColor1: #22e000;
+    --g_green: #00b359;
 }
 .g_d_none {
     display: none;
@@ -16,7 +16,7 @@
     padding: 10px;
     font-weight: 500;
     color: white;
-    background-color: var(--headerColor1);
+    background-color: var(--g_green);
     border-bottom: solid 1px var(--themeBorderColorChild);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -97,20 +97,18 @@
     text-shadow: 0 0 2px black;
 }
 .g_boxpriority_3 {
-    color: rgb(100, 100, 100);
-    text-shadow: 0 0 3px white ;
+    color: rgb(188, 188, 188);
+    text-shadow: 0 0 3px rgb(0, 0, 0);
 }
 .g_boxpriority_3 + span {
-    color: rgba(120, 120, 120);
-    text-shadow: none;
-    text-decoration: line-through;
+    color: rgb(188, 188, 188);
 }
 
 .g_boxsuccess {
     color:  #ffee00;
 }
 .g_success {
-    color: var(--headerColor1);
+    color: var(--g_green);
 }
 
 .g_status_0 {

@@ -1,82 +1,48 @@
 .nav {
-    width: 100%;
-    height: 50px;
-    margin: 2px 0 5px 0;
-    margin-top: 49px;
-}
-
-.nav ul {
-    width: 80%;
+    margin-left: 20px;
     height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 50px;
+    width: fit-content;
+}
+.nav > ul {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: var(--themeColor);
-    border: solid 1px var(--themeBorderColor);
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
-.nav ul a {
-    height: 30px;
-    width: 160px;
-    border-radius: 10px;
-    line-height: 30px;
-    text-transform: uppercase;
-    border: solid 1px rgb(123, 123, 123);
-}
-
-.nav ul a li {
-    width: 100%;
     height: 100%;
-    text-align: center;
-    color: rgb(0, 0, 0);
-    border-radius: 10px;
-    box-shadow: 0 0 3px black inset;
-    font-size: 13px;
-    font-weight: 700;
+}
+.nav ul a {
+    user-select: none;
+    display: flex;
+    height: 30px;
+    padding:  3px 5px;
+    margin: 0 5px;
+    align-items: flex-end;
+    font-size: var(--fontSizeText);
+    font-weight: 500;
     color: white;
-    text-shadow: 0 0 2px black;
+    text-shadow: 0 0 2px rgb(0, 0, 0);
+    border-bottom: solid 2px var(--themeColor);
 }
-
-.nav ul .sidePage {
-    background-color: #22e000;
+.nav ul a li i {
+    margin-right: 5px;
 }
-
-.nav ul .currentPage {
-    height: 36px;
-    width: 240px;
-    border-radius: 10px;
-    line-height: 36px;
-    background-color: #eaac00;
+.nav ul .curNav {
+    border-bottom: solid 2px var(--g_green);
+    text-shadow: unset;
+    padding-bottom: 5px;
+    transition: 150ms;
 }
-.nav ul .currentPage > li {
-    font-size: 17px;
+.nav ul .curNav li i {
+    transform: scale(1.2);
+    color: var(--g_green);
 }
-.nav ul a:first-child {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 30px;
-}
-.nav ul a:last-child {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 30px;
-}
-.nav ul a:first-child > li {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 30px;
-}
-.nav ul a:last-child > li {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 30px;
-}
-
 .nav ul a:hover {
-    box-shadow: 0 0 6px white;
+    border-bottom: solid 2px var(--g_green);
+    text-shadow: unset;
+    padding-bottom: 5px;
+    transition: 150ms;
 }
-.nav ul a:active {
-    box-shadow: 0 0 6px white;
-    transform: scale(1.01);
+.nav ul a:hover li i {
+    transform: scale(1.2);
+}
+.nav ul a:active li i {
+    transform: scale(0.95);
 }

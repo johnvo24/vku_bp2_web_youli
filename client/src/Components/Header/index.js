@@ -1,19 +1,23 @@
 import styles from './Header.module.css'
 import SlideToggle from "react-slide-toggle";
-import {useEffect} from "react";
-import {hasLoggedIn} from "../../Middlewares/Middlewares";
+import { useEffect } from "react";
+import { hasLoggedIn } from "../../Middlewares/Middlewares";
 
-function Header() {
+function Header({ children }) {
 
     const user = JSON.parse(localStorage.getItem('YoleUser'))
 
 
     return (
         <div className={styles.header}>
-            <div
-                className={styles.logoPage}
-            >
-                Logo
+            <div className={styles.navGroup}>
+                <div
+                    className={styles.logoPage}
+                >
+                    <div><img src="./resources/images/YoleLogo.png" /></div>
+                </div>
+
+                {children}
             </div>
             <div className={styles.btnGroup}>
                 {!user && (
@@ -29,10 +33,10 @@ function Header() {
                 {user && (
                     <SlideToggle
                         collapsed={true}
-                        render={({toggle, setCollapsibleElement}) => (
+                        render={({ toggle, setCollapsibleElement }) => (
                             <div className={styles.user}>
                                 <button className={styles.userBtn} onClick={toggle}>
-                                    <img src={`./resources/uploads/${user.user_avatar}`} alt='avatar' className={styles.avatar}/>
+                                    <img src={`./resources/uploads/${user.user_avatar}`} alt='avatar' className={styles.avatar} />
                                     {user.display_name}
                                 </button>
                                 <div className={styles.btngroup} ref={setCollapsibleElement}>
@@ -40,7 +44,7 @@ function Header() {
                                         type='button'
                                         className={styles.btn}
                                         onClick={() => {
-                                            window.location.href='/profile'
+                                            window.location.href = '/profile'
                                         }}
                                     >
                                         <i className="fa-solid fa-address-card" />Profile

@@ -18,7 +18,12 @@
     position: relative;
 }
 .placeHolder {
-    border: solid 1px red;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--themeBackgroundColorChild);
+    border-radius: 2px;
+    margin-top: 3px;
+    box-shadow: 0 0 2px black;
 }
 .btnAddNote {
     user-select: none;

@@ -117,7 +117,7 @@ function NoteBox({ noteBoxData }) {
             placeHolder = document.createElement('div');
             placeHolder.setAttribute("class", styles.placeHolder);
             placeHolder.style.width = figure.width + "px";
-            placeHolder.style.height = figure.height + "px"
+            placeHolder.style.height = figure.height + "px";
             CurrentEle.parentElement.insertBefore(placeHolder, CurrentEle.nextElementSibling);
         }
 

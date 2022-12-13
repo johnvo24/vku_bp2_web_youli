@@ -15,7 +15,8 @@ const noteController = () => {
                 newNote.note_title, 
                 newNote.note_img, 
                 newNote.note_description, 
-                newNote.note_link
+                newNote.note_link,
+                newNote.created_at
             ]
         );
         res.status(200);

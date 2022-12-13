@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import noteBoxAPI from "../../../api/noteBoxAPI";
 import { noteLang } from "../../../Constants/languages/NoteLanguages";
-import { getCurrentUser, getLanguage, getObjectLocalStore } from "../../../Middlewares/Middlewares";
+import { getCurrentUser, getLanguage, getObjectLocalStore, timeConverter } from "../../../Middlewares/Middlewares";
 import { NotePageContext } from "../../../Pages/NotePage";
 import BtnCancel from "../../Pieces/Buttons/BtnCancel";
 import BtnSave from "../../Pieces/Buttons/BtnSave";
@@ -35,7 +35,8 @@ function DetailNoteBox() {
         user_id: getCurrentUser('YoleUser').user_id,
         note_box_title: title || "(no name)",
         note_box_description: description,
-        created_at: new Date()
+        created_at: timeConverter(new Date(), 'y-m-dTh:i:s:SZ'),
+        updated_at: timeConverter(new Date(), 'y-m-dTh:i:s:SZ')
     }
 
     const handleSubmitForm = (e) => {

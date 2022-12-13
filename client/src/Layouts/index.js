@@ -6,8 +6,9 @@ function Layout({children}) {
 
     return (
         <>
-            <Header />
-            <NavigationBar/>
+            <Header>
+                <NavigationBar />
+            </Header>
             <div className="Main_main">
                 {children}
             </div>

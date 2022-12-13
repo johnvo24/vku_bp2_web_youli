@@ -21,6 +21,7 @@ export default function AddItem(props) {
     useEffect(() => {
         getCategory(user.user_id)
             .then(res => {
+                console.log(res);
                 setCategories(res)
                 setLoading(true)
             })
