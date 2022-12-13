@@ -42,7 +42,6 @@ export default function Statistic(props) {
                     context={CONTENT.statistic[context[1]]}
                     onClick={() => {
                         props.statisticTheme(false)
-                        props.mainTheme(true)
                     }}
                 />
                 {loading && (
@@ -53,7 +52,7 @@ export default function Statistic(props) {
                         margin={{
                             top: 5,
                             right: 30,
-                            left: 20,
+                            left: 40,
                             bottom: 5
                         }}
                     >
@@ -70,7 +69,7 @@ export default function Statistic(props) {
                             dataKey="item_cost"
                             stroke="#8884d8"
                             activeDot={{r: 8}}
-                            name="Amount"
+                            name={CONTENT.cashFlow[context[1]]}
                         />
                         <Legend/>
                     </LineChart>

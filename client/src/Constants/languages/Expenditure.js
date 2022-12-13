@@ -114,4 +114,9 @@ export const currentCatName = [
 ]
 
 
+export const cashFlow = [
+    'Cash Flow',
+    'Dòng Tiền'
+]
+
 
