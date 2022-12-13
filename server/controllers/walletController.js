@@ -118,7 +118,6 @@ async function getBills(req, res) {
     const list = await bill.getBills(req.body.wallet_id)
         .then(response => {
             res.status(200)
-            console.log(response)
             res.send(response)
         })
         .catch(err => {
@@ -135,7 +134,6 @@ async function createCustomCategory(req, res) {
         const add = await category.createCustomCategory(req.body)
             .then(response => {
                 res.status(200)
-                console.log(response)
                 res.send('Added')
             })
             .catch(err => {
@@ -164,7 +162,6 @@ async function totalCost(req, res) {
             for (let i = 0; i < response.length; ++i) {
                 sum += response[i].item_cost
             }
-            console.log(sum)
             res.status(200)
             res.send({total: sum})
         })
