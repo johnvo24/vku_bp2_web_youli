@@ -43,6 +43,7 @@ export default function Profile() {
                 localStorage.setItem('YoleUser', JSON.stringify(res[0]))
                 setMsg('Update Successful!')
                 setOpen(true)
+                setTimeout(() => {window.location.reload()}, 1500)
             })
             .catch(err => {
                 setMsg(err.response.data)

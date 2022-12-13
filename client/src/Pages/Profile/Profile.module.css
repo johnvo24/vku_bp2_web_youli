@@ -8,6 +8,7 @@
     height: 100%;
     background-color: var(--themeColor);
     border: solid 1px var(--themeBorderColor);
+    overflow: auto;
 }
 
 .profile {
