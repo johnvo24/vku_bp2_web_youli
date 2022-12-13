@@ -80,9 +80,9 @@ export default function ViewCategory() {
                         {data.length !== 0 && (
                             <table className={styles.table}>
                                 <tbody>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>{GCONTENT.name[context[1]]}</th>
+                                <tr className={styles.header}>
+                                    <th>ID</th>
+                                    <th style={{textAlign: 'left'}}>{GCONTENT.name[context[1]]}</th>
                                 </tr>
                                 {data.map(items => (
                                     <tr
@@ -91,9 +91,9 @@ export default function ViewCategory() {
                                     >
                                         <td className={styles.id}>{items.category_id}</td>
                                         <td className={styles.name}>
-                                <span
-                                    style={{color: items.type === 'cost' ? 'red' : 'green'}}
-                                >{items.category_name}</span>
+                                            <span
+                                                style={{color: items.type === 'cost' ? 'red' : 'green', width: '100%'}}
+                                            >{items.category_name}</span>
                                             <div className={styles.iconGroup}>
                                                 <i
                                                     className={`fa-solid fa-trash-can ${styles.icon}`}
