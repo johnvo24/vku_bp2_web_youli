@@ -65,7 +65,6 @@ export default function AddItem(props) {
             <div className={styles.itemTheme}>
                 <Header context={CONTENT.createBill[data[1]]}
                         onClick={() => {
-                            props.mainTheme(true)
                             props.itemTheme(false)
                         }}
                         useSave={true}
@@ -79,35 +78,35 @@ export default function AddItem(props) {
                     <input type='text' id='name' className={styles.input}/>
                     <label className={styles.label} htmlFor='description'>{CONTENT.itemDescription[data[1]]}</label>
                     <input type='text' id='description' className={styles.input}/>
-                    <label className={styles.label} htmlFor='price'>{CONTENT.itemPrice[data[1]]}</label>
-                    <input type='number' id='price' className={styles.input}/>
+                    <div className={styles.selectCtn}>
+                        <div>
+                            <label className={styles.label} htmlFor='price'>{CONTENT.itemPrice[data[1]]}</label>
+                            <input type='number' id='price' className={styles.input}/>
+                        </div>
+                        <div>
+                            <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
+                            <select id='classify' className={styles.input}
+                            >
+                                {loading && (
+                                    <>
+                                        {categories.map((items, id) => (
+                                                <option key={id} style={{
+                                                    color: items.type === 'cost' ? 'red' : 'green',
+                                                }}
+                                                        value={items.category_id}
+                                                >
+                                                    {items.category_name}
+                                                </option>
+                                            )
+                                        )}
+
+                                    </>
+                                )}
+                            </select>
+                        </div>
+                    </div>
                     <label className={styles.label} htmlFor='time'>{CONTENT.purchaseTime[data[1]]}</label>
                     <input type='datetime-local' id='time' className={styles.input}/>
-                    <label className={styles.label} htmlFor='classify'>{CONTENT.itemClassify[data[1]]}</label>
-                    <div className={styles.selectCtn}>
-                        <select id='classify' className={styles.input}
-                                onFocus={(e) => e.target.size = 5}
-                                onBlur={e => e.target.size = 1}
-                                onChange={e => {
-                                    e.target.blur()
-                                }}>
-                            {loading && (
-                                <>
-                                    {categories.map((items, id) => (
-                                            <option key={id} style={{
-                                                color: items.type === 'cost' ? 'red' : 'green',
-                                            }}
-                                                    value={items.category_id}
-                                            >
-                                                {items.category_name}
-                                            </option>
-                                        )
-                                    )}
-
-                                </>
-                            )}
-                        </select>
-                    </div>
                 </div>
             </div>
         </>

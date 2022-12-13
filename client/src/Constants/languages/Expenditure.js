@@ -22,8 +22,8 @@ export const income = [
 
 //Item Theme
 export const itemHeader = [
-    'Have Bought Something ? Fill It Right Now!',
-    'Bạn Đã Mua Một Thứ Gì Đó ? Điền Ngay Nào'
+    'Bill Form',
+    'Mẫu Hóa Đơn'
 ]
 
 export const purchasedItemName = [
