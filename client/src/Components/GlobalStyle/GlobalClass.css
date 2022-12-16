@@ -213,3 +213,14 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.g_scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+  }
+  
+.g_scroll::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  }
