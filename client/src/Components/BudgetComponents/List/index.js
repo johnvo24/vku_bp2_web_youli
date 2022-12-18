@@ -86,7 +86,7 @@ export default function List(props) {
                         {!itemTheme && !catTheme && (
                             <>
                                 <Header context={CONTENT.expenditureHistory[context[1]]}/>
-                                <div className={styles.overflow}>
+                                <div className={`${styles.overflow} g_scroll`}>
                                     {data.length !== 0 && data.map((items, idx) => (
                                         <>
                                             <div className={styles.contentContainer} key={idx}>

@@ -65,7 +65,7 @@ export default function ViewCategory() {
             >
                 {msg}
             </SnackBar>
-            <div className={styles.view}>
+            <div className={`${styles.view} g_scroll`}>
                 <AlertDialog
                     active={click}
                     content={`${CONTENT.currentCatName[context[1]]}${name}`}
