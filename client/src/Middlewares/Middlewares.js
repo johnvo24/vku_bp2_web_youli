@@ -55,3 +55,25 @@ export function hasLoggedIn() {
     else
         return false
 }
+
+export function getLocalMonth() {
+    const month = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+    const d = new Date();
+    return month[d.getMonth()];
+}
+
+export function getStatus(spending, income) {
+    if((spending === 0 && income === 0) || spending === 0)
+        return 'awesome'
+
+    const percent = income / spending
+
+    if(percent > 0.8 && percent <= 1)
+        return 'dangerous'
+    else if(percent > 0.6 && percent <= 0.8)
+        return 'warning'
+    else if(percent > 0.4 && percent <= 0.6)
+        return 'normal'
+    else
+        return 'awesome'
+}

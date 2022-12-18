@@ -100,12 +100,58 @@ const deleteBill = async bill_id => {
         db.query('DELETE FROM bills where bill_id = ?',
             [bill_id],
             (err, result) => {
-                if(err) reject(err)
+                if (err) reject(err)
                 resolve()
             })
     })
+}
 
+const getBillsByMonth = async (localMonth, wallet_id) => {
+    return await new Promise(async (resolve, reject) => {
+        //query for income in custom category table
+        let cost = 0, income = 0
+        await db.query('SELECT sum(bills.item_cost) as \'sum\' from bills ' +
+            'INNER JOIN custom_categories on bills.c_category_id = custom_categories.category_id ' +
+            'where month(bills.bill_time) = ? and custom_categories.type = ? and bills.wallet_id = ?',
+            [localMonth, 'income', wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                console.log(result)
+                income += result[0].sum
+            })
+        //query for cost in custom category table
+        await db.query('SELECT sum(bills.item_cost) as \'sum\' from bills ' +
+            'INNER JOIN custom_categories on bills.c_category_id = custom_categories.category_id ' +
+            'where month(bills.bill_time) = ? and custom_categories.type = ? and bills.wallet_id = ?',
+            [localMonth, 'cost', wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                console.log(result)
+                cost += result[0].sum
+            })
+        //query for income in category table
+        await db.query('SELECT sum(bills.item_cost) as \'sum\' from bills ' +
+            'INNER JOIN categories on bills.category_id = categories.category_id ' +
+            'where month(bills.bill_time) = ? and categories.type = ? and bills.wallet_id = ?',
+            [localMonth, 'income', wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                console.log(result)
+                income += result[0].sum
+            })
+        //query for cost in category table
+        await db.query('SELECT sum(bills.item_cost) as \'sum\' from bills ' +
+            'INNER JOIN categories on bills.category_id = categories.category_id ' +
+            'where month(bills.bill_time) = ? and categories.type = ? and bills.wallet_id = ?',
+            [localMonth, 'cost', wallet_id],
+            (err, result) => {
+                if (err) reject(err)
+                console.log(result)
+                cost += result[0].sum
+                resolve({income: income, cost: cost})
+            })
+    })
 }
 
 
-module.exports = {saveBill, getBills, statistic, totalCost, deleteBill}
+module.exports = {saveBill, getBills, statistic, totalCost, deleteBill, getBillsByMonth}

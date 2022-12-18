@@ -26,6 +26,7 @@
     padding: 0 0 5px 0;
     text-align: left;
     text-shadow: 0 0 2px black;
+    color: white;
 }
 
 .wallet {
@@ -41,10 +42,6 @@
     box-shadow: 0 0 3px black;
     border-radius: 8px;
     border: 1px solid white;
-}
-
-.wallet::after {
-    content: ' đ';
 }
 
 .leftSide {
@@ -64,7 +61,7 @@
     border-radius: 8px;
 }
 
-.walletContainer, .costContainer, .listContainer {
+.walletContainer, .costContainer, .listContainer, .statusContainer {
     text-align: center;
     box-shadow: 0 0 3px black;
     margin-bottom: 10px;

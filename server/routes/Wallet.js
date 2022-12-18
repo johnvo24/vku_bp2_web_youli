@@ -16,5 +16,7 @@ walletRouter.post('/bill/delete', controller.deleteBillWithoutRefund)
 walletRouter.post('/category/view', controller.getPrivateCategory)
 walletRouter.post('/category/delete', controller.deleteCategory)
 walletRouter.post('/category/rename', controller.renameCategory)
+walletRouter.post('/update/milestone', controller.updateMilestone)
+walletRouter.post('/bill/sumByMonth', controller.getSumOfBill)
 
 module.exports = walletRouter

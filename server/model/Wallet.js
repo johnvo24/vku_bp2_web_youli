@@ -22,7 +22,19 @@ async function updateBudget(walletId, value) {
     })
 }
 
+async function updateMileStone(walletId, value) {
+    await new Promise((resolve, reject) => {
+        db.query('update wallet set milestone = ? where wallet_id = ?',
+            [value, walletId],
+            (err, result) => {
+                if(err) reject(err)
+                resolve()
+            })
+    })
+}
+
 module.exports = {
     getInf,
-    updateBudget
+    updateBudget,
+    updateMileStone
 }
