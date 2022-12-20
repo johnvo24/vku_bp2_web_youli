@@ -1,20 +1,38 @@
 import styles from './HeroSection.module.css'
-import {Carousel} from 'react-responsive-carousel'
+import * as CONTENT from '../../../Constants/languages/Homepage'
+import {useContext} from "react";
+import {MyUserContext} from "../../../App";
 
-export default function HeroSection() {
+export default function HeroSection(props) {
+    const image_url = '/resources/images/time.jpg'
+    const context = useContext(MyUserContext)
 
     return (
-        <div className={styles.container}>
-            <Carousel showArrows={true}>
-                <div>
-                    <img src='/resources/images/success.jpg' alt='success' style={{width: '100%'}}/>
-                    <p>abc</p>
+        <div className={styles.container} style={{ backgroundImage : `url(${image_url})` }}>
+            <h1 className={styles.title}>{CONTENT.title[context[1]]}</h1>
+            <div className={styles.router}>
+                <div className={styles.column} onClick={() => window.location.href='/note'}>
+                    <i className={`fa-regular fa-note-sticky ${styles.columnIcon}`}></i>
+                    <div className={styles.columnContent}>
+                        {CONTENT.noteRow[context[1]]}
+                    </div>
                 </div>
-                <div>
-                    <img src='/resources/images/money.jpg' alt='success' style={{width: '100%'}}/>
-                    <p>abc</p>
+                <div className={styles.column} onClick={() => window.location.href='/schedule'}>
+                    <i className={`fa-regular fa-calendar-days ${styles.columnIcon}`}></i>
+                    <div className={styles.columnContent}>
+                        {CONTENT.schedualRow[context[1]]}
+                    </div>
                 </div>
-            </Carousel>
+                <div className={styles.column} onClick={() => window.location.href='/budget'}>
+                    <i className={`fa-solid fa-wallet ${styles.columnIcon}`}></i>
+                    <div className={styles.columnContent}>
+                        {CONTENT.walletRow[context[1]]}
+                    </div>
+                </div>
+            </div>
+            <div className={styles.content}>
+
+            </div>
         </div>
     )
 
