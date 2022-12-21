@@ -12,9 +12,11 @@ export function getCurrentDevice() {
 export function getCurrentUser(key) {
     return JSON.parse(localStorage.getItem(key));
 }
+
 export function getLanguage(key) {
-    return getCurrentUser(key).language;
+    return getCurrentUser(key) ? getCurrentUser(key).language : 1;
 }
+
 export function getObjectLocalStore(key) {
     return JSON.parse(localStorage.getItem(key));
 }

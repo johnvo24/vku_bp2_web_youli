@@ -1,8 +1,3 @@
-export const title = [
-    'Manage Your Life, Leave Failure Behind',
-    'Làm Chủ Cuộc Sống, Chống Thất Bại'
-]
-
 export const noteRow = [
     'List of notes filtered by important level',
     'Danh sách những ghi chú sắp xếp dựa theo tính cấp thiết'

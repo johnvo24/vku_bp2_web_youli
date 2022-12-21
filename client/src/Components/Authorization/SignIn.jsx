@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './Authorization.module.css'
 import SnackBar from "../SnackBar";
 import {PostDataForSignin} from "../../api/auth";
+import GGOAUTH from "./GGOAUTH";
 
 export default function SignIn() {
     const [msg, setMsg] = useState('')
@@ -48,6 +49,7 @@ export default function SignIn() {
                 <div className={styles.body}>
                     <div className={styles.container}>
                         <div className={"g_header"}>Sign In</div>
+                        <GGOAUTH open={setOpen} msg={setMsg} mode={0}/>
                         <div className={styles.fill}>
                             <div className={styles.input}>
                                 <i className={`fa-solid fa-user ${styles.formIcon}`}></i>

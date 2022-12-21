@@ -9,7 +9,7 @@ export default function HeroSection(props) {
 
     return (
         <div className={styles.container} style={{ backgroundImage : `url(${image_url})` }}>
-            <h1 className={styles.title}>{CONTENT.title[context[1]]}</h1>
+            <h1 className={styles.title}>Manage Your Life, Leave Failure Behind</h1>
             <div className={styles.router}>
                 <div className={styles.column} onClick={() => window.location.href='/note'}>
                     <i className={`fa-regular fa-note-sticky ${styles.columnIcon}`}></i>

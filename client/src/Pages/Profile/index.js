@@ -56,6 +56,13 @@ export default function Profile() {
         document.getElementById('avatar_file').click();
     }
 
+    const isLink = value => {
+        for(let i = 0;i <= value.length; ++i)
+            if(value[i] === '/')
+                return true
+        return false
+    }
+
     return (
         <div className={`${styles.main} g_scroll`}>
             <SnackBar
@@ -70,7 +77,8 @@ export default function Profile() {
                 <h1 className={styles.header}>{CONTENT.header[context[1]]}</h1>
                 <div className={styles.container}>
                     <div className={styles.avatar}>
-                        <img className={styles.avatarImg} alt='avatar' src={`./resources/uploads/${user.user_avatar}`}/>
+                        <img className={styles.avatarImg} alt='avatar'
+                             src={isLink(user.user_avatar) ? user.user_avatar : `./resources/uploads/${user.user_avatar}`}/>
                     </div>
                     <div className={styles.group1} style={{
                         alignItems: 'center',

@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/HeroSection.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/HeroSection.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/hooks/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/hooks/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/model/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/model/User.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +61,7 @@
     "javascript.nodejs.core.library.configured.version": "16.16.0",
     "javascript.nodejs.core.library.typings.version": "16.18.3",
     "last_directory_selection": "O:/Project/Youli/client/src/Components/BudgetComponents/Wallet",
-    "last_opened_file_path": "O:/Project/Youli/client/src/resources",
+    "last_opened_file_path": "O:/Project/react-google-authentication",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -169,7 +178,10 @@
       <workItem from="1671273391549" duration="62000" />
       <workItem from="1671355151548" duration="3641000" />
       <workItem from="1671366599758" duration="10304000" />
-      <workItem from="1671534168745" duration="4153000" />
+      <workItem from="1671534168745" duration="4566000" />
+      <workItem from="1671550914813" duration="1711000" />
+      <workItem from="1671599940219" duration="601000" />
+      <workItem from="1671605855802" duration="17506000" />
     </task>
     <servers />
   </component>

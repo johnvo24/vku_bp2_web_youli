@@ -7,6 +7,12 @@ function Header({ children }) {
 
     const user = JSON.parse(localStorage.getItem('YoleUser'))
 
+    const isLink = value => {
+        for(let i = 0;i <= value.length; ++i)
+            if(value[i] === '/')
+                return true
+        return false
+    }
 
     return (
         <div className={styles.header}>
@@ -14,7 +20,7 @@ function Header({ children }) {
                 <div
                     className={styles.logoPage}
                 >
-                    <div><img src="./resources/images/YoleLogo.png" /></div>
+                    <div><img src="./resources/images/YoleLogo.png" alt='logo'/></div>
                 </div>
 
                 {children}
@@ -36,7 +42,10 @@ function Header({ children }) {
                         render={({ toggle, setCollapsibleElement }) => (
                             <div className={styles.user}>
                                 <button className={styles.userBtn} onClick={toggle}>
-                                    <img src={`./resources/uploads/${user.user_avatar}`} alt='avatar' className={styles.avatar} />
+                                    <img
+                                        src={isLink(user.user_avatar) ? user.user_avatar : `./resources/uploads/${user.user_avatar}`}
+                                        alt='avatar'
+                                        className={styles.avatar} />
                                     {user.display_name}
                                 </button>
                                 <div className={styles.btngroup} ref={setCollapsibleElement}>

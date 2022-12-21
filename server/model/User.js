@@ -8,7 +8,7 @@ class User {
                 async (err, result) => {
                     if (err) reject(err)
                     await db.query('insert into wallet(user_id, budget) values (?, ?)',
-                        [result[0].user_id, 0],
+                        [result[0]?.user_id, 0],
                         (err, result_) => {
                             if (err) reject(err)
                             resolve()
@@ -17,10 +17,10 @@ class User {
         })
     }
 
-    setUserInformation(username, password, displayName) {
+    setUserInformation(username, password, displayName, gmail, avatar) {
         return new Promise((resolve, reject) => {
-            db.query('insert into user(username, userpassword, display_name, user_avatar) values (?, ?, ?, ?)',
-                [username, password, displayName, 'e23fd0380eea0512487d261d83354c68'],
+            db.query('insert into user(username, userpassword, display_name, user_email, user_avatar) values (?, ?, ?, ?, ?)',
+                [username, password, displayName, gmail, avatar === '' ? 'e23fd0380eea0512487d261d83354c68' : avatar],
                 async (err, result) => {
                     if (err) reject(err)
                     const wallet = await this.initWallet(username)

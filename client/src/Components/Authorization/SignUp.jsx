@@ -4,6 +4,7 @@ import styles from './Authorization.module.css'
 import SnackBar from "../SnackBar";
 import {PostDataForSignUp} from "../../api/auth";
 import {useState} from "react";
+import GGOAUTH from "./GGOAUTH";
 
 export default function SignUp() {
     const [msg, setMsg] = useState('')
@@ -23,9 +24,15 @@ export default function SignUp() {
         }
 
         PostDataForSignUp(data)
-            .then(res => setMsg(res.data))
-            .catch(err => setMsg(err.response.data))
-        setOpen(true)
+            .then(res => {
+                setMsg(res.data)
+                setOpen(true)
+            })
+            .catch(err => {
+                setMsg(err.response.data)
+                setOpen(true)
+            })
+
     }
 
     return (
@@ -46,6 +53,7 @@ export default function SignUp() {
                         height: '430px'
                     }}>
                         <div className={"g_header"}>Sign Up</div>
+                        <GGOAUTH open={setOpen} msg={setMsg}/>
                         <div className={styles.fill}>
                             <div className={styles.input}>
                                 <i className={`fa-solid fa-signature ${styles.formIcon}`}></i>
