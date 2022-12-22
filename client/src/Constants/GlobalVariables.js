@@ -150,3 +150,26 @@ export const day = [
 export const defaultAvatar = 'e23fd0380eea0512487d261d83354c68'
 
 export const clientId = '317280230180-falu28k4uq105irpke697icf1c33jobo.apps.googleusercontent.com'
+
+export const COLOR_ROW = 2
+
+export const COLOR_COLUMN = 2
+
+export const COLORS = [
+        {
+            task_color: '#66C41D',
+            task_text_color: '#66C41D'
+        },
+        {
+            task_color: 'red',
+            task_text_color: '#66C41D'
+        },
+        {
+            task_color: 'blue',
+            task_text_color: '#66C41D'
+        },
+        {
+            task_color: 'yellow',
+            task_text_color: '#66C41D'
+        },
+]
