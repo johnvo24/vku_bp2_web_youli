@@ -69,8 +69,8 @@ const scheduleController = () => {
             })
     }
 
-    scheduleController.deleteTaskCategory = async (req, res) => {
-        await ScheduleModel().deleteTaskCategory(req.body)
+    scheduleController.updateTask = async (req, res) => {
+        await ScheduleModel().updateTask(req.body)
             .then(() => {
                 res.status(200)
                 res.send()
@@ -82,6 +82,31 @@ const scheduleController = () => {
             })
     }
 
+    scheduleController.updateTaskCategory = async (req, res) => {
+        await ScheduleModel().updateTaskCategory(req.body)
+            .then(() => {
+                res.status(200)
+                res.send()
+            })
+            .catch(err => {
+                res.status(500)
+                res.send(err)
+                console.log(err)
+            })
+    }
+
+    scheduleController.getTaskCategory = async (req, res) => {
+        await ScheduleModel().getTaskCategory(req.body)
+            .then(r => {
+                res.status(200)
+                res.send({data: r})
+            })
+            .catch(err => {
+                res.status(500)
+                res.send(err)
+                console.log(err)
+            })
+    }
 
     return scheduleController;
 }

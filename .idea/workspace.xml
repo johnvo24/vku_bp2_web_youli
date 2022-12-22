@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/GGOAUTH.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/GGOAUTH.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/scheduleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/scheduleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/ScheduleRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ScheduleRouter.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +73,20 @@
       <recent name="O:\Project\Youli\documents\draw.io" />
       <recent name="O:\Project\Youli\documents" />
     </key>
+  </component>
+  <component name="RunManager" selected="Node.js.scheduleController.js">
+    <configuration name="Schedule.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/model/Schedule.js" working-dir="$PROJECT_DIR$/server/model">
+      <method v="2" />
+    </configuration>
+    <configuration name="scheduleController.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/controllers/scheduleController.js" working-dir="$PROJECT_DIR$/server/controllers">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.scheduleController.js" />
+        <item itemvalue="Node.js.Schedule.js" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -177,7 +187,8 @@
       <workItem from="1671550914813" duration="1711000" />
       <workItem from="1671599940219" duration="601000" />
       <workItem from="1671605855802" duration="18184000" />
-      <workItem from="1671689205321" duration="9670000" />
+      <workItem from="1671689205321" duration="10645000" />
+      <workItem from="1671710119860" duration="9466000" />
     </task>
     <servers />
   </component>
