@@ -12,8 +12,8 @@ export default function SignUp() {
     const user = JSON.parse(localStorage.getItem('YoleUser'))
 
     useEffect(() => {
-        if(user)
-            window.location.href='/home'
+        if (user)
+            window.location.href = '/home'
     }, [])
 
     const handleSubmit = () => {
@@ -35,6 +35,15 @@ export default function SignUp() {
 
     }
 
+    const focusin = e => {
+        e.target.parentElement.querySelector('label').classList.add(styles.active);
+    }
+
+    const exit = e => {
+        if (e.target.value === '')
+            e.target.parentElement.querySelector('label').classList.remove(styles.active);
+    }
+
     return (
         <>
             <SnackBar
@@ -47,25 +56,43 @@ export default function SignUp() {
             >
                 {msg}
             </SnackBar>
-            <div className={styles.bodyContainer}>
-                <div className={styles.body}>
-                    <div className={styles.container} style={{
-                        height: '430px'
-                    }}>
+            <div className={styles.main}>
+                <div className={styles.body + " g_scroll"}>
+                    <div className={styles.container}>
                         <div className={"g_header"}>Sign Up</div>
+                        <img src='/resources/images/YoleLogo.png' alt='logo' className={styles.logo}/>
                         <GGOAUTH open={setOpen} msg={setMsg}/>
+                        <p className={styles.or}>-Or-</p>
                         <div className={styles.fill}>
                             <div className={styles.input}>
-                                <i className={`fa-solid fa-signature ${styles.formIcon}`}></i>
-                                <input type='text' placeholder='Enter Your Display Name' id='name'/>
+                                <label htmlFor="name" className={styles.label}>DISPLAY NAME</label>
+                                <input
+                                    type='text'
+                                    id='name'
+                                    onFocus={focusin}
+                                    onBlur={exit}
+                                    defaultValue=''
+                                />
                             </div>
                             <div className={styles.input}>
-                                <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
-                                <input type='text' placeholder='Enter Your Username' id='username'/>
+                                <label htmlFor="username" className={styles.label}>USER NAME</label>
+                                <input
+                                    type='text'
+                                    id='username'
+                                    onFocus={focusin}
+                                    onBlur={exit}
+                                    defaultValue=''
+                                />
                             </div>
                             <div className={styles.input}>
-                                <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
-                                <input type='password' placeholder='Enter Your Password' id='password'/>
+                                <label htmlFor="password" className={styles.label}>PASSWORD</label>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    onFocus={focusin}
+                                    onBlur={exit}
+                                    defaultValue=''
+                                />
                             </div>
                         </div>
                         <div className={styles.btnGroup}>

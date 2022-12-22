@@ -64,7 +64,7 @@ export default function Profile() {
     }
 
     return (
-        <div className={`${styles.main} g_scroll`}>
+        <div className={`g_scroll`}>
             <SnackBar
                 duration={5000}
                 open={open}

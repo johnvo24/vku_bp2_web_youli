@@ -1,7 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useScript} from "../../hooks";
 import jwt_decode from "jwt-decode";
 import {PostDataForSignin, PostDataForSignUp} from "../../api/auth";
+import styles from './Authorization.module.css'
 
 export default function GGOAUTH(props) {
 
@@ -50,12 +51,17 @@ export default function GGOAUTH(props) {
         window.google.accounts.id.renderButton(
             document.getElementById('buttonGG'),
             {
-                theme: 'outline', size: 'large'
+                theme: 'outline',
+                size: 'medium',
+                type: 'button',
+                text: props.mode === 0 ? "signin_with" : 'signup_with',
+                shape: 'pill',
+                width: '140px'
             })
     })
 
     return (
-        <div id='buttonGG'>
+        <div id='buttonGG' className={styles.logo} style={{marginTop: '20px'}}>
         </div>
     )
 
