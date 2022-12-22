@@ -194,7 +194,7 @@ function NoteBox({ noteBoxData }) {
                         </div>)
                 }
             </div>
-            <div className="g_body">
+            <div className="g_body g_scroll">
                 <div className={styles.NoteList} id="note-list">
                     {noteList.map((note) => (
                         <Note

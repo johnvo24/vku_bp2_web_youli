@@ -19,3 +19,6 @@ export const PROFILE = axios.create({
     baseURL: '/api/profile',
     headers: { "Content-Type": "multipart/form-data" }
 })
+export const SCHEDULE = axios.create({
+    baseURL: '/api/schedule'
+})

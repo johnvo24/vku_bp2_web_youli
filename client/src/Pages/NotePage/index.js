@@ -1,5 +1,4 @@
 import styles from "./NotePage.module.css"
-import SideBar from "../../Components/Pieces/SideBar";
 import { createContext, useEffect, useState } from "react";
 import MainContainer from "../../Components/Pieces/MainContainer";
 import NoteContainer from "../../Components/NoteComponents/NoteContainer";
@@ -10,6 +9,7 @@ import ConfirmationDialog from "../../Components/NoteComponents/ConfirmationDial
 import { noteLang } from "../../Constants/languages/NoteLanguages";
 import { getLanguage } from "../../Middlewares/Middlewares";
 import DetailNote from "../../Components/NoteComponents/DetailNote";
+import SideBarNote from "../../Components/NoteComponents/SideBarNote";
 
 export const NotePageContext = createContext();
 
@@ -97,7 +97,7 @@ function NotePage() {
                     />
                 </MainContainer>
 
-                <SideBar
+                <SideBarNote
                     handleClickSideBar={handleClickSideBar}
                     handleClickBtnEdit={handleClickBtnEdit}
                 />

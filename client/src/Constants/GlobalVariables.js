@@ -116,4 +116,35 @@ export const SYSTEM_CATEGORY = [
     'Home fee'
 ]
 
+export const day = [
+    [
+        'monday',
+        'thứ hai'
+    ],
+    [
+        'tuesday',
+        'thứ ba'
+    ],
+    [
+        'wednesday',
+        'thứ tư'
+    ],
+    [
+        'thursday',
+        'thứ năm'
+    ],
+    [
+        'friday',
+        'thứ sáu'
+    ],
+    [
+        'saturday',
+        'thứ bảy'
+    ],
+    [
+        'sunday',
+        'chủ nhật'
+    ]
+]
+
 export const defaultAvatar = 'e23fd0380eea0512487d261d83354c68'
