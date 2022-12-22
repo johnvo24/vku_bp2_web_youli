@@ -83,9 +83,6 @@ function DateTag({ dayHeader, dateData }) {
                                 </div>
                             )
                         })}
-                        {
-                            
-                        }
                         <div className={styles.presentTime}
                             style={{
                                 top: 20 + "px",
