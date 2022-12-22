@@ -64,3 +64,11 @@ export async function deleteCategory(cate_id) {
 export async function renameCategory(cate_id, cate_name) {
     return await WALLET.post('/category/rename', {category_id: cate_id, category_name: cate_name})
 }
+
+export async function updateMilestone(data) {
+    return await WALLET.post('/update/milestone', data)
+}
+
+export async function getSumByMonth(data) {
+    return await WALLET.post('/bill/sumByMonth', data)
+}

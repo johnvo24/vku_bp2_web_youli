@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './Authorization.module.css'
 import SnackBar from "../SnackBar";
 import {PostDataForSignin} from "../../api/auth";
+import GGOAUTH from "./GGOAUTH";
 
 export default function SignIn() {
     const [msg, setMsg] = useState('')
@@ -32,6 +33,14 @@ export default function SignIn() {
 
     }
 
+    const focusin = e => {
+        e.target.parentElement.querySelector('label').classList.add(styles.active);
+    }
+
+    const exit = e => {
+        if (e.target.value === '')
+            e.target.parentElement.querySelector('label').classList.remove(styles.active);
+    }
     return (
         <>
             <SnackBar
@@ -44,18 +53,31 @@ export default function SignIn() {
             >
                 {msg}
             </SnackBar>
-            <div className={styles.bodyContainer}>
-                <div className={styles.body}>
+            <div className={styles.main}>
+                <div className={styles.body + " g_scroll g_scroll-y"}>
                     <div className={styles.container}>
                         <div className={"g_header"}>Sign In</div>
+                        <img src='/resources/images/YoleLogo.png' alt='logo' className={styles.logo}/>
+                        <GGOAUTH open={setOpen} msg={setMsg} mode={0}/>
+                        <p className={styles.or}>-Or-</p>
                         <div className={styles.fill}>
                             <div className={styles.input}>
-                                <i className={`fa-solid fa-user ${styles.formIcon}`}></i>
-                                <input type='text' placeholder='Enter Your Username' id='username' defaultValue=''/>
+                                <label htmlFor="username" className={styles.label}>USER NAME</label>
+                                <input
+                                    type='text'
+                                    id='username'
+                                    onFocus={focusin}
+                                    onBlur={exit}
+                                    defaultValue=''/>
                             </div>
                             <div className={styles.input}>
-                                <i className={`fa-solid fa-key ${styles.formIcon}`}></i>
-                                <input type='password' placeholder='Enter Your Password' id='password' defaultValue=''/>
+                                <label htmlFor="password" className={styles.label}>PASSWORD</label>
+                                <input
+                                    type='password'
+                                    id='password'
+                                    onFocus={focusin}
+                                    onBlur={exit}
+                                    defaultValue=''/>
                             </div>
                         </div>
                         <div className={styles.btnGroup}>

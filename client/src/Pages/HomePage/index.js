@@ -1,8 +1,9 @@
 import styles from "./HomePage.module.css"
+import HeroSection from "../../Components/HomepageComponent/HeroSection";
 
 function HomePage() {
     return (
-        <h1>Home Page</h1>
+        <HeroSection/>
     )
 }
 

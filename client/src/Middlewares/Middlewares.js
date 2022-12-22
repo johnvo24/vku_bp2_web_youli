@@ -11,9 +11,11 @@ export function getCurrentDevice() {
 export function getCurrentUser(key) {
     return JSON.parse(localStorage.getItem(key));
 }
+
 export function getLanguage(key) {
     return getCurrentUser(key) ? getCurrentUser(key).language : 1;
 }
+
 export function getObjectLocalStore(key) {
     return JSON.parse(localStorage.getItem(key));
 }
@@ -62,4 +64,26 @@ export function hasLoggedIn() {
         return true
     else
         return false
+}
+
+export function getLocalMonth() {
+    const month = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+    const d = new Date();
+    return month[d.getMonth()];
+}
+
+export function getStatus(spending, income) {
+    if((spending === 0 && income === 0) || spending === 0)
+        return 'awesome'
+
+    const percent = income / spending
+
+    if(percent > 0.8 && percent <= 1)
+        return 'dangerous'
+    else if(percent > 0.6 && percent <= 0.8)
+        return 'warning'
+    else if(percent > 0.4 && percent <= 0.6)
+        return 'normal'
+    else
+        return 'awesome'
 }

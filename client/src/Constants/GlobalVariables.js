@@ -111,9 +111,9 @@ export const listOfNavBar = {
 }
 
 export const SYSTEM_CATEGORY = [
-    'Market',
-    'Salary',
-    'Home fee'
+    'market',
+    'salary',
+    'monthly home fee'
 ]
 
 export const day = [
@@ -148,3 +148,5 @@ export const day = [
 ]
 
 export const defaultAvatar = 'e23fd0380eea0512487d261d83354c68'
+
+export const clientId = '317280230180-falu28k4uq105irpke697icf1c33jobo.apps.googleusercontent.com'

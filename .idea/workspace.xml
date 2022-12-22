@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/Authorization.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/GGOAUTH.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/GGOAUTH.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignIn.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Authorization/SignUp.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" afterDir="false" />
     </list>
@@ -52,7 +56,7 @@
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;16.16.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;16.18.3&quot;,
     &quot;last_directory_selection&quot;: &quot;O:/Project/Youli/client/src/Components/BudgetComponents/Wallet&quot;,
-    &quot;last_opened_file_path&quot;: &quot;O:/Project/Youlii&quot;,
+    &quot;last_opened_file_path&quot;: &quot;O:/Project/react-google-authentication&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -65,6 +69,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="O:\Project\Youli\client\src\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="O:\Project\Youli\client\src\api" />
       <recent name="O:\Project\Youli\documents\draw.io" />
@@ -156,7 +163,21 @@
       <workItem from="1670504882170" duration="17000" />
       <workItem from="1670731514640" duration="383000" />
       <workItem from="1670813462199" duration="277000" />
-      <workItem from="1670935758503" duration="9083000" />
+      <workItem from="1670935758503" duration="9248000" />
+      <workItem from="1670983346041" duration="182000" />
+      <workItem from="1671083407790" duration="994000" />
+      <workItem from="1671096937241" duration="11000" />
+      <workItem from="1671115474870" duration="502000" />
+      <workItem from="1671155859065" duration="614000" />
+      <workItem from="1671202005096" duration="661000" />
+      <workItem from="1671273391549" duration="62000" />
+      <workItem from="1671355151548" duration="3641000" />
+      <workItem from="1671366599758" duration="10304000" />
+      <workItem from="1671534168745" duration="4566000" />
+      <workItem from="1671550914813" duration="1711000" />
+      <workItem from="1671599940219" duration="601000" />
+      <workItem from="1671605855802" duration="18184000" />
+      <workItem from="1671689205321" duration="9670000" />
     </task>
     <servers />
   </component>

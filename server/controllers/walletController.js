@@ -195,6 +195,30 @@ async function renameCategory(req, res) {
         })
 }
 
+async function getSumOfBill(req, res) {
+    const geSum = await bill.getBillsByMonth(req.body.localMonth, req.body.wallet_id)
+        .then(response => {
+            res.status(200)
+            res.send(response)
+        })
+        .catch(err => {
+            res.status(500)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
+async function updateMilestone(req, res) {
+    const update = await wallet.updateMileStone(req.body.wallet_id, req.body.value)
+        .then(response => {
+            res.status(200)
+            res.send(response)
+        })
+        .catch(err => {
+            res.status(500)
+            res.send('Oops, There are some error occurred, Please try again later')
+        })
+}
+
 module.exports = {
     getInf,
     updateBudget,
@@ -208,5 +232,7 @@ module.exports = {
     deleteBillWithRefund,
     getPrivateCategory,
     deleteCategory,
-    renameCategory
+    renameCategory,
+    getSumOfBill,
+    updateMilestone
 }

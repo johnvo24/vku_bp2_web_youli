@@ -133,3 +133,42 @@ export const date = [
     'Date: ',
     'Ngày Mua: '
 ]
+
+export const manageWallet = [
+    'Manage Wallet',
+    'Quản Lý Ví'
+]
+
+export const manageHeader = [
+    'Wallet Data Form',
+    'Mẫu Dữ Liệu Ví'
+]
+
+export const milestone = [
+    'Spending Milestone (By Month)',
+    'Cột Mốc Chi Tiêu (Theo Tháng)'
+]
+
+export const status = [
+    'Status',
+    'Tình Trạng'
+]
+
+export const statusContent = {
+    awesome: [
+        'Awesome',
+        'Tuyệt Vời'
+    ],
+    normal: [
+        'Normal',
+        'Bình Thường'
+    ],
+    warning: [
+        'Warning',
+        'Cảnh Báo'
+    ],
+    dangerous: [
+        'Dangerous',
+        'Nguy Hiểm'
+    ]
+}
