@@ -25,6 +25,7 @@ export default function Category(props) {
             .then(() => {
                 setMsg('Created Successful')
                 setOpen(true)
+                reset()
             })
             .catch(err => {
                 setMsg(err.response.data)
