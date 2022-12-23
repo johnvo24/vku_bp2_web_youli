@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 import scheduleAPI from '../../../api/scheduleAPI';
 import { day } from '../../../Constants/GlobalVariables';
 import { getLanguage, timeConverter, timeToPxConvrter } from '../../../Middlewares/Middlewares';
@@ -31,6 +31,19 @@ function DateTag({ dayHeader, dateData }) {
             clearInterval(myInterval);
         }
     }, [])
+
+    useLayoutEffect(() => {
+        const el = document.getElementById(dateData.date);
+        let container;
+        if (el) {
+            container = el.parentElement.parentElement;
+            if ((new Date()).toDateString() === dateData.date.toDateString()) {
+                container.scrollTo(0, (timeToPxConvrter(timeConverter(new Date(), 'h:i:s')) - 100));
+            } else {
+                container.scrollTo(0, (timeToPxConvrter("05:30:00")));
+            }
+        }
+    }, []);
 
     return (
         <div
@@ -97,6 +110,7 @@ function DateTag({ dayHeader, dateData }) {
                             (presentTime.toDateString() === dateData.date.toDateString())
                             &&
                             (<div className={styles.presentTime}
+                                id={dateData.date}
                                 style={{
                                     top: timeToPxConvrter(timeConverter(presentTime, 'h:i:s')) + "px",
                                 }}

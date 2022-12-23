@@ -39,7 +39,7 @@ function TaskTag({ taskData }) {
     return (
         <div
             id={`taskTag${taskData1.schedule_id}`}
-            className={styles.taskTag +" g_scroll g_scroll-y"}
+            className={styles.taskTag +" g_scroll g_scroll-y g_scroll-hidden"}
             style={{
                 height: timeToPxConvrter(taskData1.task_to) - timeToPxConvrter(taskData1.task_from) + "px",
                 backgroundColor: taskData1.task_color,

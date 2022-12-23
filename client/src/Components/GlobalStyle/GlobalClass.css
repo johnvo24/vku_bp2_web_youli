@@ -281,6 +281,9 @@
 .g_scroll {
     overflow: scroll;
 }
+.g_scroll-hidden::-webkit-scrollbar {
+    display: none;
+}
 .g_scroll-x {
     overflow-x: scroll;
     overflow-y: hidden;
