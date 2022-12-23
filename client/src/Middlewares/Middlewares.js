@@ -72,18 +72,18 @@ export function getLocalMonth() {
     return month[d.getMonth()];
 }
 
-export function getStatus(spending, income) {
-    if((spending === 0 && income === 0) || spending === 0)
-        return 'awesome'
+export function getStatus(spending, current, milestone) {
 
-    const percent = income / spending
+    if(current <= 0)
+        return 'outOfMoney'
 
-    if(percent > 0.8 && percent <= 1)
-        return 'dangerous'
-    else if(percent > 0.6 && percent <= 0.8)
-        return 'warning'
-    else if(percent > 0.4 && percent <= 0.6)
-        return 'normal'
+    if(milestone === 0)
+        return 'stable'
+
+    const percent = spending / milestone
+
+    if(percent < 0.8)
+        return 'stable'
     else
-        return 'awesome'
+        return 'warning'
 }

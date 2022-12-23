@@ -12,6 +12,7 @@ import AddItem from "../../Components/BudgetComponents/AddItem";
 import Statistic from "../../Components/BudgetComponents/Statistic";
 import List from "../../Components/BudgetComponents/List";
 import {getLocalMonth, getStatus, hasLoggedIn} from "../../Middlewares/Middlewares";
+import ManageWallet from "../../Components/BudgetComponents/ManageWallet";
 
 function BudgetPage() {
     const [wallet, setWallet] = useState({})
@@ -47,16 +48,14 @@ function BudgetPage() {
             wallet_id: wallet.wallet_id
         })
             .then(res => {
-                const temp = getStatus(res.data.cost, res.data.income)
+                const temp = getStatus(res.data.cost, wallet.budget, wallet.milestone)
                 setStatus(CONTENT.statusContent[temp][data[1]])
-                if(temp === 'awesome')
-                    setColor('green')
-                else if(temp === 'normal')
+                if(temp === 'stable')
                     setColor('#00B008')
                 else if(temp === 'warning')
                     setColor('#D68500')
                 else
-                    setColor('red')
+                    setColor('#CF0000')
             })
     }, [wallet])
 
@@ -65,7 +64,7 @@ function BudgetPage() {
             <div className={styles.container}>
                 {loading && (
                     <>
-                        <div className={styles.leftSide}>
+                        <div className={styles.leftSide + ' g_scroll'}>
                             <div className={styles.walletContainer}>
                                 <h1 className={styles.title}>{CONTENT.yourWallet[data[1]]}</h1>
                                 <h1 className={styles.wallet} style={{color: 'green'}}><i className={`fa - solid fa-wallet ${styles.icon}`}></i>{wallet.budget}đ</h1>
@@ -111,6 +110,17 @@ function BudgetPage() {
                             }}>
                                 <i className={`fa-solid fa-clipboard-list ${styles.icon}`}></i>{CONTENT.expenditureHistory[data[1]]}
                             </div>
+
+                            <div className={styles.list} onClick={() => {
+                                setListTheme(false)
+                                setAddItemTheme(false)
+                                setCategoryTheme(false)
+                                setStatisticTheme(false)
+                                setManageWallet(true)
+                            }}>
+                                <i className={`fa-solid fa-clipboard-list ${styles.icon}`}></i>{CONTENT.manageWallet[data[1]]}
+                            </div>
+
                             <div className={styles.statusContainer} style={
                                 {backgroundColor: color, marginTop: '10px'}}>
                                 <h1 className={styles.title}>{CONTENT.status[data[1]]}</h1>
@@ -130,6 +140,9 @@ function BudgetPage() {
                             )}
                             {listTheme && (
                                 <List resetTheme={setListTheme} id={wallet.wallet_id}/>
+                            )}
+                            {manageWallet && (
+                                <ManageWallet manageTheme={setManageWallet} id={wallet.wallet_id} milestone={wallet.milestone}/>
                             )}
                         </div>
                     </>

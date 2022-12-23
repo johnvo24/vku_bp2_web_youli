@@ -10,6 +10,6 @@ scheduleRouter.post('/delete_task', scheduleController().deleteTask)
 scheduleRouter.post('/delete_task_category', scheduleController().deleteTaskCategory)
 scheduleRouter.post('/update_task', scheduleController().updateTask)
 scheduleRouter.post('/update_task_category', scheduleController().updateTaskCategory)
-scheduleRouter.post('/get_task_category', scheduleController().getTaskCategory())
+scheduleRouter.post('/get_task_category', scheduleController().getTaskCategory)
 
 module.exports = scheduleRouter;

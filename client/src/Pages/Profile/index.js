@@ -26,14 +26,14 @@ export default function Profile() {
 
         const items = {
             user_id: user.user_id,
-            display_name:  user.display_name,
+            display_name: user.display_name,
             user_email: document.getElementById('user_email').value,
             user_phone: document.getElementById('user_phone').value,
             user_biography: document.getElementById('user_bio').value,
             language: document.getElementById('user_language').value,
         }
 
-        for(let key in items) {
+        for (let key in items) {
             formData.append(key, items[key])
             console.log(`${key}: ${items[key]}`)
         }
@@ -43,7 +43,9 @@ export default function Profile() {
                 localStorage.setItem('YoleUser', JSON.stringify(res[0]))
                 setMsg('Update Successful!')
                 setOpen(true)
-                setTimeout(() => {window.location.reload()}, 1500)
+                setTimeout(() => {
+                    window.location.reload()
+                }, 1500)
             })
             .catch(err => {
                 setMsg(err.response.data)
@@ -51,14 +53,14 @@ export default function Profile() {
             })
     }
 
-    const handleClickBtnChooseFile =(e) => {
+    const handleClickBtnChooseFile = (e) => {
         e.preventDefault();
         document.getElementById('avatar_file').click();
     }
 
     const isLink = value => {
-        for(let i = 0;i <= value.length; ++i)
-            if(value[i] === '/')
+        for (let i = 0; i <= value.length; ++i)
+            if (value[i] === '/')
                 return true
         return false
     }
@@ -73,64 +75,72 @@ export default function Profile() {
                 {msg}
             </SnackBar>
 
-            <div className={styles.profile}>
-                <h1 className={styles.header}>{CONTENT.header[context[1]]}</h1>
-                <div className={styles.container}>
-                    <div className={styles.avatar}>
-                        <img className={styles.avatarImg} alt='avatar'
-                             src={isLink(user.user_avatar) ? user.user_avatar : `./resources/uploads/${user.user_avatar}`}/>
-                    </div>
-                    <div className={styles.group1} style={{
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        display: 'flex',
-                        marginTop: '-50px',
-                        marginLeft: '100px',
-                        marginBottom: '50px'
-                    }}>
-                        <label htmlFor='avatar_file' className="g_d_none">{CONTENT.avatar[context[1]]}</label>
-                        <input type='file' id='avatar_file' className="g_d_none"
-                               onChange={(e) => setFile(e.target.files[0])}/>
-                        <BtnChooseFile
-                            handleClickBtnChooseFile={handleClickBtnChooseFile}
-                        />
-                    </div>
+            <div className={styles.main}>
+                <div className={styles.profile}>
+                    <h1 className={styles.header}>{CONTENT.header[context[1]]}</h1>
+                    <div className={styles.container}>
+                        <div className={styles.avatar}>
+                            <img className={styles.avatarImg} alt='avatar'
+                                 src={isLink(user.user_avatar) ? user.user_avatar : `./resources/uploads/${user.user_avatar}`}/>
+                        </div>
+                        <div className={styles.group1} style={{
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            display: 'flex',
+                            marginTop: '-50px',
+                            marginLeft: '100px',
+                            marginBottom: '50px'
+                        }}>
+                            <label htmlFor='avatar_file' className="g_d_none">{CONTENT.avatar[context[1]]}</label>
+                            <input type='file' id='avatar_file' className="g_d_none"
+                                   onChange={(e) => setFile(e.target.files[0])}/>
+                            <BtnChooseFile
+                                handleClickBtnChooseFile={handleClickBtnChooseFile}
+                            />
+                        </div>
 
-                    <div className={styles.group2}>
-                        <div className={styles.inputCtn} style={{width: '40%'}}>
-                            <label htmlFor='user_name' className={styles.label}>{CONTENT.name[context[1]]}</label>
-                            <input type='text' id='user_name' className={styles.input} defaultValue={user.username}/>
+                        <div className={styles.group2}>
+                            <div className={styles.inputCtn} style={{width: '40%'}}>
+                                <label htmlFor='user_name' className={styles.label}>{CONTENT.name[context[1]]}</label>
+                                <input type='text' id='user_name' className={styles.input}
+                                       defaultValue={user.username}/>
+                            </div>
+                            <div className={styles.inputCtn} style={{width: '60%'}}>
+                                <label htmlFor='user_email' className={styles.label}>{CONTENT.email[context[1]]}</label>
+                                <input type='text' id='user_email' className={styles.input}
+                                       defaultValue={user.user_email}/>
+                            </div>
                         </div>
-                        <div className={styles.inputCtn} style={{width: '60%'}}>
-                            <label htmlFor='user_email' className={styles.label}>{CONTENT.email[context[1]]}</label>
-                            <input type='text' id='user_email' className={styles.input} defaultValue={user.user_email}/>
-                        </div>
-                    </div>
 
-                    <div className={styles.group2}>
-                        <div className={styles.inputCtn} style={{width: '60%'}}>
-                            <label htmlFor='user_phone' className={styles.label}>{CONTENT.phone[context[1]]}</label>
-                            <input type='text' id='user_phone' className={styles.input} defaultValue={user.user_phone}/>
+                        <div className={styles.group2}>
+                            <div className={styles.inputCtn} style={{width: '60%'}}>
+                                <label htmlFor='user_phone' className={styles.label}>{CONTENT.phone[context[1]]}</label>
+                                <input type='text' id='user_phone' className={styles.input}
+                                       defaultValue={user.user_phone}/>
+                            </div>
+                            <div className={styles.inputCtn} style={{width: '40%'}}>
+                                <label htmlFor='user_language'
+                                       className={styles.label}>{CONTENT.language[context[1]]}</label>
+                                <select className={styles.input} id='user_language'>
+                                    <option value='0' selected={user.language === 0}>English</option>
+                                    <option value='1' selected={user.language === 1}>Tiếng Việt</option>
+                                </select>
+                            </div>
                         </div>
-                        <div className={styles.inputCtn} style={{width: '40%'}}>
-                            <label htmlFor='user_language'
-                                   className={styles.label}>{CONTENT.language[context[1]]}</label>
-                            <select className={styles.input} id='user_language'>
-                                <option value='0' selected={user.language === 0}>English</option>
-                                <option value='1' selected={user.language === 1}>Tiếng Việt</option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <div className={styles.group1}>
-                        <div className={styles.inputCtn} style={{width: '100%'}}>
-                            <label htmlFor='user_bio' className={styles.label}>{CONTENT.biography[context[1]]}</label>
-                            <textarea className={styles.input} id='user_bio' rows={6} style={{resize: 'none'}}  defaultValue={user.user_biography}/>
+                        <div className={styles.group1}>
+                            <div className={styles.inputCtn} style={{width: '100%'}}>
+                                <label htmlFor='user_bio'
+                                       className={styles.label}>{CONTENT.biography[context[1]]}</label>
+                                <textarea className={styles.input} id='user_bio' rows={6} style={{resize: 'none'}}
+                                          defaultValue={user.user_biography}/>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className={styles.btnGroup}>
-                        <button type='button' className={styles.btn} onClick={onSubmit}>{CONTENT.save[context[1]]}</button>
+                        <div className={styles.btnGroup}>
+                            <button type='button' className={styles.btn}
+                                    onClick={onSubmit}>{CONTENT.save[context[1]]}</button>
+                        </div>
                     </div>
                 </div>
             </div>

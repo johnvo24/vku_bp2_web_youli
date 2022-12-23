@@ -3,11 +3,16 @@ import MainContainer from "../../Components/Pieces/MainContainer";
 import ScheduleContainer from "../../Components/ScheduleComponent/ScheduleContainer";
 import SideBarSchedule from "../../Components/ScheduleComponent/SideBarSchedule";
 import styles from "./SchedulePage.module.css"
+import {hasLoggedIn} from "../../Middlewares/Middlewares";
 
 export const ScheduleContext = createContext();
 
 function SchedulePage() {
     const [week, setWeek] = useState([]);
+
+    if (!hasLoggedIn()) {
+        window.location.href = '/sign-in'
+    }
 
     useEffect(() => {
         const today = new Date();
