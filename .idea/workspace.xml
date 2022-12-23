@@ -6,19 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7bcae03d-1aa7-42e4-b6be-92504c672a92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/List/List.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/ViewCategory.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/ViewCategory/ViewCategory.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/HomepageComponent/HeroSection/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/GlobalVariables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Constants/languages/Expenditure.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Middlewares/Middlewares.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/BudgetPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/HomePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/HomePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/NotePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/NotePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/Profile.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/Profile/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Pages/SchedulePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Pages/SchedulePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/ScheduleRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/ScheduleRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/AddItem/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Category/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/BudgetComponents/Category/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +190,8 @@
       <workItem from="1671689205321" duration="10645000" />
       <workItem from="1671710119860" duration="13440000" />
       <workItem from="1671758527707" duration="334000" />
-      <workItem from="1671771450620" duration="3445000" />
+      <workItem from="1671771450620" duration="3636000" />
+      <workItem from="1671775514520" duration="2150000" />
     </task>
     <servers />
   </component>

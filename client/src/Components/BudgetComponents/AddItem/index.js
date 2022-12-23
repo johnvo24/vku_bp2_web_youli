@@ -40,6 +40,7 @@ export default function AddItem(props) {
             .then(() => {
                 setAlert('Save Successful!')
                 setOpen(true)
+                reset()
             })
             .catch(err => {
                 setAlert(err.response.data)
