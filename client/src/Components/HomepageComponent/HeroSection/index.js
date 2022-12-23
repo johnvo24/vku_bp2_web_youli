@@ -30,9 +30,6 @@ export default function HeroSection(props) {
                     </div>
                 </div>
             </div>
-            <div className={styles.content}>
-
-            </div>
         </div>
     )
 
