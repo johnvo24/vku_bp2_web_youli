@@ -1,3 +1,4 @@
+import { getCurrentUser } from "../Middlewares/Middlewares";
 import { SCHEDULE } from "./options";
 
 /** Hàm trả về đối tượng scheduleAPI.
@@ -11,10 +12,18 @@ const scheduleAPI = () => {
         return await SCHEDULE.get(`/index/${userData.user_id}/${date}`);
     }
     scheduleAPI.getTask = async (data) => {
-        const type = data.task_id ? "1" : "2";
-        return await SCHEDULE.get(`/get_task/${data.schedule_id}/${type}`);
+        return await SCHEDULE.get(`/get_task/${data.schedule_id}`);
     }
-
+    scheduleAPI.create = async (data) => {
+        return await SCHEDULE.post(`/create_task`, data);
+    }
+    scheduleAPI.update = async (data) => {
+        return await SCHEDULE.post(`/update_task`, data);
+    }
+    scheduleAPI.delete = async (data) => {
+        return await SCHEDULE.post(`/delete_task`, data);
+    }
+    
     return scheduleAPI;
 }
 

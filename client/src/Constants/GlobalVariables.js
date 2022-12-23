@@ -111,9 +111,9 @@ export const listOfNavBar = {
 }
 
 export const SYSTEM_CATEGORY = [
-    'Salary',
-    'Home fee',
-    'Market'
+    'market',
+    'salary',
+    'monthly home fee'
 ]
 
 export const day = [

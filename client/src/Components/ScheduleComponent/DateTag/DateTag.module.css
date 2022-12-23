@@ -72,21 +72,20 @@
     user-select: none;
     position: absolute;
     width: 100% !important;
-    height: 0;
-    border-top: solid 1px rgb(0, 0, 0);
-    position: relative;
+    height: 1px;
+    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: space-between;
 }
 .presentTime > i:first-child {
-    font-size: 16px;
-    line-height: 0;
-    margin-left: -2px;
+    font-size: 13px;
+    line-height: 1px;
+    margin-left: -3px;
 }
-.presentTime > i {
-    font-size: 16px;
-    line-height: 0;
-    margin-right: -2px;
+.presentTime > i:last-child {
+    font-size: 13px;
+    line-height: 1px;
+    margin-right: -3px;
 }
 .tag {
     position: absolute;

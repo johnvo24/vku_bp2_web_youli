@@ -7,7 +7,7 @@ import Detail from "../../Components/Pieces/Detail";
 import DetailNoteBox from "../../Components/NoteComponents/DetailNoteBox";
 import ConfirmationDialog from "../../Components/NoteComponents/ConfirmationDialog";
 import { noteLang } from "../../Constants/languages/NoteLanguages";
-import {getLanguage, hasLoggedIn} from "../../Middlewares/Middlewares";
+import { getLanguage } from "../../Middlewares/Middlewares";
 import DetailNote from "../../Components/NoteComponents/DetailNote";
 import SideBarNote from "../../Components/NoteComponents/SideBarNote";
 
@@ -26,10 +26,6 @@ function NotePage() {
 
     const [currentNoteBox, setCurrentNoteBox] = useState(null);
     const [currentNote, setCurrentNote] = useState(null);
-
-    if (!hasLoggedIn()) {
-        window.location.href = '/sign-in'
-    }
 
     const reSetNoteBoxList = () => {
         action.reSetNoteBoxList(setNodeBoxList);

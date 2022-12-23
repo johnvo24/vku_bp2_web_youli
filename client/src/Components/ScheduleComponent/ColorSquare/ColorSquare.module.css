@@ -1,8 +1,18 @@
 .gridItem {
-    padding: 20px;
-    font-size: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 28px;
+    border: solid 2px rgb(0, 0, 0);
     text-align: center;
     width: 30px;
     height: 30px;
     cursor: pointer;
+}
+.gridItem:hover {
+    border: solid 2px rgb(255, 255, 255);
+    line-height: 26px;
+    font-size: 18px;
+}
+.gridItem:active {
+    font-size: 14px;
 }

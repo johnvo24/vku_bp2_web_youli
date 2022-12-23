@@ -20,6 +20,10 @@ export function getObjectLocalStore(key) {
     return JSON.parse(localStorage.getItem(key));
 }
 
+export function toFullTime(time) {
+    return time +":00";
+}
+
 export function timeConverter(time, string) {
     let t = new Date(time);
     let stringconerted = "";
@@ -72,18 +76,18 @@ export function getLocalMonth() {
     return month[d.getMonth()];
 }
 
-export function getStatus(spending, current, milestone) {
+export function getStatus(spending, income) {
+    if((spending === 0 && income === 0) || spending === 0)
+        return 'awesome'
 
-    if(current <= 0)
-        return 'outOfMoney'
+    const percent = income / spending
 
-    if(milestone === 0)
-        return 'stable'
-
-    const percent = spending / milestone
-
-    if(percent < 0.8)
-        return 'stable'
-    else
+    if(percent > 0.8 && percent <= 1)
+        return 'dangerous'
+    else if(percent > 0.6 && percent <= 0.8)
         return 'warning'
+    else if(percent > 0.4 && percent <= 0.6)
+        return 'normal'
+    else
+        return 'awesome'
 }

@@ -101,7 +101,5 @@
 
 .empty {
     font-weight: bold;
-    font-size: 1.3em;
-    color: gray;
-    padding: 20px;
+    font-size: 2em;
 }

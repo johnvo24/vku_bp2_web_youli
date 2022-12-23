@@ -7,10 +7,10 @@ export default function ColorSquare(props) {
             className={styles.gridItem}
             style={{
                 backgroundColor: props.bg,
-                color: props.text
+                color: props.text,
             }}
             onClick={props.onClick}
-        />
+        >A</div>
     )
 
 }

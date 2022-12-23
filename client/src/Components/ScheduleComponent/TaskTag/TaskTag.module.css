@@ -5,8 +5,10 @@
     position: relative;
     overflow: hidden;
 }
-
-.taskTop, .taskBottom {
+.taskTag:hover {
+    height: 200px;
+}
+.taskBottom {
     display: none;
     position: absolute;
     font-size: 9px;
@@ -14,15 +16,20 @@
     padding: 2px;
     width: 100%;
     text-align: center;
+    user-select: none;
+    pointer-events: none;
 }
-.taskTop {
-    top: 0;
+
+.taskTag:hover .taskBottom {
+    display: block;
 }
+
 .taskBottom {
     bottom: 0;
 }
+
 .taskName {
-    margin-top: 13px;
+    margin-top: 3px;
     margin-left: 30px;
     margin-right: 30px;
     text-transform: capitalize;
@@ -30,4 +37,58 @@
     text-align: center;
     text-shadow: 0 0 1px rgb(108, 108, 108);
     font-weight: 500;
+    user-select: none;
+}
+.taskTag:hover .taskName {
+    background-color: var(--g_green);
+    padding: 5px;
+    color: white;
+    text-shadow: 0 0 2px black;
+    width: 100%;
+    margin: 0;
+}
+.taskContent {
+    display: none;
+    padding: 5px 5px 20px 5px;
+    justify-content: center;
+    pointer-events: none;
+}
+.taskNote {
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border-radius: 3px;
+    margin-bottom: 2px;
+}
+.taskNote p {
+    font-size: 10px;
+    display: block;
+    margin: 0;
+    margin-top: 5px;
+}
+.taskLink {
+    padding: 5px;
+    text-align: center;
+    font-size: 12px;
+    background-color: rgb(45, 45, 45);
+    color: white;
+    border-radius: 3px;
+}
+.taskLink > a:hover {
+    text-decoration: underline;
+}
+.taskLink a {
+    margin-top: 5px;
+    font-size: 10px;
+    display: block;
+    color: white;
+    text-decoration: none;
+    word-wrap: break-word;
+    pointer-events: all;
+}
+
+.taskTag:hover .taskContent {
+    display: block;
 }

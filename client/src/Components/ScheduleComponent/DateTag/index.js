@@ -13,6 +13,7 @@ function DateTag({ dayHeader, dateData }) {
         tempPos += 18;
     }
     const [taskList, setTaskList] = useState([]);
+    const [presentTime, setPresenntTime] = useState(dateData.date || null);
 
     useEffect(() => {
         scheduleAPI().index(timeConverter(dateData.date, "y-m-d"))
@@ -20,7 +21,16 @@ function DateTag({ dayHeader, dateData }) {
                 setTaskList(res.data)
             })
             .catch((err) => console.log(err))
-    }, []);
+    }, [dateData]);
+
+    useEffect(() => {
+        const myInterval = setInterval(() => {
+            setPresenntTime(new Date());
+        }, 100);
+        return () => {
+            clearInterval(myInterval);
+        }
+    }, [])
 
     return (
         <div
@@ -83,14 +93,18 @@ function DateTag({ dayHeader, dateData }) {
                                 </div>
                             )
                         })}
-                        <div className={styles.presentTime}
-                            style={{
-                                top: 20 + "px",
-                            }}
-                        >
-                            <i class="fa-solid fa-caret-right"></i>
-                            <i class="fa-solid fa-caret-left"></i>
-                        </div>
+                        {
+                            (presentTime.toDateString() === dateData.date.toDateString())
+                            &&
+                            (<div className={styles.presentTime}
+                                style={{
+                                    top: timeToPxConvrter(timeConverter(presentTime, 'h:i:s')) + "px",
+                                }}
+                            >
+                                <i className="fa-solid fa-caret-right"></i>
+                                <i className="fa-solid fa-caret-left"></i>
+                            </div>)
+                        }
                     </div>
                 </div>
             </div>
@@ -100,7 +114,7 @@ function DateTag({ dayHeader, dateData }) {
                     {timeConverter(dateData.date, "d/m/y")}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

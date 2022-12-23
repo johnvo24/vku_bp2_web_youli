@@ -1,7 +1,5 @@
 import styles from './Header.module.css'
 import SlideToggle from "react-slide-toggle";
-import { useEffect } from "react";
-import { hasLoggedIn } from "../../Middlewares/Middlewares";
 
 function Header({ children }) {
 

@@ -155,16 +155,20 @@ export const status = [
 ]
 
 export const statusContent = {
-    stable: [
-        'Stable',
-        'Ổn Định'
+    awesome: [
+        'Awesome',
+        'Tuyệt Vời'
+    ],
+    normal: [
+        'Normal',
+        'Bình Thường'
     ],
     warning: [
         'Warning',
         'Cảnh Báo'
     ],
-    outOfMoney: [
-        'Out Of Money',
-        'Hết Tiền'
+    dangerous: [
+        'Dangerous',
+        'Nguy Hiểm'
     ]
 }
